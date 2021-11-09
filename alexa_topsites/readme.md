@@ -2,7 +2,7 @@ read me(08.11.2021)
 
 This sample will make a request to Alexa Top Sites using the API user credentials and API plan key.
 
-Tested with Python v
+Tested with Python v3.8.2
 
 1. Subscribe to Alexa Top Sites in AWS Marketplace  [https://aws.amazon.com/marketplace/pp/prodview-xv7kf2ukjktzc?ref_=srh_res_product_title](https://aws.amazon.com/marketplace/pp/prodview-xv7kf2ukjktzc?ref_=srh_res_product_title)
 2. Retrieve the API Key assigned to your account in the Alexa API Portal ([https://ats.alexa.com/](https://ats.alexa.com/)).
