@@ -27,8 +27,8 @@ convert json to csv
 
 6. result 
 
-top 1000 from UK
+top 1000 from UK: ./topsites/GB.csv
 
-top 500 from Germany
+top 500 from Germany: ./topsites/DE.csv
 
-top 500 from France
+top 500 from France: ./topsites/FR.csv
