@@ -7,11 +7,11 @@ Tested with Python v3.8.2
 3. Install requirements `pip install -r requirements.txt`
 4. Run:
 
-`python topsites.py  --key=BGPZ81d00x6KE6CyHnNRS16BUAqi0jbta0rgqbqd --action=TopSites --country=GB --options="&Output=json&ResponseGroup=Country"`
+`python topsites.py --key=<API_KEY> --action=TopSites --country=GB --options="&Output=json&ResponseGroup=Country"`
 
-`python [topsites.py](http://topsites.py/) --key=BGPZ81d00x6KE6CyHnNRS16BUAqi0jbta0rgqbqd --action=TopSites --country=DE --options="&Output=json&ResponseGroup=Country"`
+`python [topsites.py] --key=--key=<API_KEY> --action=TopSites --country=DE --options="&Output=json&ResponseGroup=Country"`
 
-`python [topsites.py](http://topsites.py/)  --key=BGPZ81d00x6KE6CyHnNRS16BUAqi0jbta0rgqbqd --action=TopSites --country=FR --options="&Output=json&ResponseGroup=Country"`
+`python [topsites.py] --key=--key=<API_KEY> --action=TopSites --country=FR --options="&Output=json&ResponseGroup=Country"`
 
 5. post-processing 
 
