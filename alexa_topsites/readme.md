@@ -1,5 +1,3 @@
-read me(08.11.2021)
-
 This sample will make a request to Alexa Top Sites using the API user credentials and API plan key.
 
 Tested with Python v3.8.2
