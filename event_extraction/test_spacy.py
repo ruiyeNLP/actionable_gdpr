@@ -431,7 +431,7 @@ class EventsExtraction:
 if __name__ == '__main__':
 	nlp = spacy.load('en_core_web_lg') #self.defined entity 
 	print(nlp.pipe_names)
-	parapraph = "For additional questions , contact us at support @ infinitygames.io . "
+	parapraph = "If you have any questions related to data protection , or if you wish to exercise your rights , please contact EMAIL or the address stated above , adding the keyword Data Protection . "
 	test_sentence = 'if you wish to exercise your rights , please contact EMAIL '
 	extractor = EventsExtraction(nlpModel=nlp)
 	extractor.create_pattern(parapraph)
