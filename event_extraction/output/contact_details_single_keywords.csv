@@ -1,0 +1,1064 @@
+	KeyBert	KeyBert_Freq	TextRank_NOUN	TextRank_NOUN_Freq	TextRank_PROPN	TextRank_PROPN_Freq	TextRank_VERB	TextRank_VERB_Freq	SingleRank_NOUN	SingleRank_NOUN_Freq	SingleRank_PROPN	SingleRank_PROPN_Freq	SingleRank_VERB	SingleRank_VERB_Freq	PositionRank_NOUN	PositionRank_NOUN_Freq	PositionRank_PROPN	PositionRank_PROPN_Freq	PositionRank_VERB	PositionRank_VERB_Freq	MultipartiteRank	MultipartiteRank_Freq	Yake_NOUN	Yake_NOUN_Freq	Yake_PROPN	Yake_PROPN_Freq	Yake_VERB	Yake_VERB_Freq	sCAKE_NOUN	sCAKE_NOUN_Freq	sCAKE_PROPN	sCAKE_PROPN_Freq	sCAKE_VERB	sCAKE_VERB_Freq	SGRank_NOUN	SGRank_NOUN_Freq	SGRank_PROPN	SGRank_PROPN_Freq	SGRank_VERB	SGRank_VERB_Freq
+0	contact	513	question	252.0	privacy policy	118.0	contact	491.0	question	252.0	privacy policy	118.0	contact	491.0	question	252.0	privacy policy	118.0	contact	491.0	contact	460.0	question	287.0	privacy	154.0	contact	488.0	question	176.0	data protection officer	23.0	contact	175.0	question	250.0	privacy	146.0	contact	308.0
+1	email	427	information	140.0	data protection officer	23.0	send	56.0	information	140.0	data protection officer	23.0	send	56.0	information	140.0	data protection officer	23.0	send	56.0	question	216.0	information	167.0	policy	132.0	send	56.0	information	124.0	privacy policy	20.0	exercise	39.0	information	161.0	policy	127.0	exercise	53.0
+2	question	285	email	85.0	privacy	10.0	exercise	55.0	email	90.0	privacy	10.0	exercise	55.0	email	92.0	privacy	10.0	exercise	55.0	privacy policy	146.0	email	102.0	data	48.0	exercise	55.0	email	65.0	united kingdom	5.0	like	38.0	email	96.0	data	45.0	provide	46.0
+3	privacy	226	right	64.0	data protection	7.0	provide	46.0	right	64.0	data protection	7.0	provide	46.0	right	64.0	data protection	7.0	provide	46.0	email	129.0	privacy	93.0	protection	40.0	provide	46.0	concern	55.0	netherlands	4.0	wish	37.0	privacy	92.0	protection	40.0	send	44.0
+4	policy	204	-email-	61.0	california	6.0	email	44.0	concern	58.0	california	6.0	email	44.0	concern	58.0	california	6.0	email	44.0	information	122.0	datum	81.0	officer	31.0	email	44.0	datum	51.0	office	4.0	send	35.0	datum	78.0	officer	30.0	wish	40.0
+5	information	171	concern	58.0	policy	6.0	wish	40.0	request	58.0	policy	6.0	wish	40.0	request	58.0	policy	6.0	wish	40.0	use	81.0	policy	78.0	limited	13.0	wish	40.0	request	49.0	united states	4.0	provide	34.0	policy	78.0	limited	13.0	believe	40.0
+6	personal	119	request	58.0	data	5.0	believe	40.0	datum	57.0	data	5.0	believe	40.0	datum	57.0	data	5.0	believe	40.0	request	59.0	concern	70.0	street	13.0	believe	40.0	right	45.0	gdpr	4.0	believe	32.0	concern	70.0	support	12.0	like	39.0
+7	use	97	datum	57.0	united kingdom	5.0	like	39.0	-email-	51.0	united kingdom	5.0	like	39.0	-email-	51.0	united kingdom	5.0	like	39.0	datum	55.0	-email-	69.0	support	12.0	like	39.0	-email-	41.0	european economic area	3.0	want	24.0	request	64.0	street	12.0	email	39.0
+8	data	94	policy	44.0	eu	5.0	write	29.0	policy	44.0	eu	5.0	write	29.0	policy	44.0	eu	5.0	write	29.0	exercise	54.0	request	68.0	london	11.0	write	29.0	child	37.0	efta states	3.0	email	23.0	-email-	62.0	london	11.0	write	27.0
+9	request	82	child	43.0	european union	5.0	want	25.0	child	43.0	european union	5.0	want	25.0	child	43.0	european union	5.0	want	25.0	send	52.0	right	67.0	games	11.0	want	25.0	policy	31.0	barbara strozzilaan	3.0	delete	21.0	right	60.0	games	11.0	want	25.0
+10	concern	80	address	32.0	gdpr	5.0	use	23.0	address	32.0	gdpr	5.0	use	23.0	address	32.0	gdpr	5.0	use	23.0	concern	46.0	address	60.0	ltd	10.0	delete	24.0	privacy policy	30.0	san francisco	3.0	collect	20.0	address	55.0	ltd	10.0	delete	24.0
+11	datum	79	privacy policy	30.0	dpo	4.0	delete	22.0	privacy policy	30.0	dpo	4.0	delete	22.0	privacy policy	30.0	dpo	4.0	delete	22.0	data protection officer	44.0	data	52.0	california	9.0	use	22.0	age	29.0	zuuks games	3.0	use	19.0	data	52.0	united	9.0	use	22.0
+12	regard	79	service	29.0	netherlands	4.0	feel	20.0	mail	30.0	netherlands	4.0	feel	20.0	service	29.0	netherlands	4.0	feel	20.0	right	42.0	practice	46.0	united	9.0	collect	22.0	service	27.0	eu	3.0	write	19.0	practice	46.0	european	8.0	collect	22.0
+13	address	72	age	29.0	office	4.0	collect	20.0	service	29.0	office	4.0	collect	20.0	age	29.0	office	4.0	collect	20.0	child	42.0	child	44.0	information	9.0	feel	20.0	use	25.0	california	3.0	receive	17.0	child	44.0	information	8.0	feel	20.0
+14	protection	70	use	27.0	united states	4.0	reach	19.0	age	29.0	united states	4.0	reach	19.0	mail	28.0	united states	4.0	reach	19.0	believe	40.0	service	43.0	customer	8.0	reach	19.0	address	24.0	privacy statement	3.0	process	14.0	service	43.0	customer	7.0	receive	18.0
+15	right	66	mail	25.0	u.s.-based	3.0	request	18.0	use	27.0	u.s.-based	3.0	request	18.0	use	27.0	u.s.-based	3.0	request	18.0	policy	40.0	contact	42.0	european	8.0	receive	18.0	time	22.0	european union	3.0	know	13.0	contact	42.0	uk	7.0	request	18.0
+16	officer	61	time	24.0	european economic area	3.0	receive	17.0	time	24.0	european economic area	3.0	receive	17.0	time	24.0	european economic area	3.0	receive	17.0	wish	39.0	comment	42.0	services	8.0	request	18.0	complaint	22.0	platform	3.0	include	11.0	comment	41.0	services	7.0	process	18.0
+17	send	56	complaint	23.0	efta states	3.0	find	16.0	complaint	23.0	efta states	3.0	find	16.0	complaint	23.0	efta states	3.0	find	16.0	like	38.0	protection	33.0	eu	8.0	process	18.0	privacy	21.0	privacy center	3.0	hold	11.0	use	34.0	california	7.0	relate	14.0
+18	exercise	52	comment	21.0	barbara strozzilaan	3.0	process	16.0	comment	21.0	barbara strozzilaan	3.0	process	16.0	comment	21.0	barbara strozzilaan	3.0	process	16.0	address	38.0	officer	31.0	uk	7.0	find	16.0	mail	19.0	privacy	2.0	update	11.0	protection	33.0	states	6.0	follow	14.0
+19	provide	46	privacy	21.0	-emailor	3.0	relate	14.0	privacy	21.0	-emailor	3.0	relate	14.0	privacy	21.0	-emailor	3.0	relate	14.0	provide	31.0	mail	30.0	states	6.0	relate	14.0	data protection officer	18.0	paris france	2.0	request	11.0	age	30.0	inc.	6.0	know	14.0
+20	service	46	practice	19.0	san francisco	3.0	know	14.0	practice	19.0	san francisco	3.0	know	14.0	practice	19.0	san francisco	3.0	know	14.0	age	28.0	age	30.0	europe	6.0	follow	14.0	practice	18.0	hn amsterdam	2.0	share	11.0	complaint	27.0	llc	6.0	include	12.0
+21	practice	46	data protection officer	18.0	privacy notice	3.0	follow	12.0	data protection officer	18.0	privacy notice	3.0	follow	12.0	data protection officer	18.0	privacy notice	3.0	follow	12.0	write	26.0	detail	29.0	inc.	6.0	know	14.0	privacy practice	18.0	w 44th street new york ny	2.0	let	10.0	detail	26.0	eu	6.0	address	12.0
+22	mail	45	website	18.0	zuuks games	3.0	include	12.0	website	18.0	zuuks games	3.0	include	12.0	website	18.0	zuuks games	3.0	include	12.0	question regard	25.0	use	28.0	llc	6.0	include	13.0	section	17.0	interactive	2.0	remove	9.0	mail	26.0	center	6.0	hold	11.0
+23	child	44	contact detail	18.0	privacy statement	3.0	update	12.0	contact detail	18.0	privacy statement	3.0	update	12.0	contact detail	18.0	privacy statement	3.0	update	12.0	e-mail	24.0	complaint	27.0	center	6.0	update	12.0	question comment	17.0	usa	2.0	resolve	9.0	support	26.0	san	5.0	update	11.0
+24	comment	42	privacy practice	18.0	support center	3.0	address	12.0	privacy practice	18.0	support center	3.0	address	12.0	privacy practice	18.0	support center	3.0	address	12.0	want	24.0	support	26.0	dpo	5.0	address	12.0	comment	16.0	thomson reuters	2.0	learn	9.0	party	25.0	kingdom	5.0	learn	11.0
+25	wish	40	suggestion	17.0	ico	3.0	hold	11.0	suggestion	17.0	ico	3.0	hold	11.0	suggestion	17.0	ico	3.0	hold	11.0	service	23.0	party	25.0	san	5.0	hold	11.0	website	15.0	uk limited	2.0	relate	8.0	officer	25.0	francisco	5.0	share	11.0
+26	believe	40	section	17.0	headspace	3.0	resolve	11.0	section	17.0	headspace	3.0	resolve	11.0	section	17.0	headspace	3.0	resolve	11.0	time	22.0	time	25.0	kingdom	5.0	resolve	11.0	party	14.0	professional	2.0	follow	8.0	time	25.0	union	5.0	resolve	10.0
+27	like	36	question comment	17.0	platform	3.0	learn	11.0	question comment	17.0	platform	3.0	learn	11.0	question comment	17.0	platform	3.0	learn	11.0	privacy	20.0	website	21.0	francisco	5.0	learn	11.0	way	14.0	south colonnade	2.0	access	8.0	website	20.0	office	5.0	find	10.0
+28	support	35	party	15.0	privacy center	3.0	visit	11.0	party	15.0	privacy center	3.0	visit	11.0	party	15.0	privacy center	3.0	visit	11.0	practice	19.0	section	20.0	union	5.0	visit	11.0	application	14.0	-emailor	2.0	feel	8.0	section	20.0	inc	5.0	concern	10.0
+29	url	33	way	15.0	email	2.0	share	11.0	way	15.0	email	2.0	share	11.0	way	15.0	email	2.0	share	11.0	concern regard	19.0	e	19.0	office	5.0	share	11.0	contact detail	14.0	-urlor	2.0	submit	7.0	account	18.0	twitter	5.0	let	10.0
+30	age	30	query	14.0	paris france	2.0	concern	10.0	query	14.0	paris france	2.0	concern	10.0	query	14.0	paris france	2.0	concern	10.0	reach	18.0	account	19.0	gdpr	5.0	concern	10.0	account	13.0	privacy shield	2.0	set	7.0	suggestion	17.0	europe	5.0	describe	9.0
+31	complaint	27	parent	14.0	hn amsterdam	2.0	let	10.0	parent	14.0	hn amsterdam	2.0	let	10.0	parent	14.0	hn amsterdam	2.0	let	10.0	comment	18.0	suggestion	17.0	inc	5.0	let	10.0	-url-	12.0	dpo	2.0	require	7.0	processing	17.0	paris	4.0	remove	9.0
+32	write	25	email address	14.0	support service	2.0	submit	9.0	email address	14.0	support service	2.0	describe	9.0	email address	14.0	support service	2.0	describe	9.0	feel	17.0	processing	17.0	twitter	5.0	submit	9.0	parent	12.0	rooster teeth productions llc	2.0	review	6.0	way	15.0	netherlands	4.0	visit	9.0
+33	want	25	account	14.0	w 44th street new york ny	2.0	describe	9.0	account	14.0	w 44th street new york ny	2.0	submit	9.0	account	14.0	w 44th street new york ny	2.0	submit	9.0	website	17.0	query	16.0	paris	4.0	describe	9.0	email address	12.0	e 51st st austin tx	2.0	modify	6.0	user	15.0	ny	4.0	access	9.0
+34	delete	24	application	14.0	interactive	2.0	remove	9.0	application	14.0	interactive	2.0	remove	9.0	application	14.0	interactive	2.0	remove	9.0	question comment	17.0	controller	16.0	netherlands	4.0	remove	9.0	relation	11.0	legal department	2.0	find	6.0	form	15.0	administrator	4.0	opt	9.0
+35	free	22	-url-	12.0	usa	2.0	refer	9.0	-url-	12.0	usa	2.0	refer	9.0	-url-	12.0	usa	2.0	refer	9.0	delete	16.0	way	15.0	ny	4.0	refer	9.0	copy	11.0	belarus minsk	2.0	change	6.0	application	15.0	usa	4.0	submit	8.0
+36	emailor	22	resident	12.0	uk limited	2.0	opt	9.0	resident	12.0	uk limited	2.0	opt	9.0	resident	12.0	thomson reuters	2.0	opt	9.0	party	15.0	user	15.0	administrator	4.0	access	9.0	inquiry	10.0	ico	2.0	opt	6.0	controller	15.0	reuters	4.0	reach	8.0
+37	time	22	copy	12.0	thomson reuters	2.0	direct	8.0	copy	12.0	thomson reuters	2.0	direct	8.0	copy	12.0	uk limited	2.0	direct	8.0	receive	15.0	form	15.0	usa	4.0	opt	9.0	resident	10.0	twitter international company	2.0	refer	6.0	query	14.0	thomson	4.0	set	7.0
+38	collect	22	relation	11.0	professional	2.0	access	8.0	relation	11.0	professional	2.0	access	8.0	relation	11.0	professional	2.0	access	8.0	parent	14.0	application	15.0	reuters	4.0	direct	8.0	data controller	10.0	yumobi tekhnolodzhi ooo support	2.0	ask	6.0	parent	14.0	statement	4.0	review	7.0
+39	party	21	detail	11.0	south colonnade	2.0	set	7.0	detail	11.0	south colonnade	2.0	set	7.0	detail	11.0	south colonnade	2.0	set	7.0	account	14.0	parent	14.0	thomson	4.0	set	7.0	query	9.0	privacy policy administrator	2.0	post	6.0	marketing	14.0	notice	4.0	require	7.0
+40	website	21	contact information	11.0	information	2.0	require	7.0	contact information	11.0	information	2.0	require	7.0	contact information	11.0	information	2.0	require	7.0	application	14.0	marketing	14.0	statement	4.0	review	7.0	guardian	9.0	information commissioner	2.0	obtain	6.0	law	13.0	department	4.0	need	7.0
+41	13	20	data controller	11.0	llc	2.0	need	7.0	data controller	11.0	webmartgroup	2.0	need	7.0	data controller	11.0	llc	2.0	need	7.0	complaint	14.0	law	13.0	notice	4.0	require	7.0	suggestion	9.0	faubourg saint	2.0	address	6.0	page	13.0	legal	4.0	modify	6.0
+42	feel	19	law	10.0	webmartgroup	2.0	review	6.0	e	10.0	llc	2.0	modify	6.0	law	10.0	webmartgroup	2.0	modify	6.0	privacy practice	14.0	-url-	13.0	personal	4.0	need	7.0	message	9.0	homa	2.0	visit	6.0	-url-	13.0	gdpr	4.0	hesitate	6.0
+43	reach	19	user	10.0	alexadra games	2.0	modify	6.0	law	10.0	alexadra games	2.0	review	6.0	user	10.0	alexadra games	2.0	review	6.0	way	13.0	page	13.0	legal	4.0	modify	6.0	user	8.0	sega europe limited customer services	2.0	describe	5.0	security	13.0	platform	4.0	change	6.0
+44	account	19	inquiry	10.0	minimum	2.0	hesitate	6.0	user	10.0	minimum	2.0	hesitate	6.0	inquiry	10.0	minimum	2.0	hesitate	6.0	collect	13.0	security	13.0	department	4.0	hesitate	6.0	attn	8.0	great west road brentford middlesex tw8	2.0	unsubscribe	5.0	copy	12.0	tower	3.0	refer	6.0
+45	section	19	term	9.0	services	2.0	change	6.0	inquiry	10.0	services	2.0	change	6.0	term	9.0	services	2.0	change	6.0	find	13.0	resident	12.0	platform	4.0	change	6.0	consent	8.0	mortimer street london w1 t	2.0	try	5.0	inquiry	12.0	service	3.0	respond	6.0
+46	make	19	guardian	9.0	-emailand	2.0	respond	6.0	term	9.0	-emailand	2.0	respond	6.0	guardian	9.0	-emailand	2.0	respond	6.0	know	13.0	copy	12.0	tower	3.0	respond	6.0	security	8.0	data privacy management grci law limited	2.0	need	5.0	relation	11.0	france	3.0	ask	6.0
+47	receive	18	officer	9.0	trustarc	2.0	ask	6.0	guardian	9.0	trustarc	2.0	ask	6.0	officer	9.0	trustarc	2.0	ask	6.0	query	12.0	inquiry	12.0	u.s.-based	3.0	ask	6.0	term	7.0	boyne tower bull ring lagavooren drogheda co	2.0	concern	5.0	resident	11.0	amsterdam	3.0	post	6.0
+48	legal	17	floor	9.0	-urlor	2.0	post	6.0	officer	9.0	-urlor	2.0	post	6.0	floor	9.0	-urlor	2.0	post	6.0	copy	12.0	relation	11.0	service	3.0	post	6.0	detail	7.0	governance europe	2.0	give	4.0	number	11.0	strozzilaan	3.0	obtain	6.0
+49	suggestion	17	message	9.0	privacy shield	2.0	obtain	6.0	floor	9.0	privacy shield	2.0	obtain	6.0	message	9.0	privacy shield	2.0	obtain	6.0	access	12.0	number	11.0	france	3.0	obtain	6.0	contact information	7.0	head	2.0	note	4.0	term	10.0	barbara	3.0	appoint	5.0
+50	access	17	attn	8.0	tantan	2.0	appoint	5.0	message	9.0	tantan	2.0	appoint	5.0	e	8.0	tantan	2.0	appoint	5.0	suggestion	12.0	term	10.0	barbara	3.0	appoint	5.0	law	7.0	spotify usa inc	2.0	reach	4.0	notice	10.0	york	3.0	locate	5.0
+51	process	17	consent	8.0	e 51st st austin tx	2.0	locate	5.0	consent	8.0	rooster teeth productions llc	2.0	locate	5.0	attn	8.0	rooster teeth productions llc	2.0	locate	5.0	section	12.0	notice	10.0	strozzilaan	3.0	locate	5.0	access	7.0	privacy office	2.0	view	4.0	guardian	9.0	new	3.0	unsubscribe	5.0
+52	customer	16	security	8.0	rooster teeth productions llc	2.0	unsubscribe	5.0	security	8.0	e 51st st austin tx	2.0	unsubscribe	5.0	consent	8.0	e 51st st austin tx	2.0	unsubscribe	5.0	relation	11.0	guardian	9.0	amsterdam	3.0	unsubscribe	5.0	processing	7.0	suntec tower	1.0	mention	4.0	issue	9.0	w	3.0	report	5.0
+53	applicable	16	content	7.0	legal department	2.0	welcome	5.0	content	7.0	legal department	2.0	welcome	5.0	security	8.0	legal department	2.0	welcome	5.0	process	11.0	floor	9.0	interactive	3.0	welcome	5.0	mail address	7.0	temasek	1.0	display	4.0	message	9.0	interactive	3.0	view	5.0
+54	query	16	access	7.0	personal	2.0	report	5.0	access	7.0	personal	2.0	report	5.0	content	7.0	personal	2.0	report	5.0	data controller	11.0	issue	9.0	w	3.0	report	5.0	floor	7.0	singapore	1.0	respond	4.0	matter	9.0	suite	3.0	display	5.0
+55	processing	16	processing	7.0	saygames	2.0	view	5.0	processing	7.0	saygames	2.0	view	5.0	access	7.0	saygames	2.0	view	5.0	post	10.0	message	9.0	new	3.0	view	5.0	notice	7.0	lingodeer	1.0	state	3.0	communication	9.0	south	3.0	try	5.0
+56	controller	16	mail address	7.0	belarus minsk	2.0	display	5.0	mail address	7.0	belarus minsk	2.0	display	5.0	processing	7.0	belarus minsk	2.0	display	5.0	law	10.0	matter	9.0	york	3.0	display	5.0	data protection	6.0	designated countriemay	1.0	notify	3.0	customer	8.0	zuuks	3.0	state	4.0
+57	law	15	enquiry	7.0	topface	2.0	register	5.0	enquiry	7.0	topface	2.0	register	5.0	mail address	7.0	topface	2.0	register	5.0	learn	10.0	communication	9.0	suite	3.0	register	5.0	basis	6.0	general data protection regulation	1.0	work	3.0	access	8.0	cyprus	3.0	give	4.0
+58	user	15	matter	7.0	twitter international company	2.0	try	5.0	attn	7.0	twitter international company	2.0	try	5.0	enquiry	7.0	twitter international company	2.0	try	5.0	contact detail	10.0	customer	8.0	south	3.0	try	5.0	enquiry	6.0	freedom circle	1.0	handle	3.0	collection	8.0	personal	3.0	note	4.0
+59	form	15	notice	7.0	yumobi tekhnolodzhi ooo support	2.0	live	5.0	matter	7.0	yumobi tekhnolodzhi ooo support	2.0	live	5.0	matter	7.0	yumobi tekhnolodzhi ooo support	2.0	live	5.0	-emailor	10.0	content	8.0	-emailor	3.0	live	5.0	matter	6.0	santa clara	1.0	head	3.0	consent	8.0	commissioner	3.0	think	4.0
+60	application	15	data protection	6.0	privacy policy administrator	2.0	state	4.0	notice	7.0	privacy policy administrator	2.0	state	4.0	notice	7.0	privacy policy administrator	2.0	state	4.0	inquiry	10.0	access	8.0	zuuks	3.0	state	4.0	form	6.0	metro customer service	1.0	limit	3.0	e	7.0	dpo	3.0	mail	4.0
+61	additional	14	e	6.0	information commissioner	2.0	give	4.0	data protection	6.0	information commissioner	2.0	give	4.0	data protection	6.0	information commissioner	2.0	give	4.0	let	10.0	collection	8.0	cyprus	3.0	give	4.0	content	6.0	privacy officer	1.0	withdraw	3.0	preference	7.0	st	3.0	list	4.0
+62	parent	14	post	6.0	faubourg saint	2.0	note	4.0	post	6.0	faubourg saint	2.0	note	4.0	post	6.0	faubourg saint	2.0	note	4.0	mail	10.0	attn	8.0	commissioner	3.0	note	4.0	order	5.0	twitters data protection officer	1.0	disclose	3.0	floor	7.0	company	3.0	mention	4.0
+63	update	14	basis	6.0	homa	2.0	think	4.0	basis	6.0	homa	2.0	think	4.0	basis	6.0	homa	2.0	think	4.0	detail	10.0	consent	8.0	st	3.0	think	4.0	datum use concern	5.0	des petites ecuries c	1.0	contain	3.0	game	7.0	international	3.0	apply	4.0
+64	marketing	14	order	6.0	contact	2.0	mail	4.0	order	6.0	contact	2.0	mail	4.0	order	6.0	contact	2.0	mail	4.0	submit	9.0	preference	7.0	saygames	3.0	mail	4.0	issue	5.0	internet privacy policy	1.0	correct	3.0	attn	7.0	centre	3.0	register	4.0
+65	direct	14	issue	6.0	great west road brentford middlesex tw8	2.0	list	4.0	issue	6.0	great west road brentford middlesex tw8	2.0	list	4.0	issue	6.0	sega europe limited customer services	2.0	list	4.0	email address	9.0	game	7.0	company	3.0	list	4.0	game	5.0	internet privacy policy administrator	1.0	explain	3.0	app	7.0	lane	3.0	notify	3.0
+66	following	14	form	6.0	sega europe limited customer services	2.0	mention	4.0	form	6.0	sega europe limited customer services	2.0	mention	4.0	form	6.0	great west road brentford middlesex tw8	2.0	mention	4.0	refer	9.0	enquiry	7.0	ico	3.0	mention	4.0	writing	5.0	eprivacy gmbh	1.0	prevent	3.0	company	7.0	w1	3.0	work	3.0
+67	know	14	page	6.0	mcdonald	2.0	notify	3.0	page	6.0	mcdonald	2.0	notify	3.0	page	6.0	mcdonald	2.0	notify	3.0	visit	9.0	app	7.0	international	3.0	apply	4.0	link	5.0	prof	1.0	list	3.0	content	7.0	homa	3.0	handle	3.0
+68	notice	14	datum use concern	5.0	mortimer street london w1 t	2.0	work	3.0	datum use concern	5.0	mortimer street london w1 t	2.0	work	3.0	datum use concern	5.0	mortimer street london w1 t	2.0	work	3.0	message	9.0	company	7.0	centre	3.0	notify	3.0	year	5.0	tap4fun co. ltd	1.0	compromise	3.0	purpose	7.0	contact	3.0	encourage	3.0
+69	way	13	office	5.0	boyne tower bull ring lagavooren drogheda co	2.0	handle	3.0	office	5.0	data privacy management grci law limited	2.0	handle	3.0	office	5.0	data privacy management grci law limited	2.0	handle	3.0	share	9.0	cookie	7.0	headspace	3.0	work	3.0	case	5.0	privacy administrator	1.0	inform	3.0	basis	6.0	road	3.0	deal	3.0
+70	follow	13	game	5.0	data privacy management grci law limited	2.0	e	3.0	game	5.0	boyne tower bull ring lagavooren drogheda co	2.0	encourage	3.0	game	5.0	boyne tower bull ring lagavooren drogheda co	2.0	encourage	3.0	term	8.0	purpose	7.0	lane	3.0	handle	3.0	event	5.0	chengdu sichuan china	1.0	add	2.0	order	6.0	sega	3.0	head	3.0
+71	page	13	writing	5.0	governance europe	2.0	encourage	3.0	writing	5.0	governance europe	2.0	deal	3.0	writing	5.0	governance europe	2.0	deal	3.0	guardian	8.0	post	6.0	w1	3.0	e	3.0	violation	5.0	tianfu	1.0	infringe	2.0	link	6.0	spotify	3.0	remain	3.0
+72	security	13	link	5.0	head	2.0	deal	3.0	link	5.0	head	2.0	head	3.0	link	5.0	head	2.0	head	3.0	remove	8.0	basis	6.0	homa	3.0	encourage	3.0	site	5.0	tile inc.	1.0	violate	2.0	feedback	6.0	email	2.0	limit	3.0
+73	relate	12	year	5.0	spotify usa inc	2.0	head	3.0	year	5.0	spotify usa inc	2.0	remain	3.0	year	5.0	spotify usa inc	2.0	remain	3.0	resolve	8.0	order	6.0	contact	3.0	deal	3.0	claim	5.0	s el camino real suite	1.0	encourage	2.0	year	6.0	efta	2.0	stop	3.0
+74	include	12	case	5.0	privacy office	2.0	remain	3.0	case	5.0	privacy office	2.0	limit	3.0	case	5.0	privacy office	2.0	limit	3.0	user	8.0	link	6.0	sega	3.0	head	3.0	description	5.0	san mateo	1.0	investigate	2.0	enquiry	6.0	area	2.0	withdraw	3.0
+75	post	12	event	5.0	suntec tower	1.0	limit	3.0	event	5.0	suntec tower	1.0	withdraw	3.0	event	5.0	suntec tower	1.0	withdraw	3.0	california resident	8.0	feedback	6.0	road	3.0	remain	3.0	respect	5.0	privacy team thomson reuters	1.0	log	2.0	list	6.0	economic	2.0	cover	3.0
+76	resident	12	site	5.0	singapore	1.0	withdraw	3.0	violation	5.0	temasek	1.0	cover	3.0	violation	5.0	temasek	1.0	cover	3.0	include	8.0	year	6.0	spotify	3.0	stop	3.0	marketing communication	5.0	canary wharf london	1.0	erase	2.0	mailing	6.0	hn	2.0	disclose	3.0
+77	copy	12	violation	5.0	temasek	1.0	cover	3.0	site	5.0	singapore	1.0	disclose	3.0	site	5.0	singapore	1.0	disclose	3.0	consent	8.0	mailing	6.0	email	2.0	limit	3.0	cookie	5.0	statement	1.0	deal	2.0	violation	6.0	social	2.0	contain	3.0
+78	inquiry	12	claim	5.0	jagex limited	1.0	disclose	3.0	claim	5.0	jagex limited	1.0	contain	3.0	claim	5.0	jagex limited	1.0	contain	3.0	describe	8.0	list	6.0	economic	2.0	withdraw	3.0	page	5.0	data protection officer thomson reuters	1.0	permit	2.0	cookie	6.0	44th	2.0	correct	3.0
+79	immediately	11	description	5.0	lingodeer	1.0	contain	3.0	description	5.0	lingodeer	1.0	correct	3.0	description	5.0	lingodeer	1.0	correct	3.0	security	8.0	violation	6.0	area	2.0	cover	3.0	privacy question	4.0	canary wharf london e14	1.0	open	2.0	post	5.0	internet	2.0	explain	3.0
+80	resolve	11	respect	5.0	designated countriemay	1.0	correct	3.0	respect	5.0	designated countriemay	1.0	explain	3.0	respect	5.0	designated countriemay	1.0	explain	3.0	question concern	8.0	team	5.0	efta	2.0	disclose	3.0	regard	4.0	twitch services	1.0	seek	2.0	team	5.0	professional	2.0	prevent	3.0
+81	office	11	marketing communication	5.0	general data protection regulation	1.0	explain	3.0	marketing communication	5.0	general data protection regulation	1.0	prevent	3.0	marketing communication	5.0	general data protection regulation	1.0	prevent	3.0	contact information	7.0	dispute	5.0	hn	2.0	contain	3.0	post	4.0	twitch interactive inc.	1.0	arise	2.0	dispute	5.0	wharf	2.0	compromise	3.0
+82	number	11	cookie	5.0	freedom circle	1.0	prevent	3.0	cookie	5.0	santa clara	1.0	compromise	3.0	cookie	5.0	santa clara	1.0	compromise	3.0	follow	7.0	phone	5.0	social	2.0	correct	3.0	party dispute resolution provider	4.0	bush street	1.0	occur	2.0	phone	5.0	canary	2.0	inform	3.0
+83	street	11	privacy question	4.0	santa clara	1.0	compromise	3.0	privacy question	4.0	freedom circle	1.0	inform	3.0	privacy question	4.0	freedom circle	1.0	inform	3.0	complaint regard	7.0	office	5.0	internet	2.0	base	3.0	charge	4.0	vertigo games sepapaja	1.0	stop	2.0	office	5.0	team	2.0	disable	3.0
+84	emailand	11	dpo	4.0	customer	1.0	inform	3.0	dpo	4.0	customer	1.0	disable	3.0	dpo	4.0	customer	1.0	disable	3.0	hold	7.0	subject	5.0	44th	2.0	explain	3.0	office	4.0	tallinn	1.0	appoint	2.0	subject	5.0	colonnade	2.0	protect	3.0
+85	games	11	regard	4.0	metro customer service	1.0	disable	3.0	regard	4.0	metro customer service	1.0	protect	3.0	regard	4.0	metro customer service	1.0	protect	3.0	contact detail provide	7.0	writing	5.0	professional	2.0	prevent	3.0	abuse	4.0	estonia	1.0	allow	2.0	writing	5.0	-emailor	2.0	add	2.0
+86	share	11	party dispute resolution provider	4.0	privacy officer	1.0	protect	3.0	party dispute resolution provider	4.0	privacy officer	1.0	add	2.0	party dispute resolution provider	4.0	privacy officer	1.0	add	2.0	notice	7.0	case	5.0	team	2.0	act	3.0	file	4.0	information	1.0	publish	2.0	case	5.0	bush	2.0	violate	2.0
+87	hold	10	charge	4.0	twitters data protection officer	1.0	add	2.0	charge	4.0	twitters data protection officer	1.0	violate	2.0	charge	4.0	twitters data protection officer	1.0	violate	2.0	respect	7.0	event	5.0	colonnade	2.0	compromise	3.0	collection	4.0	zynga inc.	1.0	follow apply	2.0	event	5.0	webmartgroup	2.0	infringe	2.0
+88	ca	10	feedback	4.0	europe	1.0	violate	2.0	feedback	4.0	europe	1.0	infringe	2.0	feedback	4.0	europe	1.0	infringe	2.0	question relate	6.0	site	5.0	canary	2.0	inform	3.0	data processing	4.0	customer support page	1.0	understand	2.0	site	5.0	alexadra	2.0	e	2.0
+89	issue	10	abuse	4.0	des petites ecuries c	1.0	infringe	2.0	abuse	4.0	des petites ecuries c	1.0	e	2.0	abuse	4.0	des petites ecuries c	1.0	e	2.0	content	6.0	claim	5.0	wharf	2.0	disable	3.0	app	4.0	street san francisco	1.0	endeavour	2.0	claim	5.0	avenue	2.0	offer	2.0
+90	learn	10	file	4.0	rules	1.0	offer	2.0	file	4.0	rules	1.0	offer	2.0	file	4.0	rules	1.0	offer	2.0	basis	6.0	description	5.0	bush	2.0	protect	3.0	question concern	4.0	gdask poland	1.0	file	2.0	description	5.0	nicosia	2.0	investigate	2.0
+91	california	10	collection	4.0	relive	1.0	investigate	2.0	collection	4.0	relive	1.0	investigate	2.0	collection	4.0	relive	1.0	investigate	2.0	processing	6.0	respect	5.0	webmartgroup	2.0	add	2.0	marketing purpose	4.0	zacna	1.0	live	2.0	respect	5.0	microsoft	2.0	help	2.0
+92	visit	10	problem	4.0	skg	1.0	indicate	2.0	problem	4.0	skg	1.0	indicate	2.0	problem	4.0	skg	1.0	indicate	2.0	hesitate	6.0	telephone	5.0	alexadra	2.0	infringe	2.0	customer service	3.0	street	1.0	transfer	2.0	telephone	5.0	representative	2.0	log	2.0
+93	let	10	data processing	4.0	storytel	1.0	log	2.0	data processing	4.0	storytel	1.0	log	2.0	data processing	4.0	storytel	1.0	log	2.0	update	6.0	safeguard	5.0	minimum	2.0	violate	2.0	dpo	3.0	lockhart ro wan chai h.k	1.0	stay	2.0	registration	5.0	-urlor	2.0	erase	2.0
+94	list	10	removal	4.0	social club	1.0	erase	2.0	removal	4.0	social club	1.0	erase	2.0	removal	4.0	social club	1.0	erase	2.0	privacy officer	6.0	registration	5.0	nicosia	2.0	offer	2.0	accordance	3.0	rm	1.0	read	2.0	center	5.0	studios	2.0	store	2.0
+95	london	10	app	4.0	social point	1.0	store	2.0	app	4.0	social point	1.0	store	2.0	app	4.0	social point	1.0	store	2.0	unsubscribe	6.0	center	5.0	avenue	2.0	help	2.0	feedback	3.0	lockhart	1.0	invoke	2.0	authority	4.0	shield	2.0	seek	2.0
+96	center	10	question concern	4.0	internet privacy policy	1.0	permit	2.0	question concern	4.0	internet privacy policy	1.0	open	2.0	question concern	4.0	internet privacy policy	1.0	open	2.0	file	6.0	authority	4.0	-emailand	2.0	investigate	2.0	service support	3.0	dvapps ab	1.0	detail	2.0	owner	4.0	code	2.0	open	2.0
+97	submit	9	preference	4.0	internet privacy policy administrator	1.0	open	2.0	preference	4.0	internet privacy policy administrator	1.0	seek	2.0	preference	4.0	internet privacy policy administrator	1.0	permit	2.0	respond	6.0	owner	4.0	microsoft	2.0	log	2.0	e	3.0	dvloper	1.0	assist	2.0	regard	4.0	tx	2.0	permit	2.0
+98	dpo	9	marketing purpose	4.0	eprivacy gmbh	1.0	seek	2.0	marketing purpose	4.0	eprivacy gmbh	1.0	permit	2.0	marketing purpose	4.0	eprivacy gmbh	1.0	seek	2.0	need	6.0	dpo	4.0	trustarc	2.0	erase	2.0	instruction	3.0	easybrain ltd	1.0	respect	2.0	unsubscribe	4.0	austin	2.0	arise	2.0
+99	limited	9	safeguard	4.0	prof	1.0	arise	2.0	safeguard	4.0	prof	1.0	arise	2.0	safeguard	4.0	prof	1.0	arise	2.0	data protection	5.0	regard	4.0	representative	2.0	store	2.0	reason	3.0	krinou street	1.0	ensure	2.0	charge	4.0	51st	2.0	occur	2.0
+100	guardian	9	letter	4.0	tandem	1.0	occur	2.0	letter	4.0	tandem	1.0	occur	2.0	letter	4.0	tandem	1.0	occur	2.0	appoint	5.0	unsubscribe	4.0	-urlor	2.0	seek	2.0	mailing list	3.0	limassol cyprus	1.0	register	2.0	provider	4.0	e	2.0	allow	2.0
+101	remove	9	choice	4.0	chengdu sichuan china	1.0	stop	2.0	choice	4.0	tap4fun co. ltd	1.0	stop	2.0	choice	4.0	tap4fun co. ltd	1.0	stop	2.0	regard	5.0	resolution	4.0	studios	2.0	permit	2.0	phone	3.0	oval	1.0	disable	2.0	resolution	4.0	productions	2.0	publish	2.0
+102	16	9	customer service	3.0	tap4fun co. ltd	1.0	allow	2.0	customer service	3.0	privacy administrator	1.0	allow	2.0	customer service	3.0	privacy administrator	1.0	allow	2.0	modify	5.0	provider	4.0	shield	2.0	open	2.0	erasure	3.0	stakhanovskaya	1.0	agree	2.0	instruction	4.0	teeth	2.0	understand	2.0
+103	refer	9	version	3.0	privacy administrator	1.0	publish	2.0	version	3.0	chengdu sichuan china	1.0	publish	2.0	version	3.0	tianfu	1.0	publish	2.0	review	5.0	charge	4.0	tantan	2.0	arise	2.0	day	3.0	technopark perm	1.0	protect	2.0	help	4.0	rooster	2.0	base	2.0
+104	welcome	9	authority	3.0	tianfu	1.0	follow apply	2.0	authority	3.0	tianfu	1.0	follow apply	2.0	authority	3.0	chengdu sichuan china	1.0	follow apply	2.0	order	5.0	instruction	4.0	code	2.0	occur	2.0	removal	3.0	strovolos avenue petousis	1.0	enforce	2.0	abuse	4.0	minsk	2.0	endeavour	2.0
+105	message	9	support team	3.0	ted sites	1.0	understand	2.0	support team	3.0	ted sites	1.0	understand	2.0	support team	3.0	ted sites	1.0	understand	2.0	office	5.0	help	4.0	google	2.0	allow	2.0	officer	3.0	strovolos nicosia cyprus	1.0	age	1.0	file	4.0	belarus	2.0	file	2.0
+106	opt	9	accordance	3.0	s el camino real suite	1.0	base	2.0	accordance	3.0	s el camino real suite	1.0	base	2.0	accordance	3.0	s el camino real suite	1.0	base	2.0	require	5.0	abuse	4.0	rooster	2.0	publish	2.0	list	3.0	personal data protection	1.0	discontinue receive	1.0	feature	4.0	terms	2.0	live	2.0
+107	communication	9	marketing	3.0	tile inc.	1.0	endeavour	2.0	marketing	3.0	tile inc.	1.0	endeavour	2.0	marketing	3.0	tile inc.	1.0	endeavour	2.0	data	5.0	file	4.0	teeth	2.0	understand	2.0	mailing address	3.0	commissioner	1.0	adopt	1.0	letter	4.0	ico	2.0	transfer	2.0
+108	term	8	service support	3.0	san mateo	1.0	file	2.0	service support	3.0	san mateo	1.0	file	2.0	service support	3.0	san mateo	1.0	file	2.0	writing	5.0	assistance	4.0	productions	2.0	endeavour	2.0	data practice	3.0	genera games s.l cardenal bueno monreal	1.0	reply	1.0	choice	4.0	commissioners	2.0	stay	2.0
+109	directly	8	instruction	3.0	privacy team thomson reuters	1.0	transfer	2.0	instruction	3.0	privacy team thomson reuters	1.0	transfer	2.0	instruction	3.0	privacy team thomson reuters	1.0	transfer	2.0	year	5.0	problem	4.0	tx	2.0	file	2.0	contact	3.0	sevilla spain	1.0	help	1.0	business	4.0	rights	2.0	read	2.0
+110	unsubscribe	8	data	3.0	canary wharf london	1.0	stay	2.0	data	3.0	canary wharf london	1.0	stay	2.0	data	3.0	statement	1.0	stay	2.0	enquiry	5.0	feature	4.0	e	2.0	transfer	2.0	web form	3.0	planta	1.0	include delete	1.0	version	3.0	ooo	2.0	invoke	2.0
+111	floor	8	reason	3.0	statement	1.0	read	2.0	reason	3.0	statement	1.0	read	2.0	reason	3.0	canary wharf london	1.0	read	2.0	case	5.0	removal	4.0	austin	2.0	stay	2.0	individual	3.0	microsoft chief privacy officer	1.0	join	1.0	dpo	3.0	tekhnolodzhi	2.0	welcome	2.0
+112	subject	8	mailing list	3.0	data protection officer thomson reuters	1.0	invoke	2.0	mailing list	3.0	data protection officer thomson reuters	1.0	invoke	2.0	mailing list	3.0	data protection officer thomson reuters	1.0	invoke	2.0	change	5.0	letter	4.0	51st	2.0	read	2.0	preference	3.0	eu data protection officer	1.0	endeavor	1.0	accordance	3.0	yumobi	2.0	detail	2.0
+113	game	8	phone	3.0	canary wharf london e14	1.0	apply	2.0	phone	3.0	canary wharf london e14	1.0	apply	2.0	phone	3.0	canary wharf london e14	1.0	apply	2.0	attn	5.0	choice	4.0	belarus	2.0	invoke	2.0	registration number	3.0	eu local representative	1.0	collect process	1.0	member	3.0	market	2.0	assist	2.0
+114	collection	8	response	3.0	twitch interactive inc.	1.0	detail	2.0	response	3.0	twitch interactive inc.	1.0	detail	2.0	response	3.0	twitch interactive inc.	1.0	detail	2.0	request regard	5.0	business	4.0	minsk	2.0	detail	2.0	department	3.0	user information policy	1.0	store	1.0	statement	3.0	rue	2.0	respect	2.0
+115	consent	8	erasure	3.0	twitch services	1.0	assist	2.0	erasure	3.0	bush street	1.0	assist	2.0	erasure	3.0	twitch services	1.0	assist	2.0	privacy notice	5.0	version	3.0	terms	2.0	assist	2.0	support e	3.0	bank	1.0	restrict	1.0	line	3.0	sas	2.0	search	2.0
+116	services	8	day	3.0	bush street	1.0	respect	2.0	day	3.0	twitch services	1.0	respect	2.0	day	3.0	bush street	1.0	respect	2.0	head	5.0	accordance	3.0	topface	2.0	respect	2.0	letter	3.0	icbc	1.0	define	1.0	reason	3.0	itv	2.0	have	2.0
+117	detailed	8	assistance	3.0	vertigo games sepapaja	1.0	have	2.0	assistance	3.0	vertigo games sepapaja	1.0	have	2.0	assistance	3.0	vertigo games sepapaja	1.0	have	2.0	violation	5.0	member	3.0	commissioners	2.0	search	2.0	password	3.0	thinking ape entertainment ltd	1.0	possess	1.0	response	3.0	holborn	2.0	ensure	2.0
+118	eu	8	privacy officer	3.0	estonia	1.0	ensure	2.0	privacy officer	3.0	tallinn	1.0	ensure	2.0	privacy officer	3.0	tallinn	1.0	ensure	2.0	report	5.0	statement	3.0	rights	2.0	have	2.0	choice	3.0	ny ny	1.0	indicate	1.0	option	3.0	denis	2.0	act	2.0
+119	company	8	list	3.0	tallinn	1.0	act	2.0	list	3.0	estonia	1.0	act	2.0	list	3.0	estonia	1.0	act	2.0	site	5.0	reason	3.0	yumobi	2.0	ensure	2.0	help center	3.0	park avenue south	1.0	think	1.0	erasure	3.0	saint	2.0	agree	2.0
+120	urlor	8	mailing address	3.0	contextlogic b.v.s	1.0	agree	2.0	mailing address	3.0	contextlogic b.v.s	1.0	agree	2.0	mailing address	3.0	contextlogic b.v.s	1.0	agree	2.0	european union	5.0	line	3.0	tekhnolodzhi	2.0	agree	2.0	privacy notice	3.0	homer	1.0	abide	1.0	breach	3.0	faubourg	2.0	enforce	2.0
+121	responsible	7	company	3.0	street san francisco	1.0	enforce	2.0	company	3.0	customer support page	1.0	enforce	2.0	company	3.0	customer support page	1.0	enforce	2.0	description	5.0	building	3.0	ooo	2.0	enforce	2.0	business	3.0	support	1.0	redirect	1.0	day	3.0	tiktok	2.0	govern	1.0
+122	relation	7	data practice	3.0	customer support page	1.0	govern	1.0	data practice	3.0	zynga inc.	1.0	govern	1.0	data practice	3.0	zynga inc.	1.0	govern	1.0	ask	5.0	response	3.0	market	2.0	govern	1.0	drawer	3.0	amsterdam	1.0	accommodate	1.0	assistance	3.0	house	2.0	oversee	1.0
+123	set	7	contact	3.0	zynga inc.	1.0	oversee	1.0	contact	3.0	street san francisco	1.0	oversee	1.0	contact	3.0	street san francisco	1.0	oversee	1.0	-email-	5.0	agent	3.0	sas	2.0	oversee	1.0	keyword	2.0	letsvpn	1.0	alert	1.0	removal	3.0	floor	2.0	age	1.0
+124	content	7	web form	3.0	musixmatch	1.0	age	1.0	web form	3.0	musixmatch	1.0	age	1.0	web form	3.0	musixmatch	1.0	age	1.0	marketing communication	5.0	option	3.0	rue	2.0	age	1.0	contact datum	2.0	level	1.0	realise	1.0	activity	3.0	fireproof	2.0	consider	1.0
+125	review	7	individual	3.0	gdask poland	1.0	consider	1.0	individual	3.0	zacna	1.0	consider	1.0	individual	3.0	zacna	1.0	consider	1.0	list	5.0	erasure	3.0	cookie	2.0	consider	1.0	data protection law	2.0	lion??s data protection officer	1.0	issue	1.0	web	3.0	tw8	2.0	choose	1.0
+126	require	7	registration number	3.0	street	1.0	choose	1.0	registration number	3.0	street	1.0	choose	1.0	registration number	3.0	street	1.0	choose	1.0	app	5.0	breach	3.0	itv	2.0	choose	1.0	version	2.0	octaaf soudanstraat	1.0	base	1.0	individual	3.0	middlesex	2.0	discontinue	1.0
+127	european	7	department	3.0	zacna	1.0	discontinue receive	1.0	department	3.0	gdask poland	1.0	discontinue receive	1.0	department	3.0	gdask poland	1.0	discontinue receive	1.0	question regard privacy	5.0	day	3.0	holborn	2.0	discontinue	1.0	privacy email	2.0	sint	1.0	call	1.0	department	3.0	brentford	2.0	adopt	1.0
+128	statement	7	support e	3.0	camsurf	1.0	incur	1.0	support e	3.0	camsurf	1.0	incur	1.0	support e	3.0	camsurf	1.0	incur	1.0	try	5.0	activity	3.0	faubourg	2.0	incur	1.0	contact service page	2.0	denijs	1.0	come	1.0	-emailor	3.0	west	2.0	reply	1.0
+129	change	7	password	3.0	bluehole pnix	1.0	adopt	1.0	password	3.0	bluehole pnix	1.0	adopt	1.0	password	3.0	bluehole pnix	1.0	adopt	1.0	issue	5.0	web	3.0	saint	2.0	adopt	1.0	owner contact email	2.0	westrem	1.0	stop collect	1.0	password	3.0	great	2.0	join	1.0
+130	attn	7	help center	3.0	state	1.0	reply	1.0	help center	3.0	state	1.0	reply	1.0	help center	3.0	state	1.0	reply	1.0	form	5.0	individual	3.0	denis	2.0	reply	1.0	alternative	2.0	belgium	1.0	play	1.0	safeguard	3.0	t	2.0	represent	1.0
+131	soon	7	privacy notice	3.0	lockhart ro wan chai h.k	1.0	help	1.0	privacy notice	3.0	lockhart ro wan chai h.k	1.0	help	1.0	privacy notice	3.0	lockhart ro wan chai h.k	1.0	help	1.0	live	5.0	department	3.0	tiktok	2.0	join	1.0	nature	2.0	california civil code	1.0	forward	1.0	technology	3.0	mortimer	2.0	endeavor	1.0
+132	uk	7	business	3.0	rm	1.0	include delete	1.0	business	3.0	lockhart	1.0	include delete	1.0	business	3.0	lockhart	1.0	include delete	1.0	privacy question	4.0	-emailor	3.0	house	2.0	represent	1.0	account information	2.0	outfit7	1.0	prefer	1.0	drawer	3.0	b66	2.0	escalate	1.0
+133	minimum	7	drawer	3.0	lockhart	1.0	join	1.0	drawer	3.0	rm	1.0	join	1.0	drawer	3.0	rm	1.0	join	1.0	dpo	4.0	password	3.0	floor	2.0	endeavor	1.0	privacy right	2.0	privacy policy notice	1.0	specify	1.0	keyword	2.0	smethwick	2.0	restrict	1.0
+134	need	7	keyword	2.0	clicktouch games	1.0	represent	1.0	keyword	2.0	clicktouch games	1.0	represent	1.0	keyword	2.0	clicktouch games	1.0	represent	1.0	datum use concern	4.0	technology	3.0	england	2.0	escalate	1.0	scope	2.0	uber	1.0	act accord	1.0	nature	2.0	roebuck	2.0	aim	1.0
+135	respect	7	contact datum	2.0	dvapps ab	1.0	endeavor	1.0	contact datum	2.0	dvapps ab	1.0	endeavor	1.0	contact datum	2.0	dvapps ab	1.0	endeavor	1.0	charge	4.0	drawer	3.0	fireproof	2.0	restrict	1.0	visitor	2.0	rosh ha ayin industrial zone israel	1.0	mail	1.0	alternative	2.0	co	2.0	quote	1.0
+136	app	7	data protection law	2.0	dvloper	1.0	collect process	1.0	data protection law	2.0	dvloper	1.0	collect process	1.0	data protection law	2.0	dvloper	1.0	collect process	1.0	marketing	4.0	keyword	2.0	great	2.0	designate	1.0	support team	2.0	personal	1.0	adhere	1.0	regulation	2.0	drogheda	2.0	s	1.0
+137	purpose	7	privacy email	2.0	limassol cyprus	1.0	escalate	1.0	privacy email	2.0	krinou street	1.0	escalate	1.0	privacy email	2.0	krinou street	1.0	escalate	1.0	phone	4.0	entity	2.0	west	2.0	aim	1.0	datum privacy	2.0	microsoft	1.0	help solve	1.0	scope	2.0	lagavooren	2.0	define	1.0
+138	department	7	contact service page	2.0	easybrain ltd	1.0	restrict	1.0	contact service page	2.0	easybrain ltd	1.0	restrict	1.0	contact service page	2.0	easybrain ltd	1.0	restrict	1.0	game	4.0	nature	2.0	brentford	2.0	quote	1.0	privacy issue	2.0	limited liability company swag masha	1.0	track	1.0	visitor	2.0	ring	2.0	possess	1.0
+139	state	6	owner contact email	2.0	krinou street	1.0	designate	1.0	owner contact email	2.0	limassol cyprus	1.0	designate	1.0	owner contact email	2.0	limassol cyprus	1.0	designate	1.0	netherlands	4.0	alternative	2.0	middlesex	2.0	s	1.0	number	2.0	internatsionalnaya str	1.0	perform	1.0	testimonial	2.0	bull	2.0	indicate	1.0
+140	general	6	entity	2.0	oval	1.0	aim	1.0	entity	2.0	oval	1.0	aim	1.0	entity	2.0	oval	1.0	aim	1.0	e-mail address	4.0	regulation	2.0	tw8	2.0	define	1.0	data subject	2.0	republic	1.0	review delete	1.0	profile	2.0	boyne	2.0	abide	1.0
+141	team	6	alternative	2.0	technopark perm	1.0	quote	1.0	nature	2.0	technopark perm	1.0	quote	1.0	nature	2.0	technopark perm	1.0	quote	1.0	abuse	4.0	scope	2.0	mcdonald	2.0	possess	1.0	request form	2.0	terms	1.0	browse	1.0	mobile	2.0	governance	2.0	accommodate	1.0
+142	basis	6	nature	2.0	stakhanovskaya	1.0	s	1.0	alternative	2.0	stakhanovskaya	1.0	s	1.0	alternative	2.0	stakhanovskaya	1.0	s	1.0	update information	4.0	visitor	2.0	t	2.0	indicate	1.0	statement	2.0	support center	1.0	search	1.0	method	2.0	law	2.0	redirect	1.0
+143	emailwith	6	account information	2.0	strovolos nicosia cyprus	1.0	define	1.0	account information	2.0	strovolos avenue petousis	1.0	define	1.0	account information	2.0	strovolos avenue petousis	1.0	define	1.0	collection	4.0	testimonial	2.0	mortimer	2.0	abide	1.0	party information collection	2.0	personal information	1.0	tap	1.0	condition	2.0	grci	2.0	alert	1.0
+144	modify	6	privacy right	2.0	strovolos avenue petousis	1.0	possess	1.0	privacy right	2.0	strovolos nicosia cyprus	1.0	possess	1.0	privacy right	2.0	strovolos nicosia cyprus	1.0	possess	1.0	opt	4.0	profile	2.0	roebuck	2.0	redirect	1.0	method	2.0	doubleugames	1.0	scroll	1.0	administrator	2.0	management	2.0	realise	1.0
+145	emailif	6	scope	2.0	personal data protection	1.0	abide	1.0	scope	2.0	personal data protection	1.0	abide	1.0	scope	2.0	personal data protection	1.0	abide	1.0	matter	4.0	mobile	2.0	smethwick	2.0	accommodate	1.0	condition	2.0	aurora ave woodstock ga	1.0	report	1.0	building	2.0	head	2.0	issue	1.0
+146	hesitate	6	visitor	2.0	commissioner	1.0	redirect	1.0	visitor	2.0	commissioner	1.0	redirect	1.0	visitor	2.0	commissioner	1.0	redirect	1.0	problem	4.0	method	2.0	b66	2.0	alert	1.0	line	2.0	tastypill	1.0	express	1.0	instance	2.0	singapore	1.0	call	1.0
+147	preference	6	testimonial	2.0	genera games s.l cardenal bueno monreal	1.0	accommodate	1.0	testimonial	2.0	genera games s.l cardenal bueno monreal	1.0	accommodate	1.0	testimonial	2.0	genera games s.l cardenal bueno monreal	1.0	accommodate	1.0	email display	4.0	condition	2.0	apple	2.0	realise	1.0	administrator	2.0	testfoni	1.0	complain	1.0	device	2.0	suntec	1.0	come	1.0
+148	feedback	6	datum privacy	2.0	sevilla spain	1.0	alert	1.0	datum privacy	2.0	sevilla spain	1.0	alert	1.0	datum privacy	2.0	sevilla spain	1.0	alert	1.0	gdpr	4.0	administrator	2.0	co	2.0	issue	1.0	instance	2.0	topface	1.0	deactivate	1.0	representative	2.0	temasek	1.0	-emailuse	1.0
+149	online	6	privacy issue	2.0	planta	1.0	realise	1.0	privacy issue	2.0	planta	1.0	realise	1.0	privacy issue	2.0	planta	1.0	realise	1.0	cookie	4.0	instance	2.0	drogheda	2.0	call	1.0	device	2.0	nicosia cyprus	1.0	retain	1.0	rectification	2.0	jagex	1.0	play	1.0
+150	help	6	number	2.0	microsoft chief privacy officer	1.0	issue	1.0	number	2.0	eu data protection officer	1.0	issue	1.0	number	2.0	microsoft chief privacy officer	1.0	issue	1.0	opt-out	4.0	device	2.0	head	2.0	come	1.0	question comment complaint	2.0	boubolina	1.0	reflect	1.0	clarification	2.0	lingodeer	1.0	forward	1.0
+151	year	6	controller	2.0	eu data protection officer	1.0	call	1.0	controller	2.0	microsoft chief privacy officer	1.0	call	1.0	controller	2.0	eu data protection officer	1.0	call	1.0	marketing purpose	4.0	representative	2.0	management	2.0	-emailuse	1.0	clarification	2.0	information commissioners	1.0	locate	1.0	accident	2.0	countriemay	1.0	prefer	1.0
+152	enquiry	6	data subject	2.0	eu local representative	1.0	come	1.0	data subject	2.0	eu local representative	1.0	come	1.0	data subject	2.0	eu local representative	1.0	come	1.0	safeguard	4.0	rectification	2.0	grci	2.0	play	1.0	support service	2.0	sunnyvale	1.0	cancel	1.0	topic	2.0	designated	1.0	specify	1.0
+153	possible	6	request form	2.0	user information policy	1.0	-emailuse	1.0	request form	2.0	user information policy	1.0	-emailuse	1.0	request form	2.0	user information policy	1.0	-emailuse	1.0	united states	4.0	clarification	2.0	law	2.0	forward	1.0	datum breach	2.0	california privacy rights	1.0	select	1.0	identity	2.0	regulation	1.0	accord	1.0
+154	mailing	6	statement	2.0	icbc	1.0	stop collect	1.0	statement	2.0	bank	1.0	stop collect	1.0	statement	2.0	bank	1.0	stop collect	1.0	privacy statement	4.0	topic	2.0	governance	2.0	prefer	1.0	topic	2.0	privacy tubi inc	1.0	identify	1.0	addition	2.0	general	1.0	hear	1.0
+155	violation	6	party information collection	2.0	bank	1.0	play	1.0	party information collection	2.0	icbc	1.0	play	1.0	party information collection	2.0	icbc	1.0	play	1.0	support center	4.0	accident	2.0	boyne	2.0	specify	1.0	accident	2.0	montgomery street	1.0	welcome	1.0	body	2.0	clara	1.0	love	1.0
+156	site	6	method	2.0	thinking ape entertainment ltd	1.0	forward	1.0	method	2.0	thinking ape entertainment ltd	1.0	forward	1.0	method	2.0	thinking ape entertainment ltd	1.0	forward	1.0	letter	4.0	identity	2.0	bull	2.0	accord	1.0	support form	2.0	twitter inc	1.0	process base	1.0	explanation	2.0	santa	1.0	adhere	1.0
+157	file	6	condition	2.0	planb labs	1.0	prefer	1.0	condition	2.0	planb labs	1.0	prefer	1.0	condition	2.0	planb labs	1.0	prefer	1.0	-emailwe	4.0	addition	2.0	ring	2.0	love	1.0	assistance	2.0	twitter	1.0	involve	1.0	channel	2.0	circle	1.0	track	1.0
+158	llc	6	line	2.0	park avenue south	1.0	specify	1.0	line	2.0	park avenue south	1.0	specify	1.0	line	2.0	park avenue south	1.0	specify	1.0	platform	4.0	body	2.0	lagavooren	2.0	hear	1.0	identity	2.0	site applications	1.0	instal	1.0	client	2.0	freedom	1.0	solve	1.0
+159	respond	6	administrator	2.0	ny ny	1.0	act accord	1.0	administrator	2.0	ny ny	1.0	act accord	1.0	administrator	2.0	ny ny	1.0	act accord	1.0	privacy center	4.0	explanation	2.0	temasek	1.0	adhere	1.0	datum processing	2.0	services	1.0	conduct	1.0	telemarketing	2.0	metro	1.0	perform	1.0
+160	ask	6	building	2.0	homer	1.0	love hear	1.0	building	2.0	homer	1.0	love hear	1.0	building	2.0	homer	1.0	love hear	1.0	contact email	3.0	client	2.0	suntec	1.0	track	1.0	addition	2.0	google play /apple app store	1.0	-emailmake	1.0	satisfaction	2.0	twitters	1.0	browse	1.0
+161	obtain	6	instance	2.0	amsterdam	1.0	adhere	1.0	instance	2.0	support	1.0	adhere	1.0	instance	2.0	support	1.0	adhere	1.0	notify	3.0	channel	2.0	singapore	1.0	solve	1.0	body	2.0	ellation inc.	1.0	act	1.0	-urlfor	2.0	ecuries	1.0	tap	1.0
+162	cookie	6	device	2.0	support	1.0	help solve	1.0	device	2.0	amsterdam	1.0	track	1.0	device	2.0	amsterdam	1.0	track	1.0	customer service	3.0	telemarketing	2.0	jagex	1.0	fill	1.0	explanation	2.0	market st	1.0	search hit enter	1.0	acknowledgment	2.0	petites	1.0	scroll	1.0
+163	registered	6	question comment complaint	2.0	letsvpn	1.0	track	1.0	question comment complaint	2.0	letsvpn	1.0	help solve	1.0	question comment complaint	2.0	letsvpn	1.0	help solve	1.0	version	3.0	acknowledgment	2.0	lingodeer	1.0	perform	1.0	app support feature	2.0	rue pierre picard	1.0	esc	1.0	disclosure	2.0	des	1.0	discuss	1.0
+164	appoint	5	agent	2.0	game	1.0	fill	1.0	agent	2.0	game	1.0	fill	1.0	agent	2.0	game	1.0	fill	1.0	authority	3.0	satisfaction	2.0	designated	1.0	browse	1.0	company	2.0	dashlane sas	1.0	close	1.0	passport	2.0	club	1.0	express	1.0
+165	order	5	representative	2.0	level	1.0	perform	1.0	representative	2.0	level	1.0	perform	1.0	representative	2.0	level	1.0	perform	1.0	privacy policy include	3.0	-urlfor	2.0	countriemay	1.0	tap	1.0	processing activity	2.0	duolingo	1.0	entitle	1.0	misuse	2.0	point	1.0	complain	1.0
+166	link	5	clarification	2.0	lima sky	1.0	review delete	1.0	clarification	2.0	lima sky	1.0	review delete	1.0	clarification	2.0	lima sky	1.0	review delete	1.0	note	3.0	disclosure	2.0	general	1.0	scroll	1.0	privacy officer	2.0	data protection	1.0	recommend	1.0	measure	2.0	prof	1.0	retain	1.0
+167	dispute	5	support service	2.0	lion studios	1.0	browse	1.0	support service	2.0	lion studios	1.0	browse	1.0	support service	2.0	lion studios	1.0	browse	1.0	suggestion regard	3.0	passport	2.0	regulation	1.0	discuss	1.0	support page	2.0	stockholm sweden	1.0	have	1.0	problem	2.0	gmbh	1.0	deactivate	1.0
+168	phone	5	datum breach	2.0	lion??s data protection officer	1.0	scroll	1.0	datum breach	2.0	lion??s data protection officer	1.0	search	1.0	datum breach	2.0	lion??s data protection officer	1.0	search	1.0	account information	3.0	misuse	2.0	freedom	1.0	express	1.0	customer service channel	2.0	brunnsgatan	1.0	2019welcome	1.0	update	2.0	eprivacy	1.0	here	1.0
+169	mobile	5	accident	2.0	musescore	1.0	search	1.0	topic	2.0	musescore	1.0	scroll	1.0	topic	2.0	musescore	1.0	tap	1.0	think	3.0	system	2.0	circle	1.0	complain	1.0	client	2.0	gametion technologies pvt ltd	1.0	click	1.0	notification	2.0	china	1.0	reflect	1.0
+170	locate	5	topic	2.0	octaaf soudanstraat	1.0	tap	1.0	accident	2.0	octaaf soudanstraat	1.0	tap	1.0	accident	2.0	octaaf soudanstraat	1.0	scroll	1.0	work	3.0	measure	2.0	santa	1.0	deactivate	1.0	marketing	2.0	eea	1.0	create	1.0	agent	2.0	sichuan	1.0	select	1.0
+171	states	5	support form	2.0	sint	1.0	discuss	1.0	support form	2.0	sint	1.0	discuss	1.0	support form	2.0	sint	1.0	discuss	1.0	party dispute resolution provider	3.0	update	2.0	clara	1.0	retain	1.0	telemarketing	2.0	eu representative	1.0	upload	1.0	product	2.0	tianfu	1.0	cancel	1.0
+172	europe	5	identity	2.0	westrem	1.0	express	1.0	identity	2.0	denijs	1.0	express	1.0	identity	2.0	denijs	1.0	express	1.0	efta states	3.0	notification	2.0	metro	1.0	here	1.0	acknowledgment	2.0	liverpool street london ec2 m	1.0	sign	1.0	vat	2.0	chengdu	1.0	identify	1.0
+173	writing	5	datum processing	2.0	belgium	1.0	complain	1.0	datum processing	2.0	westrem	1.0	complain	1.0	datum processing	2.0	westrem	1.0	complain	1.0	european economic area	3.0	product	2.0	twitters	1.0	reflect	1.0	satisfaction	2.0	dpo centre	1.0	confirm	1.0	country	2.0	co.	1.0	instal	1.0
+174	administrator	5	addition	2.0	denijs	1.0	retain	1.0	addition	2.0	belgium	1.0	retain	1.0	addition	2.0	belgium	1.0	deactivate	1.0	encourage	3.0	vat	2.0	petites	1.0	select	1.0	-urlfor	2.0	gogogame	1.0	interact	1.0	safety	2.0	tap4fun	1.0	involve	1.0
+175	building	5	explanation	2.0	california civil code	1.0	deactivate	1.0	explanation	2.0	california civil code	1.0	deactivate	1.0	body	2.0	california civil code	1.0	retain	1.0	statement	3.0	country	2.0	ecuries	1.0	cancel	1.0	passport	2.0	data protection good catch ltd shepherds building central charecroft way shepherds bush london w14	1.0	remain	1.0	delivery	2.0	ted	1.0	conduct	1.0
+176	san	5	body	2.0	outfit7	1.0	here	1.0	body	2.0	outfit7	1.0	here	1.0	explanation	2.0	outfit7	1.0	here	1.0	service support	3.0	safety	2.0	des	1.0	identify	1.0	misuse	2.0	beechavenue	1.0	elect	1.0	driver	2.0	sites	1.0	-emailmake	1.0
+177	united	5	app support feature	2.0	privacy policy notice	1.0	reflect	1.0	app support feature	2.0	privacy policy notice	1.0	reflect	1.0	app support feature	2.0	privacy policy notice	1.0	reflect	1.0	barbara strozzilaan	3.0	driver	2.0	rules	1.0	involve	1.0	purpose	2.0	schiphol	1.0	reset	1.0	boulevard	1.0	mateo	1.0	hit	1.0
+178	report	5	processing activity	2.0	kwalee	1.0	select	1.0	processing activity	2.0	kwalee	1.0	select	1.0	processing activity	2.0	kwalee	1.0	cancel	1.0	state	3.0	delivery	2.0	relive	1.0	instal	1.0	request question	2.0	rijk	1.0	misuse	1.0	state	1.0	real	1.0	enter	1.0
+179	matter	5	support page	2.0	uber	1.0	cancel	1.0	support page	2.0	uber	1.0	cancel	1.0	support page	2.0	uber	1.0	select	1.0	query regard	3.0	boulevard	1.0	skg	1.0	conduct	1.0	feedback page	2.0	data privacy officer	1.0	advise	1.0	portal	1.0	tile	1.0	close	1.0
+180	claim	5	customer service channel	2.0	rosh ha ayin industrial zone israel	1.0	identify	1.0	customer service channel	2.0	rosh ha ayin industrial zone israel	1.0	identify	1.0	customer service channel	2.0	rosh ha ayin industrial zone israel	1.0	identify	1.0	contact support service	3.0	exit	1.0	storytel	1.0	-emailmake	1.0	problem	2.0	twitter inc.	1.0	acquire	1.0	objection	1.0	camino	1.0	esc	1.0
+181	description	5	client	2.0	google	1.0	process base	1.0	client	2.0	google	1.0	involve	1.0	client	2.0	google	1.0	process base	1.0	reason	3.0	portal	1.0	club	1.0	hit	1.0	support	2.0	data protection officerone cumberland place fenian streetdublin	1.0	sell	1.0	widget	1.0	el	1.0	entitle	1.0
+182	display	5	telemarketing	2.0	diandian	1.0	involve	1.0	telemarketing	2.0	diandian	1.0	instal	1.0	telemarketing	2.0	diandian	1.0	involve	1.0	line	3.0	state	1.0	point	1.0	esc	1.0	safeguard	2.0	market street suite 900san francisco	1.0	buy	1.0	entity	1.0	e14	1.0	recommend	1.0
+183	register	5	acknowledgment	2.0	microsoft	1.0	instal	1.0	satisfaction	2.0	microsoft	1.0	process base	1.0	acknowledgment	2.0	microsoft	1.0	instal	1.0	privacy policy administrator	3.0	objection	1.0	prof	1.0	close	1.0	data	2.0	ireland	1.0	comply	1.0	cost	1.0	twitch	1.0	2019welcome	1.0
+184	try	5	-urlfor	2.0	limited liability company swag masha	1.0	conduct	1.0	-urlfor	2.0	limited liability company swag masha	1.0	conduct	1.0	satisfaction	2.0	limited liability company swag masha	1.0	conduct	1.0	deal	3.0	widget	1.0	eprivacy	1.0	enter	1.0	technology	2.0	tricor	1.0	apply	1.0	call	1.0	estonia	1.0	upload	1.0
+185	generally	5	satisfaction	2.0	internatsionalnaya str	1.0	-emailmake	1.0	acknowledgment	2.0	republic	1.0	-emailmake	1.0	-urlfor	2.0	republic	1.0	-emailmake	1.0	event	3.0	cost	1.0	gmbh	1.0	entitle	1.0	product	2.0	mark lane london	1.0	deliver	1.0	pay	1.0	tallinn	1.0	create	1.0
+186	gdpr	5	passport	2.0	republic	1.0	search hit enter	1.0	passport	2.0	internatsionalnaya str	1.0	search hit enter	1.0	passport	2.0	internatsionalnaya str	1.0	search hit enter	1.0	usa	3.0	pay	1.0	tandem	1.0	recommend	1.0	vat registration number	2.0	saygames llc	1.0	return	1.0	principle	1.0	sepapaja	1.0	click	1.0
+187	telephone	5	misuse	2.0	terms	1.0	close	1.0	misuse	2.0	terms	1.0	close	1.0	misuse	2.0	terms	1.0	esc	1.0	response	3.0	principle	1.0	china	1.0	2019welcome	1.0	team	2.0	addressable platform limited	1.0	attempt	1.0	com	1.0	vertigo	1.0	confirm	1.0
+188	safeguard	5	purpose	2.0	personal information	1.0	esc	1.0	purpose	2.0	personal information	1.0	esc	1.0	purpose	2.0	personal information	1.0	close	1.0	view	3.0	com	1.0	sichuan	1.0	click	1.0	telephone	2.0	itv	1.0	communicate	1.0	dot	1.0	b.v.s	1.0	sign	1.0
+189	registration	5	system	2.0	doubleugames	1.0	entitle	1.0	system	2.0	doubleugames	1.0	entitle	1.0	system	2.0	doubleugames	1.0	entitle	1.0	privacy practice relate	3.0	mondly	1.0	tap4fun	1.0	create	1.0	response	2.0	britbox	1.0	triage	1.0	mondly	1.0	contextlogic	1.0	interact	1.0
+190	emailwe	5	request question	2.0	aurora ave woodstock ga	1.0	recommend	1.0	request question	2.0	aurora ave woodstock ga	1.0	recommend	1.0	request question	2.0	aurora ave woodstock ga	1.0	recommend	1.0	limit	3.0	dot	1.0	co.	1.0	upload	1.0	country	2.0	itv rights limited	1.0	access rectify	1.0	manager	1.0	zynga	1.0	elect	1.0
+191	platform	5	feedback page	2.0	tastypill	1.0	2019welcome	1.0	feedback page	2.0	tastypill	1.0	2019welcome	1.0	feedback page	2.0	tastypill	1.0	2019welcome	1.0	information delete	3.0	manager	1.0	tianfu	1.0	talk	1.0	address telephone number	2.0	itv consumer limited	1.0	object	1.0	conduct	1.0	page	1.0	reset	1.0
+192	authority	4	support	2.0	testfoni	1.0	click	1.0	support	2.0	testfoni	1.0	click	1.0	support	2.0	testfoni	1.0	click	1.0	data processing	3.0	conduct	1.0	chengdu	1.0	sign	1.0	safety	2.0	holborn london ec1n	1.0	authenticate	1.0	merchandise	1.0	poland	1.0	advise	1.0
+193	think	4	datum controller	2.0	information commissioners	1.0	upload	1.0	datum controller	2.0	information commissioners	1.0	create	1.0	datum controller	2.0	nicosia cyprus	1.0	create	1.0	matter cover	3.0	example	1.0	ted	1.0	confirm	1.0	privacy matter	2.0	fremantle media limited	1.0	fulfil	1.0	example	1.0	gdask	1.0	misuse	1.0
+194	alternatively	4	communication	2.0	nicosia cyprus	1.0	create	1.0	communication	2.0	nicosia cyprus	1.0	upload	1.0	communication	2.0	information commissioners	1.0	upload	1.0	floor	3.0	merchandise	1.0	sites	1.0	interact	1.0	boulevard	1.0	stephen street london w1 t	1.0			k	1.0	zacna	1.0	buy	1.0
+195	provider	4	technology	2.0	boubolina	1.0	talk	1.0	technology	2.0	boubolina	1.0	talk	1.0	technology	2.0	boubolina	1.0	talk	1.0	obtain	3.0	k	1.0	tile	1.0	elect	1.0	datum protection officer	1.0	waterhouse square	1.0			-emailfrom	1.0	pnix	1.0	sell	1.0
+196	unresolved	4	product	2.0	sunnyvale	1.0	sign	1.0	product	2.0	sunnyvale	1.0	confirm	1.0	product	2.0	sunnyvale	1.0	confirm	1.0	company	3.0	-emailfrom	1.0	el	1.0	reset	1.0	datum protection law	1.0	got talent	1.0			nickname	1.0	bluehole	1.0	acquire	1.0
+197	satisfactorily	4	vat registration number	2.0	california privacy rights	1.0	confirm	1.0	vat registration number	2.0	california privacy rights	1.0	sign	1.0	vat registration number	2.0	california privacy rights	1.0	sign	1.0	correct	3.0	field	1.0	camino	1.0	misuse	1.0	datum protection regulation	1.0	x factor	1.0			field	1.0	state	1.0	comply	1.0
+198	charge	4	company number	2.0	privacy tubi inc	1.0	interact	1.0	company number	2.0	privacy tubi inc	1.0	interact	1.0	company number	2.0	privacy tubi inc	1.0	interact	1.0	data practice	3.0	nickname	1.0	real	1.0	advise	1.0	member state	1.0	britain	1.0			zone	1.0	h.k	1.0	deliver	1.0
+199	44	4	team	2.0	montgomery street	1.0	elect	1.0	team	2.0	montgomery street	1.0	elect	1.0	team	2.0	montgomery street	1.0	elect	1.0	web form	3.0	park	1.0	mateo	1.0	sell	1.0	portal	1.0	gb	1.0			tech	1.0	chai	1.0	attempt	1.0
+200	netherlands	4	telephone	2.0	twitter inc	1.0	reset	1.0	telephone	2.0	twitter inc	1.0	reset	1.0	telephone	2.0	twitter inc	1.0	reset	1.0	comment regard	3.0	tech	1.0	e14	1.0	buy	1.0	email address -email-	1.0	hydrane sas	1.0			park	1.0	wan	1.0	return	1.0
+201	instruction	4	country	2.0	twitter	1.0	advise	1.0	country	2.0	twitter	1.0	advise	1.0	country	2.0	twitter	1.0	misuse	1.0	individual	3.0	zone	1.0	twitch	1.0	acquire	1.0	objection	1.0	denis	1.0			software	1.0	ro	1.0	affect	1.0
+202	case	4	address telephone number	2.0	-emailwith	1.0	misuse	1.0	address telephone number	2.0	-emailwith	1.0	misuse	1.0	address telephone number	2.0	-emailwith	1.0	advise	1.0	preference	3.0	software	1.0	vertigo	1.0	comply	1.0	email preference	1.0	paris	1.0			code	1.0	lockhart	1.0	familiarize	1.0
+203	appropriate	4	safety	2.0	adobe	1.0	comply	1.0	safety	2.0	adobe	1.0	comply	1.0	safety	2.0	adobe	1.0	sell	1.0	explain	3.0	registry	1.0	sepapaja	1.0	deliver	1.0	unsubscribe link	1.0	denis paris france	1.0			registry	1.0	rm	1.0	communicate	1.0
+204	ny	4	privacy matter	2.0	site applications	1.0	acquire	1.0	privacy matter	2.0	site applications	1.0	sell	1.0	privacy matter	2.0	site applications	1.0	buy	1.0	page	3.0	code	1.0	tallinn	1.0	return	1.0	member profile	1.0	rue	1.0			offer	1.0	clicktouch	1.0	triage	1.0
+205	specific	4	boulevard	1.0	camel games	1.0	buy	1.0	boulevard	1.0	camel games	1.0	buy	1.0	boulevard	1.0	camel games	1.0	acquire	1.0	registration number	3.0	promotion	1.0	estonia	1.0	attempt	1.0	support widget	1.0	companyabout games blog jobs	1.0			promotion	1.0	ab	1.0	object	1.0
+206	reuters	4	datum protection officer	1.0	google play /apple app store	1.0	sell	1.0	datum protection officer	1.0	google play /apple app store	1.0	acquire	1.0	datum protection officer	1.0	google play /apple app store	1.0	comply	1.0	support e-mail	3.0	offer	1.0	contextlogic	1.0	affect	1.0	pay phone	1.0	games articles	1.0			newsletter	1.0	dvapps	1.0	rectify	1.0
+207	thomson	4	exit	1.0	ellation inc.	1.0	deliver	1.0	exit	1.0	ellation inc.	1.0	deliver	1.0	exit	1.0	ellation inc.	1.0	deliver	1.0	ico	3.0	newsletter	1.0	b.v.s	1.0	familiarize	1.0	call	1.0	twitter facebook linkedin	1.0			contextlogic	1.0	dvloper	1.0	enjoy	1.0
+208	kingdom	4	datum protection regulation	1.0	market st	1.0	return	1.0	datum protection law	1.0	market st	1.0	return	1.0	datum protection law	1.0	market st	1.0	return	1.0	support	3.0	contextlogic	1.0	zynga	1.0	communicate	1.0	cost	1.0	events careers	1.0			ticket	1.0	limassol	1.0	hope	1.0
+209	francisco	4	datum protection law	1.0	cube software	1.0	attempt	1.0	datum protection regulation	1.0	cube software	1.0	attempt	1.0	datum protection regulation	1.0	cube software	1.0	attempt	1.0	password	3.0	port	1.0	page	1.0	triage	1.0	mobile	1.0	tiktok inc	1.0			jurisdiction	1.0	oval	1.0	fulfil	1.0
+210	correct	4	member state	1.0	rue pierre picard	1.0	affect	1.0	member state	1.0	dashlane sas	1.0	affect	1.0	member state	1.0	dashlane sas	1.0	affect	1.0	inform	3.0	ticket	1.0	musixmatch	1.0	rectify	1.0	principle	1.0	tiktok legal department	1.0			receipt	1.0	krinou	1.0	authenticate	1.0
+211	abuse	4	portal	1.0	dashlane sas	1.0	familiarize	1.0	portal	1.0	rue pierre picard	1.0	familiarize	1.0	portal	1.0	rue pierre picard	1.0	familiarize	1.0	help center	3.0	jurisdiction	1.0	poland	1.0	object	1.0	mondly	1.0	venice blvd suite	1.0			juvenile	1.0	easybrain	1.0		
+212	view	4	email address -email-	1.0	dingtone	1.0	communicate	1.0	email address -email-	1.0	dingtone	1.0	communicate	1.0	email address -email-	1.0	dingtone	1.0	communicate	1.0	choice	3.0	receipt	1.0	gdask	1.0	enjoy	1.0	dot	1.0	culver city	1.0			forum	1.0	perm	1.0		
+213	representative	4	objection	1.0	duolingo	1.0	triage	1.0	objection	1.0	duolingo	1.0	triage	1.0	objection	1.0	duolingo	1.0	triage	1.0	disable	3.0	juvenile	1.0	zacna	1.0	hope	1.0	com	1.0	usaemail	1.0			blog	1.0	technopark	1.0		
+214	certain	4	email preference	1.0	stockholm sweden	1.0	access rectify	1.0	email preference	1.0	brunnsgatan	1.0	access rectify	1.0	email preference	1.0	brunnsgatan	1.0	access rectify	1.0	drawer	3.0	blog	1.0	camsurf	1.0	authenticate	1.0	manager contact information section	1.0	policy	1.0			decision	1.0	stakhanovskaya	1.0		
+215	union	4	unsubscribe link	1.0	brunnsgatan	1.0	object	1.0	member profile	1.0	stockholm sweden	1.0	object	1.0	unsubscribe link	1.0	stockholm sweden	1.0	object	1.0	address state	2.0	forum	1.0	pnix	1.0	fulfil	1.0	datum protection	1.0	october	1.0			word	1.0	strovolos	1.0		
+216	mention	4	member profile	1.0	gamegos	1.0	hope	1.0	unsubscribe link	1.0	gamegos	1.0	hope	1.0	member profile	1.0	gamegos	1.0	hope	1.0	add	2.0	decision	1.0	bluehole	1.0			data protection authority	1.0	bytedance uk limited aviation house	1.0			ctr	1.0	petousis	1.0		
+217	assistance	4	support widget	1.0	gametion technologies pvt ltd	1.0	enjoy	1.0	support widget	1.0	gametion technologies pvt ltd	1.0	enjoy	1.0	support widget	1.0	gametion technologies pvt ltd	1.0	enjoy	1.0	keyword data protection	2.0	word	1.0	state	1.0			conduct	1.0	kingsway holborn london wc2b	1.0			document	1.0	sevilla	1.0		
+218	problem	4	pay phone	1.0	eu representative	1.0	fulfil	1.0	pay phone	1.0	eu representative	1.0	authenticate	1.0	call	1.0	eu representative	1.0	authenticate	1.0	contact provide	2.0	ctr	1.0	h.k	1.0			website application	1.0	summarywhat	1.0			advertising	1.0	planta	1.0		
+219	limit	4	call	1.0	eea	1.0	authenticate	1.0	call	1.0	eea	1.0	fulfil	1.0	pay phone	1.0	eea	1.0	fulfil	1.0	data protection law	2.0	document	1.0	chai	1.0			help page	1.0	hays house north wing	1.0			tracking	1.0	spain	1.0		
+220	feature	4	mobile	1.0	liverpool street london ec2 m	1.0			mobile	1.0	liverpool street london ec2 m	1.0			cost	1.0	liverpool street london ec2 m	1.0			question contact	2.0	tracking	1.0	rm	1.0			example	1.0	floor millmead guildford surrey england gu2 4hj	1.0			meaning	1.0	monreal	1.0		
+221	removal	4	cost	1.0	dpo centre	1.0			cost	1.0	dpo centre	1.0			mobile	1.0	dpo centre	1.0			follow way	2.0	advertising	1.0	lockhart	1.0			merchandise	1.0	contact information	1.0			paragraph	1.0	bueno	1.0		
+222	apply	4	principle	1.0	gogogame	1.0			principle	1.0	gogogame	1.0			principle	1.0	gogogame	1.0			privacy email	2.0	meaning	1.0	ro	1.0			marketing preference	1.0	support centre	1.0			connection	1.0	cardenal	1.0		
+223	emailfor	4	mondly	1.0	data protection good catch ltd shepherds building central charecroft way shepherds bush london w14	1.0			mondly	1.0	data protection good catch ltd shepherds building central charecroft way shepherds bush london w14	1.0			mondly	1.0	data protection good catch ltd shepherds building central charecroft way shepherds bush london w14	1.0			contact service page	2.0	paragraph	1.0	wan	1.0			k account information	1.0	data protection team	1.0			tool	1.0	s.l	1.0		
+224	forth	4	dot	1.0	rijk	1.0			dot	1.0	schiphol	1.0			dot	1.0	beechavenue	1.0			owner contact email	2.0	connection	1.0	clicktouch	1.0			email account	1.0	fireproof studios ltd	1.0			transfer	1.0	genera	1.0		
+225	aware	4	com	1.0	schiphol	1.0			com	1.0	rijk	1.0			com	1.0	schiphol	1.0			nature	2.0	handling	1.0	ab	1.0			-emailfrom	1.0	pepper deals ltd	1.0			handling	1.0	chief	1.0		
+226	live	4	manager contact information section	1.0	beechavenue	1.0			manager contact information section	1.0	beechavenue	1.0			manager contact information section	1.0	rijk	1.0			alternative	2.0	transfer	1.0	dvapps	1.0			subject field	1.0	batemans row london ec2a	1.0			mean	1.0	local	1.0		
+227	letter	4	datum protection	1.0	data privacy officer	1.0			datum protection	1.0	data privacy officer	1.0			datum protection	1.0	data privacy officer	1.0			support team	2.0	tool	1.0	dvloper	1.0			nickname	1.0	lindgreens	1.0			institution	1.0	icbc	1.0		
+228	ico	4	data protection authority	1.0	data protection officerone cumberland place fenian streetdublin	1.0			data protection authority	1.0	data protection officerone cumberland place fenian streetdublin	1.0			data protection authority	1.0	data protection officerone cumberland place fenian streetdublin	1.0			accordance	2.0	mean	1.0	limassol	1.0			subject line	1.0	k?benhavn sor	1.0			function	1.0	bank	1.0		
+229	twitter	4	conduct	1.0	market street suite 900san francisco	1.0			conduct	1.0	market street suite 900san francisco	1.0			conduct	1.0	market street suite 900san francisco	1.0			resident	2.0	function	1.0	easybrain	1.0			software park	1.0	restaurants limited customer services	1.0			database	1.0	user	1.0		
+230	business	4	website application	1.0	twitter inc.	1.0			website application	1.0	twitter inc.	1.0			website application	1.0	twitter inc.	1.0			-emailwith	2.0	institution	1.0	krinou	1.0			tech zone	1.0	high road east finchley london	1.0			hn	1.0	entertainment	1.0		
+231	entitled	3	help page	1.0	ireland	1.0			help page	1.0	ireland	1.0			help page	1.0	ireland	1.0			violate	2.0	database	1.0	oval	1.0			building	1.0	mcdonald	1.0			end	1.0	ape	1.0		
+232	notify	3	example	1.0	mark lane london	1.0			merchandise	1.0	tricor	1.0			merchandise	1.0	tricor	1.0			infringe	2.0	hn	1.0	technopark	1.0			owner	1.0	uk information commissioners office	1.0			opinion	1.0	thinking	1.0		
+233	tower	3	merchandise	1.0	tricor	1.0			example	1.0	mark lane london	1.0			example	1.0	mark lane london	1.0			scope	2.0	end	1.0	perm	1.0			registry code	1.0	legal department freeview	1.0			left	1.0	labs	1.0		
+234	version	3	marketing preference	1.0	saygames llc	1.0			marketing preference	1.0	saygames llc	1.0			marketing preference	1.0	saygames llc	1.0			visitor	2.0	opinion	1.0	stakhanovskaya	1.0			unsubscribe option	1.0	floor	1.0			setting	1.0	planb	1.0		
+235	urlfor	3	k account information	1.0	cookie	1.0			k account information	1.0	cookie	1.0			k account information	1.0	cookie	1.0			email use	2.0	setting	1.0	strovolos	1.0			promotion	1.0	dtv services ltd	1.0			advertiser	1.0	park	1.0		
+236	previous	3	email account	1.0	cookie policy	1.0			email account	1.0	cookie policy	1.0			email account	1.0	cookie policy	1.0			testimonial	2.0	left	1.0	petousis	1.0			offer	1.0	digital uk limited	1.0			partner	1.0	homer	1.0		
+237	current	3	subject field	1.0	direct	1.0			nickname	1.0	direct	1.0			-emailfrom	1.0	direct	1.0			datum privacy	2.0	personal	1.0	sevilla	1.0			newsletter	1.0	picsart inc.	1.0			personal	1.0	letsvpn	1.0		
+238	owner	3	-emailfrom	1.0	addressable platform limited	1.0			-emailfrom	1.0	addressable platform limited	1.0			nickname	1.0	addressable platform limited	1.0			privacy issue	2.0	advertiser	1.0	spain	1.0			datum use practice	1.0	california business	1.0			mind	1.0	game	1.0		
+239	note	3	nickname	1.0	britbox	1.0			subject field	1.0	itv	1.0			subject field	1.0	itv	1.0			handle	2.0	mind	1.0	genera	1.0			contextlogic use	1.0	sutter st.	1.0			sharing	1.0	level	1.0		
+240	accordance	3	subject line	1.0	itv	1.0			subject line	1.0	britbox	1.0			subject line	1.0	britbox	1.0			controller	2.0	partner	1.0	s.l	1.0			support ticket	1.0	professions code section	1.0			system	1.0	sky	1.0		
+241	lawful	3	tech zone	1.0	stephen street london w1 t	1.0			software park	1.0	stephen street london w1 t	1.0			software park	1.0	got talent	1.0			resolve issue	2.0	sharing	1.0	cardenal	1.0			rectification	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by.you	1.0			-urland	1.0	lima	1.0		
+242	unauthorized	3	software park	1.0	holborn london ec1n	1.0			tech zone	1.0	holborn london ec1n	1.0			tech zone	1.0	itv rights limited	1.0			paris france	2.0	-urland	1.0	bueno	1.0			jurisdiction	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by products	1.0			menu	1.0	lion	1.0		
+243	member	3	s	1.0	itv rights limited	1.0			s	1.0	itv rights limited	1.0			owner	1.0	itv consumer limited	1.0			request form	2.0	menu	1.0	monreal	1.0			mail address -email-	1.0	services uk europe	1.0			affiliate	1.0	lion??s	1.0		
+244	resolution	3	owner	1.0	itv consumer limited	1.0			owner	1.0	itv consumer limited	1.0			registry code	1.0	holborn london ec1n	1.0			hn amsterdam	2.0	affiliate	1.0	planta	1.0			receipt	1.0	international dpd	1.0			limitation	1.0	belgium	1.0		
+245	based	3	registry code	1.0	fremantle media limited	1.0			registry code	1.0	fremantle media limited	1.0			unsubscribe option	1.0	stephen street london w1 t	1.0			information collection	2.0	limitation	1.0	chief	1.0			address -email-	1.0	dpd terms	1.0			opposition	1.0	westrem	1.0		
+246	specifically	3	unsubscribe option	1.0	got talent	1.0			unsubscribe option	1.0	waterhouse square	1.0			promotion	1.0	x factor	1.0			instruction	2.0	opposition	1.0	local	1.0			communication feature	1.0	brexit csr press centre	1.0			submission	1.0	denijs	1.0		
+247	local	3	promotion	1.0	waterhouse square	1.0			promotion	1.0	got talent	1.0			offer	1.0	fremantle media limited	1.0			method	2.0	submission	1.0	user	1.0			juvenile	1.0	update	1.0			payment	1.0	sint	1.0		
+248	handle	3	offer	1.0	x factor	1.0			offer	1.0	x factor	1.0			newsletter	1.0	britain	1.0			conduct	2.0	payment	1.0	bank	1.0			blog	1.0	conditions	1.0			gdprbot	1.0	soudanstraat	1.0		
+249	confidentially	3	newsletter	1.0	britain	1.0			newsletter	1.0	britain	1.0			datum use practice	1.0	waterhouse square	1.0			investigate	2.0	voice	1.0	icbc	1.0			forum	1.0	commitment	1.0			person	1.0	octaaf	1.0		
+250	offer	3	datum use practice	1.0	gb	1.0			datum use practice	1.0	gb	1.0			contextlogic use	1.0	gb	1.0			indicate	2.0	gdprbot	1.0	entertainment	1.0			communication option	1.0	apec cbpr	1.0			regulator	1.0	civil	1.0		
+251	encourage	3	contextlogic use	1.0	hydrane sas	1.0			contextlogic use	1.0	hydrane sas	1.0			support ticket	1.0	hydrane sas	1.0			log	2.0	person	1.0	thinking	1.0			decision	1.0	privacyto	1.0			flat	1.0	outfit7	1.0		
+252	quickly	3	support ticket	1.0	denis	1.0			support ticket	1.0	denis	1.0			rectification	1.0	paris	1.0			take-two	2.0	regulator	1.0	ape	1.0			datum request	1.0	apple	1.0			ip	1.0	uber	1.0		
+253	paris	3	rectification	1.0	paris	1.0			rectification	1.0	paris	1.0			jurisdiction	1.0	denis	1.0			internet privacy policy administrator	2.0	flat	1.0	labs	1.0			word	1.0	european data protection officer	1.0			box	1.0	israel	1.0		
+254	amsterdam	3	jurisdiction	1.0	homa games	1.0			jurisdiction	1.0	homa games	1.0			access request	1.0	homa games	1.0			street new york ny	2.0	ip	1.0	planb	1.0			subject	1.0	apples privacy policy	1.0			po	1.0	zone	1.0		
+255	strozzilaan	3	access request	1.0	companyabout games blog jobs	1.0			access request	1.0	companyabout games blog jobs	1.0			mail address -email-	1.0	denis paris france	1.0			erase	2.0	po	1.0	homer	1.0			unsubscribe instruction	1.0	prp	1.0			attention	1.0	industrial	1.0		
+256	barbara	3	mail address -email-	1.0	denis paris france	1.0			mail address -email-	1.0	denis paris france	1.0			receipt	1.0	companyabout games blog jobs	1.0			instance	2.0	box	1.0	park	1.0			ctr	1.0	calabasas rd calabasas	1.0			place	1.0	ayin	1.0		
+257	201	3	receipt	1.0	twitter facebook linkedin	1.0			receipt	1.0	games articles	1.0			address -email-	1.0	games articles	1.0			collect information	2.0	attention	1.0	letsvpn	1.0			customer service email address	1.0	contact	1.0			touch	1.0	ha	1.0		
+258	1083	3	address -email-	1.0	games articles	1.0			address -email-	1.0	twitter facebook linkedin	1.0			communication feature	1.0	rue	1.0			professional	2.0	place	1.0	game	1.0			document	1.0	planetart llc	1.0			compliance	1.0	rosh	1.0		
+259	hn	3	communication feature	1.0	events careers	1.0			communication feature	1.0	events careers	1.0			juvenile	1.0	twitter facebook linkedin	1.0			thomson reuters	2.0	touch	1.0	level	1.0			party tracking	1.0	spotify	1.0			-emailwith	1.0	str	1.0		
+260	relevant	3	juvenile	1.0	rue	1.0			juvenile	1.0	rue	1.0			blog	1.0	events careers	1.0			uk limited	2.0	action	1.0	lima	1.0			advertising	1.0	w 18th street	1.0			login	1.0	internatsionalnaya	1.0		
+261	reason	3	forum	1.0	.california	1.0			blog	1.0	.california	1.0			forum	1.0	.california	1.0			process information	2.0	compliance	1.0	sky	1.0			user content	1.0	new york ny	1.0			dissemination	1.0	masha	1.0		
+262	interactive	3	blog	1.0	tiktok inc	1.0			forum	1.0	tiktok inc	1.0			communication option	1.0	tiktok inc	1.0			question comment complaint	2.0	-emailwith	1.0	lion	1.0			meaning	1.0					aspect	1.0	republic	1.0		
+263	york	3	communication option	1.0	tiktok legal department	1.0			communication option	1.0	venice blvd suite	1.0			decision	1.0	venice blvd suite	1.0			south	2.0	login	1.0	lion??s	1.0			paragraph	1.0					ability	1.0	swag	1.0		
+264	new	3	decision	1.0	venice blvd suite	1.0			decision	1.0	tiktok legal department	1.0			datum request	1.0	tiktok legal department	1.0			offer	2.0	dissemination	1.0	musescore	1.0			privacy concern complaint	1.0					answer	1.0	liability	1.0		
+265	event	3	datum request	1.0	culver city	1.0			datum request	1.0	culver city	1.0			subject	1.0	culver city	1.0			option	2.0	aspect	1.0	denijs	1.0			dispute	1.0					storage	1.0	doubleugames	1.0		
+266	deal	3	subject	1.0	usaemail	1.0			subject	1.0	usaemail	1.0			word	1.0	usaemail	1.0			request contact	2.0	ability	1.0	sint	1.0			connection	1.0					-emailany	1.0	ga	1.0		
+267	store	3	word	1.0	october	1.0			word	1.0	october	1.0			unsubscribe instruction	1.0	october	1.0			privacy policy contact	2.0	answer	1.0	westrem	1.0			request email	1.0					change	1.0	woodstock	1.0		
+268	usa	3	unsubscribe instruction	1.0	bytedance uk limited aviation house	1.0			unsubscribe instruction	1.0	bytedance uk limited aviation house	1.0			ctr	1.0	bytedance uk limited aviation house	1.0			eu representative	2.0	storage	1.0	octaaf	1.0			handling	1.0					companyattn	1.0	ave	1.0		
+269	response	3	ctr	1.0	kingsway holborn london wc2b	1.0			ctr	1.0	kingsway holborn london wc2b	1.0			customer service email address	1.0	kingsway holborn london wc2b	1.0			open	2.0	-emailany	1.0	soudanstraat	1.0			data transfer tool	1.0					material	1.0	aurora	1.0		
+270	30	3	customer service email address	1.0	summarywhat	1.0			customer service email address	1.0	summarywhat	1.0			document	1.0	summarywhat	1.0			request erasure	2.0	change	1.0	belgium	1.0			mail -email-	1.0					deletion	1.0	tastypill	1.0		
+271	head	3	document	1.0	contractual	1.0			document	1.0	contractual	1.0			profile	1.0	contractual	1.0			permit	2.0	companyattn	1.0	civil	1.0			user information	1.0					extent	1.0	testfoni	1.0		
+272	agent	3	profile	1.0	floor millmead guildford surrey england gu2 4hj	1.0			profile	1.0	floor millmead guildford surrey england gu2 4hj	1.0			party tracking	1.0	hays house north wing	1.0			webmartgroup	2.0	material	1.0	outfit7	1.0			function	1.0					withdrawal	1.0	boubolina	1.0		
+273	option	3	party tracking	1.0	hays house north wing	1.0			party tracking	1.0	hays house north wing	1.0			advertising	1.0	floor millmead guildford surrey england gu2 4hj	1.0			llc	2.0	deletion	1.0	kwalee	1.0			institution	1.0					eea	1.0	topface	1.0		
+274	10	3	advertising	1.0	england	1.0			advertising	1.0	england	1.0			user content	1.0	england	1.0			support service	2.0	withdrawal	1.0	uber	1.0			mean	1.0					ec3r	1.0	sunnyvale	1.0		
+275	zuuks	3	user content	1.0	contact information	1.0			user content	1.0	support centre	1.0			meaning	1.0	contact information	1.0			claim arise	2.0	extent	1.0	rosh	1.0			database	1.0					suite	1.0	montgomery	1.0		
+276	erasure	3	meaning	1.0	support centre	1.0			meaning	1.0	contact information	1.0			paragraph	1.0	support centre	1.0			datum breach	2.0	eea	1.0	ha	1.0			member	1.0					interest	1.0	tubi	1.0		
+277	day	3	paragraph	1.0	fireproof	1.0			paragraph	1.0	fireproof	1.0			privacy concern complaint	1.0	fireproof	1.0			mention topic	2.0	ec3r	1.0	industrial	1.0			child user	1.0					volume	1.0	applications	1.0		
+278	remain	3	privacy concern complaint	1.0	data protection team	1.0			privacy concern complaint	1.0	data protection team	1.0			connection	1.0	data protection team	1.0			accident occur	2.0	suite	1.0	zone	1.0			hn	1.0					traffic	1.0	site	1.0		
+279	young	3	dispute	1.0	fireproof studios ltd	1.0			connection	1.0	fireproof studios ltd	1.0			dispute	1.0	fireproof studios ltd	1.0			alexadra games	2.0	interest	1.0	israel	1.0			end	1.0					pattern	1.0	camel	1.0		
+280	stop	3	connection	1.0	sega	1.0			dispute	1.0	sega	1.0			telephone number	1.0	sega	1.0			following contact information	2.0	analytic	1.0	ayin	1.0			question complaint	1.0					sale	1.0	store	1.0		
+281	withdraw	3	telephone number	1.0	batemans row london ec2a	1.0			telephone number	1.0	batemans row london ec2a	1.0			request email	1.0	batemans row london ec2a	1.0			support form	2.0	base	1.0	diandian	1.0			question opinion	1.0					base	1.0	/apple	1.0		
+282	cover	3	request email	1.0	pepper deals ltd	1.0			request email	1.0	pepper deals ltd	1.0			data transfer tool	1.0	pepper deals ltd	1.0			day	2.0	sale	1.0	str	1.0			setting	1.0					analytic	1.0	play	1.0		
+283	disclose	3	data transfer tool	1.0	k?benhavn sor	1.0			data transfer tool	1.0	k?benhavn sor	1.0			handling	1.0	k?benhavn sor	1.0			assistance	2.0	pattern	1.0	republic	1.0			left	1.0					group	1.0	google	1.0		
+284	contain	3	handling	1.0	lindgreens	1.0			handling	1.0	lindgreens	1.0			mail -email-	1.0	lindgreens	1.0			remain	2.0	traffic	1.0	internatsionalnaya	1.0			controller section	1.0					producer	1.0	ellation	1.0		
+285	cyprus	3	mail -email-	1.0	high road east finchley london	1.0			mail -email-	1.0	high road east finchley london	1.0			user information	1.0	high road east finchley london	1.0			request removal	2.0	volume	1.0	liability	1.0			datum privacy practice	1.0					programme	1.0	software	1.0		
+286	activity	3	user information	1.0	restaurants limited customer services	1.0			user information	1.0	restaurants limited customer services	1.0			function	1.0	restaurants limited customer services	1.0			allow	2.0	group	1.0	swag	1.0			option	1.0					ico	1.0	cube	1.0		
+287	commissioner	3	mean	1.0	uk information commissioners office	1.0			function	1.0	uk information commissioners office	1.0			institution	1.0	uk information commissioners office	1.0			withdraw	2.0	producer	1.0	masha	1.0			mind	1.0					experience	1.0	picard	1.0		
+288	base	3	institution	1.0	legal department freeview	1.0			institution	1.0	legal department freeview	1.0			mean	1.0	legal department freeview	1.0			publish	2.0	programme	1.0	doubleugames	1.0			personal information	1.0					publishing	1.0	pierre	1.0		
+289	web	3	function	1.0	floor	1.0			mean	1.0	floor	1.0			database	1.0	floor	1.0			identity	2.0	ico	1.0	ga	1.0			party advertiser	1.0					platform	1.0	dashlane	1.0		
+290	transfer	3	database	1.0	digital uk limited	1.0			database	1.0	dtv services ltd	1.0			child user	1.0	dtv services ltd	1.0			datum processing	2.0	t	1.0	aurora	1.0			partner	1.0					calendar	1.0	duolingo	1.0		
+291	swiss	3	child user	1.0	dtv services ltd	1.0			child user	1.0	digital uk limited	1.0			member	1.0	digital uk limited	1.0			mailing list	2.0	publishing	1.0	ave	1.0			disclosure	1.0					contactquestion	1.0	sweden	1.0		
+292	individual	3	member	1.0	professions code section	1.0			member	1.0	professions code section	1.0			hn	1.0	professions code section	1.0			addition	2.0	experience	1.0	woodstock	1.0			sharing	1.0					residence	1.0	stockholm	1.0		
+293	promotional	3	hn	1.0	california business	1.0			hn	1.0	california business	1.0			end	1.0	picsart inc.	1.0			disclose	2.0	platform	1.0	tastypill	1.0			regulation	1.0					-emailprivacy	1.0	brunnsgatan	1.0		
+294	explain	3	end	1.0	sutter st.	1.0			end	1.0	picsart inc.	1.0			question complaint	1.0	california business	1.0			body	2.0	calendar	1.0	testfoni	1.0			system	1.0					clause	1.0	pvt	1.0		
+295	prevent	3	question complaint	1.0	picsart inc.	1.0			question complaint	1.0	sutter st.	1.0			question opinion	1.0	sutter st.	1.0			explanation	2.0	contactquestion	1.0	boubolina	1.0			-urland	1.0					complaintsin	1.0	technologies	1.0		
+296	misuse	3	question opinion	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by.you	1.0			question opinion	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by.you	1.0			setting	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by.you	1.0			mailing address	2.0	-emailprivacy	1.0	sunnyvale	1.0			party information disclosure	1.0					ground	1.0	gametion	1.0		
+297	reasonable	3	setting	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by products	1.0			setting	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by products	1.0			left	1.0	dpdgroup uk ltd roebuck lane smethwick b66 1by products	1.0			support feature	2.0	residence	1.0	tubi	1.0			information processing	1.0					opportunity	1.0	eea	1.0		
+298	saygames	3	left	1.0	brexit csr press centre	1.0			left	1.0	services uk europe	1.0			controller section	1.0	services uk europe	1.0			claim regard	2.0	clause	1.0	montgomery	1.0			security question	1.0					operation	1.0	m	1.0		
+299	password	3	controller section	1.0	services uk europe	1.0			controller section	1.0	dpd terms	1.0			datum privacy practice	1.0	international dpd	1.0			services	2.0	complaintsin	1.0	-emailwith	1.0			game support menu	1.0					step	1.0	ec2	1.0		
+300	compromise	3	datum privacy practice	1.0	international dpd	1.0			datum privacy practice	1.0	international dpd	1.0			personal information	1.0	dpd terms	1.0			processing activity	2.0	ground	1.0	adobe	1.0			affiliate	1.0					unit	1.0	liverpool	1.0		
+301	inform	3	party advertiser	1.0	dpd terms	1.0			party advertiser	1.0	brexit csr press centre	1.0			party advertiser	1.0	brexit csr press centre	1.0			follow apply	2.0	opportunity	1.0	site	1.0			datum information	1.0					recipient	1.0	gogogame	1.0		
+302	apple	3	personal information	1.0	update	1.0			personal information	1.0	conditions	1.0			mind	1.0	conditions	1.0			following information	2.0	operation	1.0	applications	1.0			datum rectification	1.0					beginning	1.0	shepherds	1.0		
+303	choice	3	option	1.0	conditions	1.0			partner	1.0	update	1.0			option	1.0	update	1.0			understand	2.0	step	1.0	camel	1.0			limitation	1.0					language	1.0	w14	1.0		
+304	headspace	3	partner	1.0	european data protection officer	1.0			mind	1.0	european data protection officer	1.0			partner	1.0	european data protection officer	1.0			set	2.0	unit	1.0	app	1.0			opposition	1.0					subscription	1.0	charecroft	1.0		
+305	disable	3	mind	1.0	apples privacy policy	1.0			option	1.0	apples privacy policy	1.0			disclosure	1.0	apples privacy policy	1.0			support page	2.0	recipient	1.0	store	1.0			submission	1.0					fax	1.0	way	1.0		
+306	homa	3	disclosure	1.0	apec cbpr	1.0			disclosure	1.0	apec cbpr	1.0			sharing	1.0	apec cbpr	1.0			customer service channel	2.0	beginning	1.0	play	1.0			payment information	1.0					minor	1.0	central	1.0		
+307	protect	3	sharing	1.0	prp	1.0			sharing	1.0	prp	1.0			regulation	1.0	prp	1.0			client	2.0	language	1.0	/apple	1.0			party company	1.0					circumstance	1.0	building	1.0		
+308	sega	3	regulation	1.0	commitment	1.0			regulation	1.0	commitment	1.0			-urland	1.0	commitment	1.0			information concern	2.0	subscription	1.0	ellation	1.0			-url- user	1.0					push	1.0	catch	1.0		
+309	spotify	3	-urland	1.0	privacyto	1.0			-urland	1.0	privacyto	1.0			party information disclosure	1.0	privacyto	1.0			in-game	2.0	fax	1.0	cube	1.0			data protection practice	1.0					sms	1.0	good	1.0		
+310	keyword	2	party information disclosure	1.0	apple support	1.0			party information disclosure	1.0	apple support	1.0			information processing	1.0	apple support	1.0			telemarketing	2.0	minor	1.0	software	1.0			controller	1.0					asset	1.0	rijk	1.0		
+311	add	2	information processing	1.0	calabasas rd calabasas	1.0			information processing	1.0	calabasas rd calabasas	1.0			security question	1.0	calabasas rd calabasas	1.0			endeavour	2.0	push	1.0	dashlane	1.0			support center	1.0					seller	1.0	schiphol	1.0		
+312	available	2	security question	1.0	planetart llc	1.0			security question	1.0	planetart llc	1.0			game support menu	1.0	planetart llc	1.0			following email address	2.0	sms	1.0	pierre	1.0			data policy	1.0					buyer	1.0	beechavenue	1.0		
+313	external	2	game support menu	1.0	customer care	1.0			game support menu	1.0	customer care	1.0			affiliate	1.0	customer care	1.0			address set	2.0	circumstance	1.0	picard	1.0			gdprbot	1.0					duty	1.0	900san	1.0		
+314	entity	2	affiliate	1.0	customer support	1.0			affiliate	1.0	customer support	1.0			datum information	1.0	customer support	1.0			privacy shield policy	2.0	asset	1.0	dingtone	1.0			person	1.0					obligation	1.0	officerone	1.0		
+315	alternative	2	datum information	1.0	spotify	1.0			datum information	1.0	spotify	1.0			datum rectification	1.0	spotify	1.0			satisfaction	2.0	seller	1.0	duolingo	1.0			protection	1.0					agreement	1.0	cumberland	1.0		
+316	nature	2	datum rectification	1.0	w 18th street	1.0			datum rectification	1.0	new york ny	1.0			limitation	1.0	new york ny	1.0			acknowledgment	2.0	buyer	1.0	sweden	1.0			building flat	1.0					property	1.0	place	1.0		
+317	infringe	2	submission	1.0	new york ny	1.0			submission	1.0	w 18th street	1.0			opposition	1.0	w 18th street	1.0			tantan	2.0	agreement	1.0	stockholm	1.0			regulator	1.0					policythis	1.0	fenian	1.0		
+318	emailso	2	limitation	1.0					opposition	1.0					submission	1.0					email contain	2.0	duty	1.0	brunnsgatan	1.0			security measure	1.0					parcel	1.0	streetdublin	1.0		
+319	violate	2	opposition	1.0					limitation	1.0					party company	1.0					prevent misuse	2.0	obligation	1.0	gamegos	1.0			ip address	1.0					point	1.0	ireland	1.0		
+320	work	2	party company	1.0					party company	1.0					payment information	1.0					-emailalong	2.0	property	1.0	gametion	1.0			-emailor po box	1.0					surcharge	1.0	tricor	1.0		
+321	regulation	2	payment information	1.0					payment information	1.0					-url- user	1.0					passport	2.0	policythis	1.0	technologies	1.0			attention	1.0					fuel	1.0	mark	1.0		
+322	scope	2	-url- user	1.0					-url- user	1.0					data protection practice	1.0					delete user provide datum	2.0	point	1.0	pvt	1.0			place	1.0					schedule	1.0	saygames	1.0		
+323	visitor	2	data protection practice	1.0					data protection practice	1.0					voice	1.0					purpose	2.0	parcel	1.0	eea	1.0			privacy question concern	1.0					sitemap	1.0	cookie	1.0		
+324	particulary	2	voice	1.0					voice	1.0					support center	1.0					system	2.0	pickup	1.0	m	1.0			privacy inquiry form	1.0					award	1.0	britbox	1.0		
+325	respective	2	support center	1.0					support center	1.0					data policy	1.0					department	2.0	schedule	1.0	liverpool	1.0			touch	1.0					career	1.0	addressable	1.0		
+326	testimonial	2	data policy	1.0					data policy	1.0					gdprbot	1.0					rooster teeth productions llc	2.0	award	1.0	ec2	1.0			compliance	1.0					franchise	1.0	square	1.0		
+327	profile	2	gdprbot	1.0					gdprbot	1.0					protection	1.0					legal department	2.0	career	1.0	gogogame	1.0			-emailwith	1.0					vacancy	1.0	waterhouse	1.0		
+328	800	2	protection	1.0					protection	1.0					person	1.0					request question	2.0	vacancy	1.0	shepherds	1.0			login	1.0					postcode	1.0	ec1n	1.0		
+329	1800	2	person	1.0					person	1.0					building flat	1.0					saygames	2.0	surcharge	1.0	w14	1.0			information collection	1.0					phishing	1.0	consumer	1.0		
+330	007	2	building flat	1.0					building flat	1.0					regulator	1.0					-url-	2.0	franchise	1.0	good	1.0			dissemination practice	1.0					moment	1.0	gb	1.0		
+331	related	2	regulator	1.0					regulator	1.0					security measure	1.0					stay	2.0	sitemap	1.0	catch	1.0			aspect	1.0					certification	1.0	media	1.0		
+332	high	2	security measure	1.0					security measure	1.0					ip address	1.0					belarus minsk	2.0	moment	1.0	building	1.0			ability	1.0					guideline	1.0	fremantle	1.0		
+333	efta	2	ip address	1.0					ip address	1.0					-emailor po box	1.0					read	2.0	certification	1.0	central	1.0			datum collection	1.0					employee	1.0	stephen	1.0		
+334	economic	2	-emailor po box	1.0					-emailor po box	1.0					attention	1.0					invoke	2.0	guideline	1.0	charecroft	1.0			processing practice	1.0					download	1.0	factor	1.0		
+335	area	2	attention	1.0					attention	1.0					contact email	1.0					visit feedback page	2.0	employee	1.0	way	1.0			security violation	1.0					region	1.0	x	1.0		
+336	france	2	contact email	1.0					contact email	1.0					place	1.0					datum controller	2.0	region	1.0	schiphol	1.0			-emailor	1.0					restriction	1.0	talent	1.0		
+337	rue	2	place	1.0					place	1.0					privacy question concern	1.0					twitter international company	2.0	download	1.0	rijk	1.0			storage	1.0					control	1.0	got	1.0		
+338	75010	2	privacy question concern	1.0					privacy question concern	1.0					privacy inquiry form	1.0					contact twitter	2.0	restriction	1.0	beechavenue	1.0			-emailany time	1.0					limit	1.0	britain	1.0		
+339	method	2	privacy inquiry form	1.0					privacy inquiry form	1.0					touch	1.0					yumobi tekhnolodzhi ooo support service	2.0	limit	1.0	ireland	1.0			datum privacy inquiry	1.0					exercise	1.0	hydrane	1.0		
+340	conduct	2	touch	1.0					touch	1.0					action	1.0					assist	2.0	exercise	1.0	900san	1.0			information request	1.0							linkedin	1.0		
+341	investigate	2	action	1.0					action	1.0					compliance	1.0					search	2.0	control	1.0	cumberland	1.0			website account	1.0							facebook	1.0		
+342	indicate	2	compliance	1.0					compliance	1.0					login	1.0					share information	2.0			place	1.0			business purpose	1.0							jobs	1.0		
+343	line	2	-emailwith	1.0					login	1.0					-emailwith	1.0					ensure	2.0			fenian	1.0			question query	1.0							blog	1.0		
+344	social	2	login	1.0					-emailwith	1.0					information collection	1.0					communication	2.0			tricor	1.0			update	1.0							careers	1.0		
+345	log	2	dissemination practice	1.0					dissemination practice	1.0					dissemination practice	1.0					obtain removal	2.0			mark	1.0			contact e	1.0							articles	1.0		
+346	unable	2	information collection	1.0					information collection	1.0					aspect	1.0					contact headspace	2.0			direct	1.0			information practice	1.0							events	1.0		
+347	point	2	aspect	1.0					aspect	1.0					ability	1.0					technology	2.0			britbox	1.0			privacy policy change	1.0							companyabout	1.0		
+348	internet	2	ability	1.0					ability	1.0					datum collection	1.0					cookie policy	2.0			addressable	1.0			notification	1.0							city	1.0		
+349	44th	2	security violation	1.0					security violation	1.0					processing practice	1.0					product	2.0			waterhouse	1.0			companyattn	1.0							usaemail	1.0		
+350	110	2	datum collection	1.0					processing practice	1.0					security violation	1.0					information commissioner	2.0			square	1.0			material	1.0							culver	1.0		
+351	10036	2	processing practice	1.0					datum collection	1.0					-emailor	1.0					company number	2.0			ec1n	1.0			unsubscribe	1.0							blvd	1.0		
+352	inaccurate	2	-emailor	1.0					-emailor	1.0					answer	1.0					vat registration number	2.0			factor	1.0			communication	1.0							venice	1.0		
+353	erase	2	answer	1.0					answer	1.0					storage	1.0					homa	2.0			consumer	1.0			deletion	1.0							october	1.0		
+354	software	2	storage	1.0					storage	1.0					-emailany time	1.0					business	2.0			x	1.0			withdrawal	1.0							wc2b	1.0		
+355	zone	2	-emailany time	1.0					-emailany time	1.0					datum privacy inquiry	1.0					telephone	2.0			fremantle	1.0			extent	1.0							summarywhat	1.0		
+356	park	2	datum privacy inquiry	1.0					datum privacy inquiry	1.0					information request	1.0					sega europe limited customer services	2.0			britain	1.0			agent question comment	1.0							kingsway	1.0		
+357	instance	2	information request	1.0					information request	1.0					website account	1.0					country	2.0			got	1.0			eea	1.0							aviation	1.0		
+358	device	2	website account	1.0					website account	1.0					business purpose	1.0					address telephone number	2.0			talent	1.0			customer support	1.0							bytedance	1.0		
+359	professional	2	business purpose	1.0					business purpose	1.0					question query	1.0					email address provide	2.0			stephen	1.0			agent	1.0							4hj	1.0		
+360	canary	2	question query	1.0					question query	1.0					update	1.0					mcdonald	2.0			gb	1.0			suite	1.0							gu2	1.0		
+361	wharf	2	update	1.0					update	1.0					contact e	1.0					privacy matter	2.0			media	1.0			ec3r	1.0							england	1.0		
+362	colonnade	2	contact e	1.0					contact e	1.0					privacy policy change	1.0					spotify usa inc	2.0			hydrane	1.0			interest	1.0							surrey	1.0		
+363	e14	2	privacy policy change	1.0					privacy policy change	1.0					information practice	1.0					privacy office	2.0			blog	1.0			activity	1.0							guildford	1.0		
+364	94104	2	information practice	1.0					information practice	1.0					notification	1.0					singapore	1.0			linkedin	1.0			user base sale pattern traffic volume	1.0							millmead	1.0		
+365	2nd	2	notification	1.0					notification	1.0					companyattn	1.0					govern	1.0			facebook	1.0			analytic	1.0							wing	1.0		
+366	code	2	companyattn	1.0					companyattn	1.0					material	1.0					request describe	1.0			articles	1.0			group company	1.0							north	1.0		
+367	contextlogic	2	unsubscribe	1.0					material	1.0					unsubscribe	1.0					datum protection officer	1.0			events	1.0			company number	1.0							hays	1.0		
+368	permit	2	material	1.0					unsubscribe	1.0					deletion	1.0					detail set	1.0			careers	1.0			producer	1.0							ec2a	1.0		
+369	emailto	2	deletion	1.0					deletion	1.0					extent	1.0					entity	1.0			jobs	1.0			programme	1.0							row	1.0		
+370	open	2	extent	1.0					extent	1.0					withdrawal	1.0					jagex limited	1.0			companyabout	1.0			ico	1.0							batemans	1.0		
+371	94103	2	withdrawal	1.0					withdrawal	1.0					agent question comment	1.0					-emailor send	1.0			.california	1.0			privacy query	1.0							deals	1.0		
+372	clarification	2	agent question comment	1.0					agent question comment	1.0					eea	1.0					hold information	1.0			october	1.0			game support	1.0							pepper	1.0		
+373	webmartgroup	2	eea	1.0					eea	1.0					customer support	1.0					child age	1.0			venice	1.0			policy term	1.0							sor	1.0		
+374	arise	2	customer support	1.0					customer support	1.0					suite	1.0					send email	1.0			blvd	1.0			publishing	1.0							k?benhavn	1.0		
+375	present	2	ec3r	1.0					suite	1.0					ec3r	1.0					contact lingodeer	1.0			culver	1.0			experience	1.0							lindgreens	1.0		
+376	breach	2	suite	1.0					ec3r	1.0					activity	1.0					consider	1.0			city	1.0			calendar year	1.0							mcdonald	1.0		
+377	accident	2	interest	1.0					activity	1.0					interest	1.0					designated countriemay	1.0			usaemail	1.0			platform	1.0							finchley	1.0		
+378	occur	2	activity	1.0					interest	1.0					user base sale pattern traffic volume	1.0					choose exit	1.0			bytedance	1.0			marketing use	1.0							east	1.0		
+379	topic	2	user base sale pattern traffic volume	1.0					user base sale pattern traffic volume	1.0					analytic	1.0					datum protection law	1.0			aviation	1.0			contactquestion comment	1.0							high	1.0		
+380	alexadra	2	analytic	1.0					analytic	1.0					group company	1.0					general data protection regulation	1.0			kingsway	1.0			-emailprivacy	1.0							restaurants	1.0		
+381	blog	2	group company	1.0					group company	1.0					producer	1.0					member state	1.0			wc2b	1.0			residence	1.0							freeview	1.0		
+382	allow	2	programme	1.0					producer	1.0					programme	1.0					portal	1.0			summarywhat	1.0			representative	1.0							digital	1.0		
+383	long	2	producer	1.0					programme	1.0					ico	1.0					datum protection regulation	1.0			contractual	1.0			complaintsin	1.0							dtv	1.0		
+384	publish	2	ico	1.0					ico	1.0					privacy query	1.0					objection	1.0			4hj	1.0			support request	1.0							section	1.0		
+385	identity	2	privacy query	1.0					privacy query	1.0					game support	1.0					e-mail address provide	1.0			gu2	1.0			communication preference	1.0							professions	1.0		
+386	future	2	policy term	1.0					game support	1.0					policy term	1.0					email preference	1.0			hays	1.0			opportunity	1.0							business	1.0		
+387	addition	2	game support	1.0					policy term	1.0					publishing	1.0					unsubscribe link find	1.0			north	1.0			authority	1.0							st.	1.0		
+388	explanation	2	experience	1.0					publishing	1.0					experience	1.0					discontinue receive	1.0			wing	1.0			operation	1.0							sutter	1.0		
+389	301	2	publishing	1.0					experience	1.0					calendar year	1.0					member profile	1.0			millmead	1.0			step	1.0							picsart	1.0		
+390	able	2	marketing use	1.0					calendar year	1.0					platform	1.0					customer support team	1.0			guildford	1.0			unit	1.0							1by.you	1.0		
+391	nicosia	2	calendar year	1.0					platform	1.0					marketing use	1.0					feedback	1.0			surrey	1.0			recipient	1.0							dpdgroup	1.0		
+392	avenue	2	platform	1.0					marketing use	1.0					contactquestion comment	1.0					support widget	1.0			pepper	1.0			beginning	1.0							dpd	1.0		
+393	understand	2	contactquestion comment	1.0					contactquestion comment	1.0					-emailprivacy	1.0					related entity	1.0			deals	1.0			contact form	1.0							press	1.0		
+394	microsoft	2	residence	1.0					residence	1.0					residence	1.0					incur	1.0			batemans	1.0			language website	1.0							csr	1.0		
+395	trustarc	2	-emailprivacy	1.0					-emailprivacy	1.0					clause	1.0					mobile	1.0			row	1.0			subscription feature	1.0							products	1.0		
+396	identifiable	2	clause	1.0					clause	1.0					complaintsin	1.0					pay phone	1.0			ec2a	1.0			datum controller	1.0							brexit	1.0		
+397	client	2	complaintsin	1.0					complaintsin	1.0					ground	1.0					metro customer service number	1.0			lindgreens	1.0			email phone fax	1.0							1by	1.0		
+398	channel	2	ground	1.0					ground	1.0					support request	1.0					principle	1.0			k?benhavn	1.0			minor	1.0							conditions	1.0		
+399	telemarketing	2	support request	1.0					support request	1.0					communication preference	1.0					dot	1.0			sor	1.0			measure	1.0							update	1.0		
+400	postal	2	communication preference	1.0					communication preference	1.0					opportunity	1.0					com	1.0			high	1.0			email sms push notification	1.0							privacyto	1.0		
+401	endeavour	2	opportunity	1.0					opportunity	1.0					operation	1.0					contact twitters data protection officer	1.0			restaurants	1.0			circumstance	1.0							apples	1.0		
+402	4th	2	step	1.0					operation	1.0					step	1.0					time contact	1.0			east	1.0			asset	1.0							commitment	1.0		
+403	play	2	operation	1.0					step	1.0					unit	1.0					suggestion concern data protection	1.0			finchley	1.0			customer	1.0							prp	1.0		
+404	studios	2	unit	1.0					unit	1.0					recipient	1.0					europe	1.0			freeview	1.0			seller	1.0							cbpr	1.0		
+405	lion	2	recipient	1.0					recipient	1.0					beginning	1.0					contact information provide	1.0			dtv	1.0			buyer	1.0							apec	1.0		
+406	shield	2	beginning	1.0					beginning	1.0					contact form	1.0					contact information offer	1.0			digital	1.0			right property	1.0							apple	1.0		
+407	acknowledgment	2	contact form	1.0					contact form	1.0					language website	1.0					data manager contact information section	1.0			sutter	1.0			duty	1.0							calabasas	1.0		
+408	timely	2	language website	1.0					language website	1.0					subscription feature	1.0					datum protection	1.0			st.	1.0			obligation	1.0							rd	1.0		
+409	satisfaction	2	subscription feature	1.0					subscription feature	1.0					privacy statement	1.0					reply	1.0			business	1.0			agreement	1.0							planetart	1.0		
+410	tantan	2	privacy statement	1.0					privacy statement	1.0					email phone fax	1.0					service feel	1.0			professions	1.0			issue concern	1.0							care	1.0		
+411	disclosure	2	email phone fax	1.0					email phone fax	1.0					minor	1.0					find contact detail	1.0			section	1.0			privacy policythis policy	1.0							18th	1.0		
+412	passport	2	measure	1.0					minor	1.0					measure	1.0					data protection authority	1.0			picsart	1.0			driver	1.0										
+413	emailalong	2	minor	1.0					measure	1.0					email sms push notification	1.0					-emailor send mail	1.0			dpdgroup	1.0			delivery point	1.0										
+414	fast	2	email sms push notification	1.0					email sms push notification	1.0					circumstance	1.0					rules	1.0			1by.you	1.0			parcel	1.0										
+415	google	2	circumstance	1.0					circumstance	1.0					asset	1.0					condition	1.0			dpd	1.0			pickup service update delivery schedule	1.0										
+416	rooster	2	right property	1.0					asset	1.0					right property	1.0					following link	1.0			1by	1.0			vacancy owner driver franchise service	1.0										
+417	austin	2	customer	1.0					right property	1.0					customer	1.0					relive	1.0			products	1.0			cookie policy phishing data protection	1.0										
+418	tx	2	asset	1.0					customer	1.0					seller	1.0					help page	1.0			update	1.0			technology security career	1.0										
+419	51st	2	agreement	1.0					agreement	1.0					duty	1.0					data protection officer know	1.0			brexit	1.0			sitemap fuel surcharge	1.0										
+420	productions	2	obligation	1.0					obligation	1.0					buyer	1.0					skg	1.0			csr	1.0			postcode	1.0										
+421	1901	2	seller	1.0					buyer	1.0					obligation	1.0					help	1.0			press	1.0			award	1.0										
+422	78723	2	duty	1.0					seller	1.0					agreement	1.0					datum want	1.0			conditions	1.0			moment	1.0										
+423	stay	2	buyer	1.0					duty	1.0					issue concern	1.0					storytel process	1.0			apec	1.0			privacy safeguard	1.0										
+424	belarus	2	issue concern	1.0					issue concern	1.0					privacy policythis policy	1.0					merchandise relate	1.0			cbpr	1.0			privacy law	1.0										
+425	minsk	2	privacy policythis policy	1.0					privacy policythis policy	1.0					delivery point	1.0					example	1.0			prp	1.0			security guideline	1.0										
+426	carefully	2	delivery point	1.0					delivery point	1.0					driver	1.0					marketing preference	1.0			commitment	1.0			certification	1.0										
+427	read	2	driver	1.0					parcel	1.0					parcel	1.0					social club	1.0			privacyto	1.0			employee	1.0										
+428	emailany	2	parcel	1.0					driver	1.0					pickup service update delivery schedule	1.0					email -emailfrom	1.0			calabasas	1.0			breach	1.0										
+429	invoke	2	pickup service update delivery schedule	1.0					pickup service update delivery schedule	1.0					vacancy owner driver franchise service	1.0					email account	1.0			rd	1.0			region	1.0										
+430	topface	2	vacancy owner driver franchise service	1.0					vacancy owner driver franchise service	1.0					cookie policy phishing data protection	1.0					join social club include	1.0			planetart	1.0			download request	1.0										
+431	commissioners	2	cookie policy phishing data protection	1.0					cookie policy phishing data protection	1.0					technology security career	1.0					social club nickname	1.0			care	1.0			mobile app	1.0										
+432	measure	2	technology security career	1.0					technology security career	1.0					postcode	1.0					field	1.0			18th	1.0			restriction	1.0										
+433	ooo	2	sitemap fuel surcharge	1.0					sitemap fuel surcharge	1.0					award	1.0					social point hold	1.0							-emailor assistance	1.0										
+434	yumobi	2	postcode	1.0					postcode	1.0					sitemap fuel surcharge	1.0					social point mailing list	1.0							center	1.0										
+435	tekhnolodzhi	2	award	1.0					award	1.0					moment	1.0					646-536-2842	1.0							age limit	1.0										
+436	assist	2	moment	1.0					moment	1.0					privacy safeguard	1.0					prof	1.0							control section	1.0										
+437	good	2	privacy safeguard	1.0					privacy safeguard	1.0					privacy law	1.0					use tandem	1.0							exercise	1.0										
+438	sas	2	privacy law	1.0					privacy law	1.0					security guideline	1.0					-phoneor	1.0							information cookie	1.0										
+439	legitimate	2	security guideline	1.0					security guideline	1.0					certification	1.0					zone chengdu sichuan china	1.0																		
+440	eea	2	breach	1.0					certification	1.0					employee	1.0					endeavor	1.0																		
+441	centre	2	certification	1.0					employee	1.0					breach	1.0					ted	1.0																		
+442	50	2	employee	1.0					breach	1.0					download request	1.0					ted sites	1.0																		
+443	notification	2	download request	1.0					download request	1.0					region	1.0					contact ted	1.0																		
+444	lane	2	region	1.0					region	1.0					mobile app	1.0					information collect process use	1.0																		
+445	suite	2	mobile app	1.0					mobile app	1.0					restriction	1.0					store	1.0																		
+446	emailin	2	restriction	1.0					restriction	1.0					-emailor assistance	1.0					owner	1.0																		
+447	similar	2	-emailor assistance	1.0					-emailor assistance	1.0					center	1.0					tile device	1.0																		
+448	technology	2	center	1.0					center	1.0					age limit	1.0					privacy team	1.0																		
+449	product	2	control section	1.0					age limit	1.0					control section	1.0					privacy team thomson reuters	1.0																		
+450	itv	2	age limit	1.0					control section	1.0					exercise	1.0					escalate	1.0																		
+451	vat	2	exercise	1.0					exercise	1.0					information cookie	1.0					data protection officer thomson reuters	1.0																		
+452	w1t	2	information cookie	1.0					information cookie	1.0											twitch services	1.0																		
+453	0041	2																			bush street	1.0																		
+454	76	2																			vertigo games sepapaja	1.0																		
+455	tiktok	2																			tallinn	1.0																		
+456	england	2																			estonia registry code	1.0																		
+457	fireproof	2																			restrict	1.0																		
+458	brentford	2																			designate agent	1.0																		
+459	845	2																			receive email	1.0																		
+460	5502	2																			promotion	1.0																		
+461	14	2																			newsletter	1.0																		
+462	country	2																			datum use practice	1.0																		
+463	mcdonald	2																			email address list	1.0																		
+464	3jf	2																			section contact	1.0																		
+465	mortimer	2																			games	1.0																		
+466	dpdgroup	2																			-emailto request access	1.0																		
+467	b66	2																			port	1.0																		
+468	delivery	2																			support ticket	1.0																		
+469	driver	2																			seek rectification	1.0																		
+470	governance	2																			information hold	1.0																		
+471	management	2																			zuuks games	1.0																		
+472	grci	2																			jurisdiction	1.0																		
+473	lagavooren	2																			contact zuuks games	1.0																		
+474	boyne	2																			link send e-mail	1.0																		
+475	drawer	2																			contact zynga	1.0																		
+476	suntec	1																			customer support page	1.0																		
+477	singapore	1																			access request	1.0																		
+478	038988	1																			request concern	1.0																		
+479	temasek	1																			clarification musixmatch	1.0																		
+480	08	1																			provide e-mail	1.0																		
+481	05	1																			receipt	1.0																		
+482	boulevard	1																			aim	1.0																		
+483	govern	1																			zacna	1.0																		
+484	oversee	1																			street	1.0																		
+485	jagex	1																			gdask poland	1.0																		
+486	particular	1																			stop use	1.0																		
+487	kindly	1																			erasure	1.0																		
+488	lingodeer	1																			communication feature	1.0																		
+489	consider	1																			contact camsurf	1.0																		
+490	countriemay	1																			juvenile	1.0																		
+491	designated	1																			define	1.0																		
+492	exit	1																			require age	1.0																		
+493	choose	1																			forum	1.0																		
+494	portal	1																			blog	1.0																		
+495	national	1																			decision	1.0																		
+496	objection	1																			communication option update	1.0																		
+497	discontinue	1																			possess	1.0																		
+498	freedom	1																			collect use	1.0																		
+499	3979	1																			datum request	1.0																		
+500	clara	1																			subject	1.0																		
+501	santa	1																			word	1.0																		
+502	95054	1																			instruction contain	1.0																		
+503	circle	1																			california	1.0																		
+504	12th	1																			customer service email address	1.0																		
+505	widget	1																			think clicktouch games	1.0																		
+506	cost	1																			abide	1.0																		
+507	992	1																			post privacy policy	1.0																		
+508	1300	1																			dvloper	1.0																		
+509	pay	1																			dvapps ab	1.0																		
+510	363	1																			oval	1.0																		
+511	incur	1																			krinou street	1.0																		
+512	metro	1																			easybrain ltd	1.0																		
+513	principle	1																			limassol cyprus	1.0																		
+514	adopt	1																			accommodate	1.0																		
+515	interested	1																			redirect	1.0																		
+516	mondly	1																			address provide	1.0																		
+517	com	1																			document feel	1.0																		
+518	dot	1																			stakhanovskaya	1.0																		
+519	twitters	1																			technopark perm	1.0																		
+520	11	1																			profile	1.0																		
+521	manager	1																			question regard view	1.0																		
+522	reply	1																			tracking	1.0																		
+523	primarily	1																			advertising	1.0																		
+524	petites	1																			alert	1.0																		
+525	ecuries	1																			request relate	1.0																		
+526	des	1																			146-148 strovolos avenue petousis building	1.0																		
+527	rules	1																			strovolos nicosia cyprus	1.0																		
+528	condition	1																			commissioner	1.0																		
+529	relive	1																			personal data protection	1.0																		
+530	skg	1																			realise	1.0																		
+531	youd	1																			planta	1.0																		
+532	0161	1																			sevilla	1.0																		
+533	1162	1																			sevilla spain	1.0																		
+534	768	1																			user content	1.0																		
+535	storytel	1																			eu resident	1.0																		
+536	merchandise	1																			information ask question	1.0																		
+537	example	1																			meaning	1.0																		
+538	2k	1																			privacy policy access	1.0																		
+539	club	1																			paragraph	1.0																		
+540	join	1																			datum base	1.0																		
+541	emailfrom	1																			eu data protection officer	1.0																		
+542	nickname	1																			microsoft chief privacy officer	1.0																		
+543	field	1																			privacy concern complaint	1.0																		
+544	2842	1																			trustarc	1.0																		
+545	536	1																			connection	1.0																		
+546	646	1																			resolve dispute	1.0																		
+547	regular	1																			contact trustarc	1.0																		
+548	eprivacy	1																			telephone number	1.0																		
+549	gmbh	1																			request email	1.0																		
+550	represent	1																			data transfer tool	1.0																		
+551	prof	1																			handling	1.0																		
+552	tandem	1																			eu local representative	1.0																		
+553	dont	1																			user information policy	1.0																		
+554	tap4fun	1																			function	1.0																		
+555	tianfu	1																			bank	1.0																		
+556	chengdu	1																			icbc	1.0																		
+557	sichuan	1																			user information	1.0																		
+558	china	1																			institution	1.0																		
+559	emailvia	1																			mean	1.0																		
+560	tech	1																			mention	1.0																		
+561	phoneor	1																			come	1.0																		
+562	0086	1																			privacy policy email	1.0																		
+563	a3	1																			thinking ape entertainment ltd	1.0																		
+564	endeavor	1																			planb labs	1.0																		
+565	ted	1																			database	1.0																		
+566	sites	1																			stop collect	1.0																		
+567	tile	1																			child user	1.0																		
+568	2121	1																			member	1.0																		
+569	mateo	1																			-emailor write	1.0																		
+570	94403	1																			homer	1.0																		
+571	camino	1																			locate	1.0																		
+572	900	1																			park avenue south	1.0																		
+573	escalate	1																			floor ny ny	1.0																		
+574	satisfied	1																			amsterdam	1.0																		
+575	5ep	1																			-urlor	1.0																		
+576	twitch	1																			play	1.0																		
+577	bush	1																			end	1.0																		
+578	350	1																			question complaint	1.0																		
+579	registry	1																			contact level	1.0																		
+580	14340159	1																			contact lima sky	1.0																		
+581	vertigo	1																			contact lion studios	1.0																		
+582	15551	1																			suggestion concern	1.0																		
+583	estonia	1																			question opinion	1.0																		
+584	tallinn	1																			left	1.0																		
+585	sepapaja	1																			setting-feedback	1.0																		
+586	restrict	1																			forward	1.0																		
+587	designate	1																			welcome feedback	1.0																		
+588	newsletter	1																			following address	1.0																		
+589	promotion	1																			information provide	1.0																		
+590	special	1																			data controller section	1.0																		
+591	electronic	1																			datum privacy practice	1.0																		
+592	commercial	1																			advertiser	1.0																		
+593	ticket	1																			mind	1.0																		
+594	port	1																			partner	1.0																		
+595	jurisdiction	1																			stop	1.0																		
+596	zynga	1																			prefer	1.0																		
+597	699	1																			use musescore	1.0																		
+598	8th	1																			sint-denijs-westrem	1.0																		
+599	physical	1																			octaaf soudanstraat	1.0																		
+600	musixmatch	1																			belgium	1.0																		
+601	statutory	1																			entitled	1.0																		
+602	receipt	1																			prevent disclosure	1.0																		
+603	aim	1																			california civil code section	1.0																		
+604	quote	1																			ur contact information	1.0																		
+605	effectively	1																			sharing	1.0																		
+606	just	1																			regulation	1.0																		
+607	zacna	1																			age specify	1.0																		
+608	poland	1																			party information collection	1.0																		
+609	gdask	1																			party information disclosure	1.0																		
+610	283	1																			outfit7	1.0																		
+611	80	1																			information processing	1.0																		
+612	traditional	1																			security question	1.0																		
+613	unanswered	1																			privacy policy notice	1.0																		
+614	thereof	1																			enquiry regard	1.0																		
+615	camsurf	1																			support menu	1.0																		
+616	yo	1																			right set	1.0																		
+617	juvenile	1																			act accord	1.0																		
+618	legally	1																			kwalee	1.0																		
+619	define	1																			affiliate	1.0																		
+620	forum	1																			registered office	1.0																		
+621	decision	1																			datum information	1.0																		
+622	possess	1																			include access	1.0																		
+623	bluehole	1																			limitation	1.0																		
+624	pnix	1																			opposition	1.0																		
+625	body	1																			datum rectification	1.0																		
+626	word	1																			submission	1.0																		
+627	seek	1																			transfer datum	1.0																		
+628	lockhart	1																			store use	1.0																		
+629	chai	1																			payment information	1.0																		
+630	wan	1																			google	1.0																		
+631	ro	1																			-url- user	1.0																		
+632	rm	1																			personal datum	1.0																		
+633	307	1																			data protection practice	1.0																		
+634	19c	1																			diandian	1.0																		
+635	ctr	1																			love hear	1.0																		
+636	clicktouch	1																			voice	1.0																		
+637	abide	1																			microsoft welcome	1.0																		
+638	dvapps	1																			adhere	1.0																		
+639	dvloper	1																			privacy feedback	1.0																		
+640	ab	1																			limited liability company swag masha	1.0																		
+641	easybrain	1																			republic	1.0																		
+642	limassol	1																			internatsionalnaya str	1.0																		
+643	4103	1																			service remain	1.0																		
+644	oval	1																			personal information	1.0																		
+645	krinou	1																			doubleugames account	1.0																		
+646	6th	1																			-emailany time	1.0																		
+647	emailhowever	1																			aurora ave woodstock ga	1.0																		
+648	redirect	1																			data policy	1.0																		
+649	accommodate	1																			gdprbot	1.0																		
+650	preferred	1																			testfoni	1.0																		
+651	document	1																			information apply	1.0																		
+652	technopark	1																			datum topface send	1.0																		
+653	stakhanovskaya	1																			protection	1.0																		
+654	perm	1																			person	1.0																		
+655	54	1																			information commissioners	1.0																		
+656	advertising	1																			boubolina building	1.0																		
+657	tracking	1																			nicosia cyprus	1.0																		
+658	alert	1																			topface	1.0																		
+659	strovolos	1																			regulator	1.0																		
+660	petousis	1																			security measure	1.0																		
+661	146	1																			track	1.0																		
+662	148	1																			ip address	1.0																		
+663	2048	1																			help solve	1.0																		
+664	incorrect	1																			-emailor po box	1.0																		
+665	realise	1																			attention	1.0																		
+666	sevilla	1																			california privacy rights	1.0																		
+667	spain	1																			privacy tubi inc	1.0																		
+668	genera	1																			twitter inc	1.0																		
+669	cardenal	1																			yumobi tekhnolodzhi ooo	1.0																		
+670	planta	1																			compromise	1.0																		
+671	monreal	1																			information relate	1.0																		
+672	bueno	1																			place	1.0																		
+673	41010	1																			service wish	1.0																		
+674	20	1																			review information collect	1.0																		
+675	permanently	1																			information modify	1.0																		
+676	meaning	1																			fill	1.0																		
+677	paragraph	1																			privacy question concern	1.0																		
+678	chief	1																			privacy inquiry form	1.0																		
+679	connection	1																			adobe	1.0																		
+680	3995	1																			touch	1.0																		
+681	82	1																			action	1.0																		
+682	1588	1																			perform	1.0																		
+683	handling	1																			compliance	1.0																		
+684	tool	1																			information handle	1.0																		
+685	icbc	1																			disclose information	1.0																		
+686	function	1																			review delete	1.0																		
+687	institution	1																			follow address	1.0																		
+688	overseas	1																			identifying information	1.0																		
+689	bank	1																			email include	1.0																		
+690	mean	1																			dissemination practice	1.0																		
+691	come	1																			site applications	1.0																		
+692	watchdog	1																			camel games	1.0																		
+693	ape	1																			aspect	1.0																		
+694	thinking	1																			app store	1.0																		
+695	entertainment	1																			google play	1.0																		
+696	planb	1																			browse	1.0																		
+697	labs	1																			tap	1.0																		
+698	database	1																			scroll	1.0																		
+699	emailuse	1																			contact information list	1.0																		
+700	homer	1																			exercise choice	1.0																		
+701	460	1																			ability	1.0																		
+702	10016	1																			follow mailing address	1.0																		
+703	south	1																			market st	1.0																		
+704	letsvpn	1																			data cube software collect	1.0																		
+705	personally	1																			good	1.0																		
+706	level	1																			dashlane sas	1.0																		
+707	lima	1																			rue pierre picard	1.0																		
+708	sky	1																			need assistance	1.0																		
+709	opinion	1																			security violation	1.0																		
+710	various	1																			datum collection	1.0																		
+711	left	1																			processing practice	1.0																		
+712	setting	1																			answer	1.0																		
+713	forward	1																			storage	1.0																		
+714	advertiser	1																			dingtone	1.0																		
+715	partner	1																			-urlor -emailany time	1.0																		
+716	mind	1																			-emailto	1.0																		
+717	far	1																			contact duolingo	1.0																		
+718	prefer	1																			datum privacy inquiry	1.0																		
+719	musescore	1																			information request	1.0																		
+720	belgium	1																			direct	1.0																		
+721	octaaf	1																			brunnsgatan	1.0																		
+722	soudanstraat	1																			stockholm sweden	1.0																		
+723	denijs	1																			discuss	1.0																		
+724	9051	1																			claim	1.0																		
+725	22	1																			question express	1.0																		
+726	westrem	1																			gamegos	1.0																		
+727	sint	1																			user want	1.0																		
+728	civil	1																			complain	1.0																		
+729	1798	1																			gametion technologies pvt ltd	1.0																		
+730	83	1																			website account	1.0																		
+731	furthermore	1																			deactivate	1.0																		
+732	ur	1																			retain	1.0																		
+733	sharing	1																			-emailbut note	1.0																		
+734	specify	1																			business purpose	1.0																		
+735	urland	1																			eea resident	1.0																		
+736	outfit7	1																			dpo centre	1.0																		
+737	menu	1																			gogogame	1.0																		
+738	act	1																			change update	1.0																		
+739	accord	1																			question query	1.0																		
+740	kwalee	1																			contact e-mail address	1.0																		
+741	uber	1																			schiphol-rijk	1.0																		
+742	affiliate	1																			beechavenue	1.0																		
+743	israel	1																			data privacy officer	1.0																		
+744	515059236	1																			privacy policy change	1.0																		
+745	rosh	1																			-email- notification	1.0																		
+746	ayin	1																			reflect change	1.0																		
+747	industrial	1																			information practice	1.0																		
+748	ha	1																			twitter international companyattn	1.0																		
+749	submission	1																			d02 ax07 ireland	1.0																		
+750	rectification	1																			cancel email	1.0																		
+751	limitation	1																			material	1.0																		
+752	opposition	1																			deletion	1.0																		
+753	payment	1																			withdrawal	1.0																		
+754	diandian	1																			extent	1.0																		
+755	hear	1																			post content	1.0																		
+756	voice	1																			identify	1.0																		
+757	love	1																			eea register agent question comment	1.0																		
+758	connected	1																			reach headspace customer support	1.0																		
+759	adhere	1																			tricor suite 4th floor	1.0																		
+760	practically	1																			mark lane london	1.0																		
+761	liability	1																			tricor	1.0																		
+762	internatsionalnaya	1																			7qr	1.0																		
+763	masha	1																			registered agent	1.0																		
+764	republic	1																			-emailin order	1.0																		
+765	220030	1																			complaint saygames	1.0																		
+766	swag	1																			saygames llc address	1.0																		
+767	str	1																			involve	1.0																		
+768	terms	1																			activity set	1.0																		
+769	doubleugames	1																			interest	1.0																		
+770	30188	1																			display	1.0																		
+771	woodstock	1																			process base	1.0																		
+772	302	1																			service-specific privacy notice	1.0																		
+773	aurora	1																			registered email address	1.0																		
+774	ga	1																			itv group company	1.0																		
+775	ave	1																			addressable platform limited	1.0																		
+776	tastypill	1																			britbox	1.0																		
+777	gdprbot	1																			united kingdom	1.0																		
+778	testfoni	1																			ico website	1.0																		
+779	authorized	1																			register office	1.0																		
+780	person	1																			holborn london ec1n 2ae	1.0																		
+781	regulator	1																			waterhouse square	1.0																		
+782	lead	1																			itv rights limited	1.0																		
+783	flat	1																			relate	1.0																		
+784	main	1																			britain	1.0																		
+785	1060	1																			got talent	1.0																		
+786	40	1																			itv consumer limited	1.0																		
+787	boubolina	1																			fremantle media limited	1.0																		
+788	ip	1																			programme act	1.0																		
+789	track	1																			producer	1.0																		
+790	solve	1																			vat registration number gb	1.0																		
+791	sunnyvale	1																			privacy query	1.0																		
+792	94088	1																			paris	1.0																		
+793	60429	1																			faubourg saint-denis	1.0																		
+794	po	1																			datum collect	1.0																		
+795	box	1																			hydrane sas	1.0																		
+796	rights	1																			data processing concern	1.0																		
+797	tubi	1																			contact homa games section	1.0																		
+798	montgomery	1																			close publishing	1.0																		
+799	attention	1																			search hit enter	1.0																		
+800	315	1																			esc	1.0																		
+801	international	1																			faubourg saint-denis paris france	1.0																		
+802	outside	1																			game support	1.0																		
+803	shall	1																			condition twitter facebook linkedin search	1.0																		
+804	place	1																			rue	1.0																		
+805	adobe	1																			use cookie	1.0																		
+806	touch	1																			business relate enquiry	1.0																		
+807	perform	1																			experience	1.0																		
+808	action	1																			calendar year	1.0																		
+809	compliance	1																			residentsonce	1.0																		
+810	login	1																			entitle	1.0																		
+811	identifying	1																			obtain information	1.0																		
+812	dissemination	1																			marketing use	1.0																		
+813	applications	1																			recommend	1.0																		
+814	camel	1																			tiktok inc	1.0																		
+815	aspect	1																			tiktok legal department	1.0																		
+816	browse	1																			venice blvd suite	1.0																		
+817	tap	1																			october 2019welcome	1.0																		
+818	search	1																			tiktok	1.0																		
+819	scroll	1																			usaemail address	1.0																		
+820	ellation	1																			residence	1.0																		
+821	market	1																			bytedance uk limited aviation house	1.0																		
+822	835	1																			kingsway holborn london wc2b	1.0																		
+823	cube	1																			agree	1.0																		
+824	dashlane	1																			upload content	1.0																		
+825	75018	1																			create	1.0																		
+826	21	1																			privacy policy click	1.0																		
+827	pierre	1																			clause	1.0																		
+828	picard	1																			complaintsin	1.0																		
+829	answer	1																			email protect	1.0																		
+830	dingtone	1																			england	1.0																		
+831	storage	1																			company registered	1.0																		
+832	duolingo	1																			protect	1.0																		
+833	556895	1																			committed	1.0																		
+834	1213	1																			process contact information	1.0																		
+835	brunnsgatan	1																			support request	1.0																		
+836	stockholm	1																			-emailin accordance	1.0																		
+837	sweden	1																			support centre	1.0																		
+838	111	1																			use agree	1.0																		
+839	38	1																			fireproof	1.0																		
+840	discuss	1																			talk	1.0																		
+841	gamegos	1																			za055154	1.0																		
+842	express	1																			data protection team	1.0																		
+843	complain	1																			fireproof studios ltd	1.0																		
+844	gametion	1																			question feel	1.0																		
+845	pvt	1																			confirm	1.0																		
+846	technologies	1																			opportunity	1.0																		
+847	deactivate	1																			communication preference	1.0																		
+848	retain	1																			sign	1.0																		
+849	emailbut	1																			device	1.0																		
+850	liverpool	1																			interact	1.0																		
+851	797	1																			sega learn	1.0																		
+852	6340	1																			step	1.0																		
+853	7pr	1																			operation sega	1.0																		
+854	203	1																			pepper deals ltd unit	1.0																		
+855	ec2m	1																			batemans row london	1.0																		
+856	gogogame	1																			3hh	1.0																		
+857	shepherds	1																			detail regard	1.0																		
+858	catch	1																			recipient	1.0																		
+859	w14	1																			beginning	1.0																		
+860	0ee	1																			language website	1.0																		
+861	beechavenue	1																			lindgreens	1.0																		
+862	rijk	1																			contact form	1.0																		
+863	schiphol	1																			mail address	1.0																		
+864	1119	1																			opt-out instruction	1.0																		
+865	182	1																			subscription feature	1.0																		
+866	accurate	1																			opt-in	1.0																		
+867	ensure	1																			elect	1.0																		
+868	reflect	1																			receive marketing communication	1.0																		
+869	companyattn	1																			uk information commissioners office	1.0																		
+870	inquiry1355	1																			follow detail	1.0																		
+871	streetdublin	1																			legal department freeview 2nd floor	1.0																		
+872	ireland	1																			dtv services ltd	1.0																		
+873	officerone	1																			registration number z9156270 act	1.0																		
+874	d02	1																			digital uk limited	1.0																		
+875	cancel	1																			email phone fax	1.0																		
+876	select	1																			reset	1.0																		
+877	material	1																			account compromise	1.0																		
+878	deletion	1																			advise	1.0																		
+879	withdrawal	1																			misuse	1.0																		
+880	extent	1																			minor	1.0																		
+881	identify	1																			professions code section	1.0																		
+882	855	1																			email -emailor contact	1.0																		
+883	432	1																			california business	1.0																		
+884	3822	1																			registered user	1.0																		
+885	tricor	1																			email sms push notification	1.0																		
+886	ec3r	1																			circumstance require	1.0																		
+887	7qr	1																			customer	1.0																		
+888	mark	1																			apply	1.0																		
+889	ul	1																			enforce	1.0																		
+890	involve	1																			comply	1.0																		
+891	instal	1																			buy	1.0																		
+892	traffic	1																			asset	1.0																		
+893	sale	1																			obligation	1.0																		
+894	analytic	1																			sell	1.0																		
+895	britbox	1																			seller	1.0																		
+896	addressable	1																			buyer	1.0																		
+897	group	1																			agreement	1.0																		
+898	emailmake	1																			issue concern	1.0																		
+899	clear	1																			attempt	1.0																		
+900	britain	1																			re-deliver	1.0																		
+901	programme	1																			driver	1.0																		
+902	producer	1																			delivery point	1.0																		
+903	media	1																			parcel	1.0																		
+904	06633451	1																			return	1.0																		
+905	consumer	1																			deliver	1.0																		
+906	factor	1																			dpd	1.0																		
+907	ec1n	1																			conditions privacy	1.0																		
+908	197	1																			uk delivery	1.0																		
+909	67	1																			cookie policy phishing data protection	1.0																		
+910	hydrane	1																			postcode affect	1.0																		
+911	faubourg	1																			dpd terms	1.0																		
+912	publishing	1																			gdpr sitemap fuel surcharge	1.0																		
+913	companyabout	1																			services uk europe	1.0																		
+914	facebook	1																			familiarize	1.0																		
+915	01	1																			moment	1.0																		
+916	residentsonce	1																			security guideline	1.0																		
+917	calendar	1																			datum use concern regard	1.0																		
+918	recommend	1																			communicate	1.0																		
+919	contactquestion	1																			prp certification	1.0																		
+920	informed	1																			apec cbpr	1.0																		
+921	residence	1																			apple employee	1.0																		
+922	city	1																			dispute resolution	1.0																		
+923	usaemail	1																			commitment	1.0																		
+924	venice	1																			apples privacy policy	1.0																		
+925	emailprivacy	1																			european data protection officer	1.0																		
+926	10100	1																			enforce privacy safeguard	1.0																		
+927	2019welcome	1																			breach	1.0																		
+928	blvd	1																			information receive	1.0																		
+929	bytedance	1																			triage	1.0																		
+930	aviation	1																			team	1.0																		
+931	summarywhat	1																			apple support number	1.0																		
+932	wc2b	1																			above-mention right	1.0																		
+933	upload	1																			planetart llc	1.0																		
+934	contractual	1																			restriction	1.0																		
+935	clause	1																			customer care department use	1.0																		
+936	standard	1																			object	1.0																		
+937	complaintsin	1																			access rectify	1.0																		
+938	thorough	1																			contact customer support	1.0																		
+939	hays	1																			-emailor assistance	1.0																		
+940	guildford	1																			term use	1.0																		
+941	surrey	1																			clarification	1.0																		
+942	house	1																			data protection officer use	1.0																		
+943	millmead	1																			spotify	1.0																		
+944	north	1																			control section	1.0																		
+945	ground	1																			request exercise	1.0																		
+946	wing	1																			age limit	1.0																		
+947	gu2	1																			new york ny	1.0																		
+948	4hj	1																			hope	1.0																		
+949	06687549	1																			enjoy spotify	1.0																		
+950	committed	1																			street floor	1.0																		
+951	properly	1																			contact customer service	1.0																		
+952	agree	1																			information cookie	1.0																		
+953	talk	1																			authenticate	1.0																		
+954	za055154	1																			fulfil	1.0																		
+955	sign	1																			safety	1.0																		
+956	middlesex	1																																						
+957	confirm	1																																						
+958	west	1																																						
+959	opportunity	1																																						
+960	____________________________________________________________________	1																																						
+961	interact	1																																						
+962	supervisory	1																																						
+963	children	1																																						
+964	unhappy	1																																						
+965	pepper	1																																						
+966	deals	1																																						
+967	ec2a	1																																						
+968	3hh	1																																						
+969	row	1																																						
+970	batemans	1																																						
+971	unit	1																																						
+972	recipient	1																																						
+973	beginning	1																																						
+974	lindgreens	1																																						
+975	37561304	1																																						
+976	language	1																																						
+977	benhavn	1																																						
+978	2300	1																																						
+979	electronically	1																																						
+980	sor	1																																						
+981	subscription	1																																						
+982	elect	1																																						
+983	subsequently	1																																						
+984	restaurants	1																																						
+985	finchley	1																																						
+986	59	1																																						
+987	2018	1																																						
+988	road	1																																						
+989	n2	1																																						
+990	freeview	1																																						
+991	27	1																																						
+992	dtv	1																																						
+993	digital	1																																						
+994	z9156270	1																																						
+995	z7207230	1																																						
+996	fax	1																																						
+997	reset	1																																						
+998	advise	1																																						
+999	emailthat	1																																						
+1000	minor	1																																						
+1001	valid	1																																						
+1002	picsart	1																																						
+1003	publicly	1																																						
+1004	22581	1																																						
+1005	211	1																																						
+1006	sms	1																																						
+1007	push	1																																						
+1008	circumstance	1																																						
+1009	property	1																																						
+1010	acquire	1																																						
+1011	obligation	1																																						
+1012	asset	1																																						
+1013	buyer	1																																						
+1014	sell	1																																						
+1015	seller	1																																						
+1016	additionally	1																																						
+1017	smethwick	1																																						
+1018	1by	1																																						
+1019	roebuck	1																																						
+1020	policythis	1																																						
+1021	urlto	1																																						
+1022	deliver	1																																						
+1023	parcel	1																																						
+1024	return	1																																						
+1025	usif	1																																						
+1026	early	1																																						
+1027	dpd	1																																						
+1028	postcode	1																																						
+1029	pickup	1																																						
+1030	surcharge	1																																						
+1031	brexit	1																																						
+1032	fuel	1																																						
+1033	schedule	1																																						
+1034	familiarize	1																																						
+1035	moment	1																																						
+1036	privacyto	1																																						
+1037	apec	1																																						
+1038	apples	1																																						
+1039	prp	1																																						
+1040	secure	1																																						
+1041	cbpr	1																																						
+1042	certification	1																																						
+1043	guideline	1																																						
+1044	companywide	1																																						
+1045	download	1																																						
+1046	region	1																																						
+1047	triage	1																																						
+1048	planetart	1																																						
+1049	calabasas	1																																						
+1050	91302	1																																						
+1051	rectify	1																																						
+1052	restriction	1																																						
+1053	care	1																																						
+1054	control	1																																						
+1055	enjoy	1																																						
+1056	45	1																																						
+1057	18th	1																																						
+1058	10011	1																																						
+1059	hope	1																																						
+1060	authenticate	1																																						
+1061	safety	1																																						
+1062	fulfil	1																																						
