@@ -1,6 +1,6 @@
 import spacy
 import csv
-import string 
+import string
 import pandas as pd
 import re
 import sys
@@ -13,7 +13,6 @@ import spacy
 import pke
 import nltk
 from tqdm import tqdm
-from multi_rake import Rake
 import textacy
 from textacy.extract import keyterms
 from textacy import preprocessing as textacy_preprocessing
@@ -29,10 +28,9 @@ spacy_languages = {"en": "en_core_web_trf"}
 somajo_tokenizer = SoMaJo("en_PTB", split_sentences=False)
 
 
-def analyse(file):
+def analyse(filepath):
 
     print("Start time: ", str(datetime.datetime.now()))
-
 
     def somajo_remove_url(text):
         """
@@ -44,7 +42,6 @@ def analyse(file):
         text_as_list.append(text)
         tokenized_text = somajo_tokenizer.tokenize_text(text_as_list)
         for dummy_tokenized_text in tokenized_text:
-            # return([detokenize(bla) for bla in tokenized_text][0])
             for token in dummy_tokenized_text:
                 if token.token_class == "URL":
                     out.append("-URL-")
@@ -76,67 +73,11 @@ def analyse(file):
         return lemmatized_docs
 
 
-    # def pke_textrank(text, language):
-    #     extractor = pke.unsupervised.TextRank()
-    #     try:
-    #         extractor.load_document(input=text, language=language)
-    #         extractor.candidate_selection()
-    #         extractor.candidate_weighting(pos={'NOUN', 'PROPN', 'VERB'})
-    #         keyphrases = extractor.get_n_best(n=20)
-    #         list_of_keyphrases = [keyphrase for keyphrase, score in keyphrases]
-    #     except:
-    #         tqdm.write(traceback.format_exc())
-    #         sys.exit()
-    #     return list_of_keyphrases
-
-
-    # def pke_singlerank(text, language):
-    #     extractor = pke.unsupervised.SingleRank()
-    #     try:
-    #         extractor.load_document(input=text, language=language)
-    #         extractor.candidate_selection(pos={'NOUN', 'PROPN', 'VERB'})
-    #         extractor.candidate_weighting(pos={'NOUN', 'PROPN', 'VERB'})
-    #         keyphrases = extractor.get_n_best(n=20)
-    #         list_of_keyphrases = [keyphrase for keyphrase, score in keyphrases]
-    #     except:
-    #         tqdm.write(traceback.format_exc())
-    #         sys.exit()
-    #     return list_of_keyphrases
-
-
-    # def pke_positionrank(text, language):
-    #     extractor = pke.unsupervised.PositionRank()
-    #     try:
-    #         extractor.load_document(input=text, language=language)
-    #         extractor.candidate_selection(grammar="NP: {<NOUN|PROPN>+}")
-    #         extractor.candidate_weighting(pos={'NOUN', 'PROPN', 'VERB'})
-    #         keyphrases = extractor.get_n_best(n=20)
-    #         list_of_keyphrases = [keyphrase for keyphrase, score in keyphrases]
-    #     except:
-    #         tqdm.write(traceback.format_exc())
-    #         sys.exit()
-    #     return list_of_keyphrases
-
-
-    # def pke_topicrank(text, language):
-    #     extractor = pke.unsupervised.TopicRank()
-    #     try:
-    #         extractor.load_document(input=text, language=language)
-    #         extractor.candidate_selection()
-    #         extractor.candidate_weighting()
-    #         keyphrases = extractor.get_n_best(n=20)
-    #         list_of_keyphrases = [keyphrase for keyphrase, score in keyphrases]
-    #     except:
-    #         tqdm.write(traceback.format_exc())
-    #         sys.exit()
-    #     return list_of_keyphrases
-
-
-    def pke_multipartiterank(text, language):
+    def pke_multipartiterank(text, language, pos):
         extractor = pke.unsupervised.MultipartiteRank()
         try:
             extractor.load_document(input=text, language=language)
-            extractor.candidate_selection(pos={'NOUN', 'PROPN', 'VERB'})
+            extractor.candidate_selection(pos={pos})
             extractor.candidate_weighting()
             keyphrases = extractor.get_n_best(n=20)
             list_of_keyphrases = [keyphrase for keyphrase, score in keyphrases]
@@ -227,19 +168,40 @@ def analyse(file):
         return list_of_keyphrases
 
 
-    def postprocessing(list_of_lists_of_keywords, name, pos=None):
+    def postprocessing(list_of_lists_of_keywords, number_of_documents, pos=None, name=None):
+        """
+        The keywords are weighted over the number of extractors and number of documents
+        For KeyBert, only weighting over the number of documents is performed.
+        """
         list_of_lists_of_keywords = [keyword.lower() for list_of_keywords in list_of_lists_of_keywords for keyword in list_of_keywords]
-        list_of_freq_keywords = nltk.FreqDist(flatten(list_of_lists_of_keywords)).most_common()
+        keyword_freq_dict = dict(nltk.FreqDist(flatten(list_of_lists_of_keywords)))
         if pos:
-            df_keywords = pd.DataFrame(list_of_freq_keywords, columns=[name + "_" + pos, name + "_" + pos + "_" + "Freq"])
-        else:
-            df_keywords = pd.DataFrame(list_of_freq_keywords, columns=[name, name + "_" + "Freq"])
+            keyword_freq_dict = {keyword:(freq/(number_of_documents*7)) for (keyword, freq) in keyword_freq_dict.items()}
+            df_keywords = pd.DataFrame(keyword_freq_dict.items(), columns=[pos, pos + "_" + "weight"])
+            df_keywords.sort_values(by=pos + "_" + "weight", ascending=False, inplace=True)
+        elif name=="KeyBert":
+            keyword_freq_dict = {keyword:(freq/number_of_documents) for (keyword, freq) in keyword_freq_dict.items()}
+            df_keywords = pd.DataFrame(keyword_freq_dict.items(), columns=[name, name + "_" + "weight"])
+            df_keywords.sort_values(by=name + "_" + "weight", ascending=False, inplace=True)
         print(df_keywords.head())
         return df_keywords
 
 
-    ### Entry point ###
+    def load_texts(filepath):
+        list_of_texts = []
+        with open(filepath) as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                row2string = ''.join(str(e) for e in row)
+                rowSplited = row2string.split('\t')
+                parapraph = rowSplited[1]
+                list_of_texts.append(parapraph)
+        return list_of_texts
 
+
+    ### Entry point ###
+    language = "en"
+    include_pos = ['NOUN', "PROPN", "VERB"]
     keyphrase_extractors = {
         "KeyBert": keybert,
         "TextRank": textacy_textrank,
@@ -251,48 +213,44 @@ def analyse(file):
         "SGRank": textacy_sgrank
     }
 
-    # Depending whether the library does lemmatization or not by itself, the appropriate list is passed to the function
-    groups_of_algorithms = {"misc":['MultiRake', "KeyBert"],
-            "pke":['TopicRank', 'MultipartiteRank'],
-            "textacy":['TextRank', 'SingleRank', 'PositionRank', "Yake", "sCAKE", "SGRank"]}
-
-    language = "en"
-    include_pos = ['NOUN', "PROPN", "VERB"]
+    # Depending on whether the library can extract keyterms based on pos or not, the appropriate list is passed to the function
+    groups_of_algorithms = {"bert":["KeyBert"],
+            "notBert":["TextRank", "SingleRank", "PositionRank", "MultipartiteRank", "Yake", "sCAKE", "SGRank", ]}
 
     # load tsv file as corpus
-    list_of_texts = []
-    with open(file) as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            row2string = ''.join(str(e) for e in row)
-            rowSplited = row2string.split('\t')
-            parapraph = rowSplited[1]
-            list_of_texts.append(parapraph)
-
+    list_of_texts = load_texts(filepath)
     list_of_texts = [text_preprocessing(text) for text in list_of_texts]
     list_of_lemmatized_texts = spacy_lemmatizer_with_whitespace(list_of_texts, language)
 
     list_of_df_keywords = []
-    for name, extractor in keyphrase_extractors.items():
-        if name in groups_of_algorithms["textacy"]:
-            for pos in include_pos:
+    for pos in include_pos:
+        list_of_lists_of_keywords = []
+        for name, extractor in keyphrase_extractors.items():
+            if name in groups_of_algorithms["notBert"]:
                 print("Extracting keyphrases using " + name + " for " + pos)
-                list_of_lists_of_keywords = Parallel(n_jobs=1)(
-                    delayed(extractor)(text, language, pos) for text in tqdm(list_of_texts, position=1))
-                df_keywords = postprocessing(list_of_lists_of_keywords, name, pos)
-                list_of_df_keywords.append(df_keywords)
-        else:
-            list_of_lists_of_keywords = Parallel(n_jobs=1)(
-            delayed(extractor)(text, language) for text in tqdm(list_of_lemmatized_texts, position=1))
-            df_keywords = postprocessing(list_of_lists_of_keywords, name, None)
-            list_of_df_keywords.append(df_keywords)
+                # list of lists per extractor
+                if name == "MultipartiteRank":
+                    list_of_lists_of_keywords.append(flatten(Parallel(n_jobs=1)(
+                        delayed(extractor)(text, language, pos) for text in tqdm(list_of_lemmatized_texts, position=1))))
+                else:
+                    list_of_lists_of_keywords.append(flatten(Parallel(n_jobs=1)(
+                        delayed(extractor)(text, language, pos) for text in tqdm(list_of_texts, position=1))))
+        df_keywords = postprocessing(list_of_lists_of_keywords, len(list_of_texts), pos, None)
+        list_of_df_keywords.append(df_keywords)
+
+    # keyphrase extraction for keybert is performed seperately as not pos can be passed
+    print("Extracting keyphrases using KeyBert")
+    list_of_lists_of_keywords = Parallel(n_jobs=1)(
+    delayed(keybert)(text, language) for text in tqdm(list_of_lemmatized_texts, position=1))
+    df_keywords = postprocessing(list_of_lists_of_keywords, len(list_of_lemmatized_texts), None,  "KeyBert")
+    list_of_df_keywords.append(df_keywords)
 
     df_keywords = pd.concat(list_of_df_keywords, axis=1)
-    filename = './output/'+str(file).split('/')[-1].split('.')[0]+'_single_keywords'+'.csv'
-    df_keywords.to_csv(filename, sep='\t', encoding='utf-8')
+    output_filename = './output/'+str(filepath).split('/')[-1].split('.')[0]+'_single_keywords'+'.tsv'
+    df_keywords.to_csv(output_filename, sep='\t', encoding='utf-8', index=False)
 
-
-file = "./input/contact_details.tsv"
-analyse(file)
-file = './input/user_rights_sentences.tsv'
-analyse(file)
+if __name__ == '__main__':
+    filepath = "./input/contact_details.tsv"
+    analyse(filepath)
+    filepath = './input/user_rights_sentences.tsv'
+    analyse(filepath)
