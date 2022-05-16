@@ -1,422 +1,464 @@
-#goal: automatically generate ontology words and patterns
-#input: initial seed word lists, heuristic linguistic patterns
-#output: expanded ontology word lists(???and patterns to activate trigger words)
-#from asyncio.windows_events import NULL
+# goal: automatically generate ontology words and patterns
+# input: initial seed word lists, heuristic linguistic patterns
+# output: expanded ontology word lists(???and patterns to activate trigger words)
 from curses.panel import top_panel
 from json.tool import main
 import spacy
+# import pandas as pd
 import csv
+import pandas as pd
+import itertools
 
-'''ontology dictionary'''
-class OntologyDict:
-	def __init__(self):
-		# init seed words
-		self.rightVerbs = [u'exercise', u'lodge', u'delete', u'access', u'correct', u'object',u'ask',u'correct']
-		self.rightVerbsFilter = [u'like', u'make']
-		self.accessVerbs = [u'contact']
-		self.rightNouns = [u'right']
-		self.accessNouns = [u'email']
-		self.accessVerbsFilter = [u'do']
-		self.preps = [u'via',u'by',u'through',u'within',u'at']
+class DotDict(dict):
+	__getattr__ = dict.get
+    # __setattr__ = dict.__setitem__
+    # __delattr__ = dict.__delitem__
 
-'''complex event pattern '''
+'''complex event pattern'''
 class EventsExtraction:
-	def __init__(self, nlpModel):
-		self.parser = nlpModel
-		self.ontodict = OntologyDict()
+	def __init__(self):
+		#self.parser = nlpModel
+		self.ontoDict = {
+			'rightVerbs': ['exercise', 'lodge', 'delete', 'access', 'correct', 'object','ask','correct','limit'],
+			'rightVerbsFilter': ['like', 'make', 'be'],
+			'rightNouns': ['right','copy'],
+			'accessVerbs': ['contact'],
+			'accessNouns': ['email'],
+			'accessNounsFilter':['right','time','complaint','use','delay','portability','circumstance','accordance'],
+			'accessVerbsFilter': ['do'],
+			'preps': ['via','by','through','within','at','to','in','with']
+		}
+		self.ontoDict = DotDict(self.ontoDict)
+		self.patternFreq = {}
+		self.candidateInSentence = {
+			'rightVerbs': [],
+			'rightNouns': [],
+			'accessVerbs': [],
+			'accessNouns': []
+		}
+		self.candidateInSentence = DotDict(self.candidateInSentence)
+		self.toPrintInSentence = []
+		self.recordFile = open('./output/training_sentences.csv','w')
+		self.recordWriter = csv.writer(self.recordFile)
+		self.word_dict = {}
+		self.word_dict['sentence'] = []
+		self.word_dict['accessNouns'] = []
+		self.word_dict['rightNouns'] = []
+		self.word_dict['rightVerbs'] = []
+		self.word_dict['accessVerbs'] = []
 
-	'''generate ontology with liguistic method'''
-	def generate_ontology(self, paragraph):
-		doc = self.parser(paragraph)
-		with doc.retokenize() as retokenizer:
-			for chunk in doc.noun_chunks:
-				retokenizer.merge(chunk, attrs={'LEMMA': chunk.root.lemma_, 'TAG':chunk.root.tag_, 'TEXT': chunk.root.text })
-
-		def analysize_sentence(sent,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-			def lingui_rightNoun_prep_n(token, toPrint):
-				for child in token.children:
-							#print('grandchild', grandchild.text, grandchild.pos_, grandchild.dep_)
-							if child.dep_ == 'prep' and child.text in self.ontodict.preps:
-								print('rightNoun+prep: ', child.text, child.pos_, child.dep_)
-								curtoken = child
-								for child in curtoken.children:
-									if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ == 'PROPN'):
-										#print('verb+prep+pobj', gradgrandchild.text)
-										if child.lemma_ not in self.ontodict.accessNouns: # enlarge accessverb list of verb + 
-											self.ontodict.accessNouns.append(child.lemma_) 
-											#print('gradgrandchild.lemma_', gradgrandchild.lemma_)
-											break
-			def lingui_prep_n(token,accessNouns,toPrint):
-				for child in token.children:
-					if child.dep_ == 'prep' and child.text in self.ontodict.preps:
-						toPrint.append('prep: '+child.text+' | '+child.dep_+' | '+child.pos_)
+	'''generate ontology with liguistic pattern'''
+	def generateOntology(self, doc):
+		def analysizeSentence(sent):
+			def addToOntoDict():
+				self.toPrintInSentence.append('rightVerbs: '+str(self.candidateInSentence.rightVerbs))
+				self.toPrintInSentence.append('rightNouns: '+str(self.candidateInSentence.rightNouns))
+				self.toPrintInSentence.append('accessVerbs: '+str(self.candidateInSentence.accessVerbs))
+				self.toPrintInSentence.append('accessNouns: '+str(self.candidateInSentence.accessNouns))
+				self.recordWriter.writerow(self.toPrintInSentence[2])
+				for rightVerb in self.candidateInSentence.rightVerbs:
+					if rightVerb.lower() not in self.ontoDict.rightVerbs: 
+						self.ontoDict.rightVerbs.append(rightVerb.lower())
+				for rightNoun in self.candidateInSentence.rightNouns:
+					if rightNoun.lower() not in self.ontoDict.rightNouns: 
+						self.ontoDict.rightNouns.append(rightNoun.lower())
+				for accessNoun in self.candidateInSentence.accessNouns:
+					if accessNoun.lower() not in self.ontoDict.accessNouns: 
+						self.ontoDict.accessNouns.append(accessNoun.lower())
+				for accessVerb in self.candidateInSentence.accessVerbs:
+					if accessVerb.lower() not in self.ontoDict.accessVerbs: 
+						self.ontoDict.accessVerbs.append(accessVerb.lower())		
+							
+			def pattern_prep_n(token):
+				for child in token.children: # ??? to all prep or only the first and reture 
+					if child.dep_ == 'prep' and child.text in self.ontoDict.preps:
+						self.toPrintInSentence.append('prep: '+child.text+' | '+child.dep_+' | '+child.pos_)
 						curtoken = child
 						for child in curtoken.children:
-							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ == 'PROPN'):
-								accessNouns.append(child.lemma_) 
-								toPrint.append('prep+pobj: '+child.text+' | '+child.dep_+' | '+child.pos_)
+							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ == 'PROPN') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+								if child.text.lower() not in self.candidateInSentence.accessNouns:
+									self.candidateInSentence.accessNouns.append(child.text.lower()) 
+								self.toPrintInSentence.append('prep+pobj: '+child.text+' | '+child.dep_+' | '+child.pos_)
 								return True
 				return False
-			
-			def activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs):
-				for rightVerb in rightVerbs:
-					if rightVerb.lower() not in self.ontodict.rightVerbs: 
-						self.ontodict.rightVerbs.append(rightVerb.lower())
-				for rightNoun in rightNouns:
-					if rightNoun.lower() not in self.ontodict.rightNouns: 
-						self.ontodict.rightNouns.append(rightNoun.lower())
-				for accessNoun in accessNouns:
-					if accessNoun.lower() not in self.ontodict.accessNouns: 
-						self.ontodict.accessNouns.append(accessNoun.lower())
-				for accessVerb in accessVerbs:
-					if accessVerb.lower() not in self.ontodict.accessVerbs: 
-						self.ontodict.accessVerbs.append(accessVerb.lower())
 
-			def lingui_aclVerb_dobj_prep_n(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
+			def pattern_aclVerb_dobj_prep_n(token):
 				for child in token.children: 
 					if child.dep_ == 'acl' and child.pos_ == 'VERB': # have the right + to + Verb
 						curchild = child
-						toPrint.append('have the right+aclVerb: '+child.text+' | '+child.dep_+' | '+child.pos_)
-						if curchild.lemma_ not in self.ontodict.rightVerbsFilter: 
-							rightVerbs.append(curchild.lemma_)
+						self.toPrintInSentence.append('have the right+aclVerb: '+child.text+' | '+child.dep_+' | '+child.pos_)
+						if curchild.lemma_ not in self.ontoDict.rightVerbsFilter: 
+							self.candidateInSentence.rightVerbs.append(curchild.lemma_)
 						for child in curchild.children:
 							if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								rightNouns.append(child.lemma_)	
-								toPrint.append('have the right+aclVerb+n: '+child.text+' | '+child.dep_ +' | '+child.pos_)
-								toPrint.append('have the right+prep+pobj check start')
-								if lingui_prep_n(child,accessNouns,toPrint):	
-									activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs)					
+								if child.text.lower() not in self.ontoDict.rightNouns: 
+									self.candidateInSentence.rightNouns.append(child.text.lower())	
+								self.toPrintInSentence.append('have the right+aclVerb+n: '+child.text+' | '+child.dep_ +' | '+child.pos_)
+								self.toPrintInSentence.append('have the right+prep+pobj check start')
+								if pattern_prep_n(child):	
+									addToOntoDict()					
 				return
 
-			def lingui_rightVerb_rightNoun(token, rightVerbs,toPrint):
-				if token.head.lemma_ not in self.ontodict.rightVerbsFilter: 
-					rightVerbs.append(token.head.lemma_)
-					toPrint.append('rightVerb+rightNoun: '+token.head.text+' | '+token.head.dep_+' | '+token.head.pos_)
+			def pattern_rightVerb_rightNoun(token):
+				if token.head.lemma_ not in self.ontoDict.rightVerbsFilter: 
+					self.candidateInSentence.rightVerbs.append(token.head.lemma_)
+					self.toPrintInSentence.append('rightVerb+rightNoun: '+token.head.text+' | '+token.head.dep_+' | '+token.head.pos_)
 					return token.head
+				else:
+					return None
 
-			def lingui_findMainVerb_from_rightVerb(token,toPrint):
-				# toPrint.append('rightVerb: '+token.text)
-				if not token:
-					toPrint.append('skip for no access')
-					return 
+			def pattern_Verb_rightNoun(token):
+				self.toPrintInSentence.append('Verb+rightNoun: '+token.head.text+' | '+token.head.dep_+' | '+token.head.pos_)
+				return token.head
+
+			def lingui_findMainVerb_from_rightVerb(token):
+				#self.toPrintInSentence.append('Verb: '+token)
 				if token.dep_ == 'ROOT':
-					toPrint.append('rightVerb is Root: '+token.text)
+					self.toPrintInSentence.append('rightVerb is Root: '+token.text)
+					return token
+				if token.dep_ == 'advcl':
+					self.toPrintInSentence.append('rightVerb is curtoken: '+token.text)
 					return token
 				if token.dep_ == 'xcomp' and token.head.pos_ == 'VERB' and token.head.dep_ == 'advcl':
-					toPrint.append('rightVerb+xcomp+advcl: '+token.head.text)
+					self.toPrintInSentence.append('rightVerb+xcomp+advcl: '+token.head.text)
 					return token.head
+				else:
+					return None
 				
-			def lingui_findMainVerb(token, toPrint): # another method is to use token.head.dep_ == 'xcomp':
-						curtoken = token.head
-						toPrint.append('curtoken: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
+			def lingui_findMainVerb(token): # another method is to use token.head.dep_ == 'xcomp':
+				curtoken = token.head
+				self.toPrintInSentence.append('curtoken: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
+				if not (curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
+					curtoken = curtoken.head
+					self.toPrintInSentence.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
+					if not (curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
+						curtoken = curtoken.head
+						self.toPrintInSentence.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
 						if not (curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
 							curtoken = curtoken.head
-							toPrint.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
-							if not (curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
-								curtoken = curtoken.head
-								toPrint.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
-								if not (curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
-									curtoken = curtoken.head
-									toPrint.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
-						if not(curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
-							toPrint.append('no main verb')
-							return 
-						else:
-							return curtoken
+							self.toPrintInSentence.append('curtoken+rightNoun: '+curtoken.text+' | '+curtoken.dep_+' | '+curtoken.pos_)
+				if not(curtoken.dep_ == 'advcl' and curtoken.pos_ == 'VERB'):
+					self.toPrintInSentence.append('no main  verb')
+					return 
+				else:
+					return curtoken
 
-			def lingui_accessVerb_patterns(accessVerbToken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
+			def lingui_accessVerb_patterns(accessVerbToken):
 				accessNoun_accessVerb_dobj = []
 				accessNoun_accessVerb_prep_pojb = []
 				accessNoun_accessVerb_prep_prep_pobj = []
 				for child in accessVerbToken.children:
-					toPrint.append('accessVerb: '+child.text+' | '+child.dep_+' | '+child.pos_)
-					if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-						toPrint.append('accessverb+dobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+					self.toPrintInSentence.append('accessVerb: '+child.text+' | '+child.dep_+' | '+child.pos_)
+					if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+						self.toPrintInSentence.append('accessverb+dobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
 						accessNoun_accessVerb_dobj.append(child.text)
-						
-
-					if child.dep_ == 'prep' and child.text in self.ontodict.preps: # go down through the tree and find 'via' + pobj
-						toPrint.append('accessverb+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
 						curchild = child
 						for child in curchild.children:
-							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								toPrint.append('accessverb+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+							if child.dep_ == 'conj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN') and not all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+								self.toPrintInSentence.append('accessverb+dobj+conj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+								accessNoun_accessVerb_dobj.append(child.text)
+					if child.dep_ == 'prep' and child.text in self.ontoDict.preps:# and child.text != 'to': # go down through the tree and find 'via' + pobj
+						self.toPrintInSentence.append('accessverb+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
+						curchild = child
+						for child in curchild.children:
+							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN' or child.pos_ =='PUNCT') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+								self.toPrintInSentence.append('accessverb+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
 								accessNoun_accessVerb_prep_pojb.append(child.text)
 							if child.dep_ == 'pcomp' and child.pos_ == 'VERB':
-								toPrint.append('accessverb+prep+pcomp'+child.text+' | '+child.pos_+' | '+child.dep_)
+								if child.lemma_ not in self.ontoDict.accessVerbs:
+									self.candidateInSentence.accessVerbs.append(child.lemma_)
+								self.toPrintInSentence.append('accessverb+prep+pcomp'+child.text+' | '+child.pos_+' | '+child.dep_)
 								curchild = child
 								for child in curchild.children:
-									if child.dep_ == 'dobj' and child.pos_ == 'NOUN':
-										toPrint.append('accessverb+prep+pcomp+dobj'+child.text+' | '+child.pos_+' | '+child.dep_)
+									if child.dep_ == 'dobj' and child.pos_ == 'NOUN' and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+										self.toPrintInSentence.append('accessverb+prep+pcomp+dobj'+child.text+' | '+child.pos_+' | '+child.dep_)
 										accessNoun_accessVerb_prep_pojb.append(child.text)
-
-					if child.dep_ == 'prep' and child.text not in self.ontodict.preps: # go down through the tree and find 'via' + pobj
-						toPrint.append('accessverb+prep(not via): '+child.text+' | '+child.pos_+' | '+child.dep_)
+					if child.dep_ == 'prep' and child.text not in self.ontoDict.preps: # go down through the tree and find 'via' + pobj
+						self.toPrintInSentence.append('accessverb+prep(not via): '+child.text+' | '+child.pos_+' | '+child.dep_)
 						curchild = child
 						for child in curchild.children:
-							toPrint.append('accessverb+prep(not via)+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
+							self.toPrintInSentence.append('accessverb+prep(not via)+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
 							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								toPrint.append('accessverb+prep(not via)+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+								self.toPrintInSentence.append('accessverb+prep(not via)+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
 								curchild = child 
 								for child in curchild.children:
-									if child.dep_ == 'prep' and child.text in self.ontodict.preps:
-										toPrint.append('accessverb+prep(not via)+prep+pobj+via: '+child.text+' | '+child.pos_+' | '+child.dep_)
+									if child.dep_ == 'prep' and child.text in self.ontoDict.preps:
+										self.toPrintInSentence.append('accessverb+prep(not via)+prep+pobj+via: '+child.text+' | '+child.pos_+' | '+child.dep_)
 										curchild = child
 										for child in curchild.children:
-											if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-												toPrint.append('accessverb+prep(not via)+prep+pobj+via+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+											if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+												self.toPrintInSentence.append('accessverb+prep(not via)+prep+pobj+via+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
 												accessNoun_accessVerb_prep_prep_pobj.append(child.text)
-				print('accessNoun_accessVerb_dobj: ', accessNoun_accessVerb_dobj)
-				print('accessNoun_accessVerb_prep_pojb: ', accessNoun_accessVerb_prep_pojb)
-				print('accessNoun_accessVerb_prep_pojb: ', accessNoun_accessVerb_prep_prep_pobj)
+				self.toPrintInSentence.append('accessNoun_accessVerb_dobj: '+' | '.join(accessNoun_accessVerb_dobj))
+				self.toPrintInSentence.append('accessNoun_accessVerb_prep_pojb: '+' | '.join(accessNoun_accessVerb_prep_pojb))
+				self.toPrintInSentence.append('accessNoun_accessVerb_prep_pojb: '+' | '.join(accessNoun_accessVerb_prep_prep_pobj))
 				if not accessNoun_accessVerb_dobj and not accessNoun_accessVerb_prep_pojb and not accessNoun_accessVerb_prep_prep_pobj:
 					return
-				elif accessNoun_accessVerb_prep_pojb:
-					for noun in accessNoun_accessVerb_prep_pojb:
-						accessNouns.append(noun)
-				elif accessNoun_accessVerb_dobj:
-					for noun in accessNoun_accessVerb_dobj:
-						accessNouns.append(noun)
-				else: 
-					for noun in accessNoun_accessVerb_prep_prep_pobj:
-						accessNouns.append(noun)
-				activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs)
+				for noun in accessNoun_accessVerb_prep_pojb:
+					if child.text.lower() not in self.candidateInSentence.accessNouns:
+						self.candidateInSentence.accessNouns.append(noun.lower())
+				for noun in accessNoun_accessVerb_dobj:
+					if child.text.lower() not in self.candidateInSentence.accessNouns:
+						self.candidateInSentence.accessNouns.append(noun.lower())
+				for noun in accessNoun_accessVerb_prep_prep_pobj:
+					if child.text.lower() not in self.candidateInSentence.accessNouns:
+						self.candidateInSentence.accessNouns.append(noun.lower())
+				self.toPrintInSentence.append('this target sentence is analysed ')
+				addToOntoDict()
 
-			def lingui_mainVerb_check(mainVerbToken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-
+			def checkMainVerb(mainVerbToken):
 				print(mainVerbToken.head.text)
 				if mainVerbToken.head.pos_ != 'VERB':
 					return 
-
-				toPrint.append('mainVerb+accessVerb: '+mainVerbToken.head.text)						
+				self.toPrintInSentence.append('mainVerb+accessVerb: '+mainVerbToken.head.text)						
 				curtoken = mainVerbToken.head
-				lingui_accessVerb_patterns(curtoken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint)
+				lingui_accessVerb_patterns(curtoken)
 			
-			for token in sent:
-				if token.pos_ == 'NOUN'and any(rightNoun in token.lemma_ for rightNoun in self.ontodict.rightNouns):	
-					toPrint.append('trigger rightNoun: '+token.text)
-					if token.dep_ == 'dobj' and token.head.text == 'have': # have the right + ... 
-						lingui_aclVerb_dobj_prep_n(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint)
-						for string in toPrint:
-							print(string)						
-						return 
-					if token.dep_ == 'dobj' and token.head.pos_ == 'VERB' and token.head.text != 'have':
-						VerbToken = lingui_rightVerb_rightNoun(token, rightVerbs,toPrint) 
-						mainVerbToken = lingui_findMainVerb_from_rightVerb(VerbToken, toPrint)
-													
-					if not (token.dep_ == 'dobj' and token.head.pos_ == 'VERB'): 
-						mainVerbToken = lingui_findMainVerb(token, toPrint)
+			def pattern_rightVerb_rightNoun_pp(token):
+				for child in token.children:
+					if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
+						self.toPrintInSentence.append('rightsVerb+rightsNoun: '+child.text+' | '+child.pos_+' | '+child.dep_)
+						if child.text.lower() not in self.ontoDict.rightNouns: # enlarge accessverb list of verb + dobj
+							self.candidateInSentence.rightNouns.append(child.text.lower()) 
+						self.toPrintInSentence.append('rightVerb+perp+pobj check start')
+						if pattern_prep_n(child):
+							addToOntoDict()
+							return True
+				return False
 
-					# 	if not mainVerbToken: # no main verb ????						
-					
-					if mainVerbToken: 
-						toPrint.append('the mainVerbToken is: '+mainVerbToken.text)	
-
-						lingui_mainVerb_check(mainVerbToken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint )	
-						return						
-
-				if token.pos_ == 'VERB'and any(rightVerb in token.lemma_ for rightVerb in self.ontodict.rightVerbs):
-					toPrint.append("rightsVerb: "+token.text)
-
-					def lingui_rightVerb_rightNoun_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for child in token.children:
-							if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								toPrint.append('rightsVerb+rightsNoun: '+child.text+' | '+child.pos_+' | '+child.dep_)
-								if child.lemma_ not in self.ontodict.rightNouns: # enlarge accessverb list of verb + dobj
-									rightNouns.append(child.lemma_) 
-								toPrint.append('rightVerb+perp+pobj check start')
-								if lingui_prep_n(child,accessNouns,toPrint):
-									activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs)
-									return True
-						return False
-
-					if lingui_rightVerb_rightNoun_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for string in toPrint:
-							print(string)
-						
-						return
-
-					def lingui_rightVerb_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for child in token.children:
-							if child.dep_ == 'prep' and child.text in self.ontodict.preps: 
-								toPrint.append('accessverb+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
+			def pattern_rightVerb_pp(token):
+				for child in token.children:
+					if child.dep_ == 'prep' and child.text in self.ontoDict.preps and child.text != 'to': 
+						self.toPrintInSentence.append('accessverb+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
+						curchild = child
+						for child in curchild.children:
+							if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+								self.toPrintInSentence.append('accessverb+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+								if child.lemma_ not in self.ontoDict.accessNouns: 
+									self.candidateInSentence.accessNouns.append(child.text.lower())
+								return True # ??? or continure & compare all accessNoun candidates
+							if child.dep_ == 'pcomp':
+								self.toPrintInSentence.append('accessverb+prep+pcomp: '+child.text+' | '+child.pos_+' | '+child.dep_)
 								curchild = child
-								for child in curchild.children:
-									if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-										toPrint.append('accessverb+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-										if child.lemma_ not in self.ontodict.accessNouns: 
-											accessNouns.append(child.lemma_)
-										return True # ??? or continure & compare all accessNoun candidates
-									if child.dep_ == 'pcomp':
-										toPrint.append('accessverb+prep+pcomp: '+child.text+' | '+child.pos_+' | '+child.dep_)
+								for child in curchild.children:		
+									if child.dep_ == 'prep':
+										self.toPrintInSentence.append('accessverb+prep+pcomp+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
 										curchild = child
-										for child in curchild.children:		
-											if child.dep_ == 'prep':
-												toPrint.append('accessverb+prep+pcomp+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
-												curchild = child
-												for child in curchild.children:
-													if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-														toPrint.append('accessverb+prep+pcomp+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-														if child.lemma_ not in self.ontodict.accessNouns:  
-															accessNouns.append(child.lemma_)
-														return True # ??? or continure & compare all accessNoun candidates
-												if child.dep_ == 'dobj':
-													toPrint.append('accessverb+prep+pcomp+dobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-													formerchild = child 
+										for child in curchild.children:
+											if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN') and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+												self.toPrintInSentence.append('accessverb+prep+pcomp+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+												if child.lemma_ not in self.ontoDict.accessNouns:  
+													self.candidateInSentence.accessNouns.append(child.text.lower())
+												return True # ??? or continure & compare all accessNoun candidates
+										if child.dep_ == 'dobj':
+											self.toPrintInSentence.append('accessverb+prep+pcomp+dobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+											formerchild = child 
+											curchild = child
+											child_has_acl =False
+											for child in curchild.children:
+												if child.dep_ == 'acl':
+													child_has_acl = True
+													self.toPrintInSentence.append('accessverb+prep+pcomp+dobj+acl: '+child.text+' | '+child.pos_+' | '+child.dep_)
 													curchild = child
-													child_has_acl =False
 													for child in curchild.children:
-														if child.dep_ == 'acl':
-															child_has_acl = True
-															toPrint.append('accessverb+prep+pcomp+dobj+acl: '+child.text+' | '+child.pos_+' | '+child.dep_)
+														if child.dep_ == 'prep':
+															self.toPrintInSentence.append('accessverb+prep+pcomp+dobj+acl+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
 															curchild = child
 															for child in curchild.children:
-																if child.dep_ == 'prep':
-																	toPrint.append('accessverb+prep+pcomp+dobj+acl+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
-																	curchild = child
-																	for child in curchild.children:
-																		if child.dep_ == 'pobj':
-																			toPrint.append('accessverb+prep+pcomp+dobj+acl+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-																			if child.lemma_ not in self.ontodict.accessNouns: # enlarge accessverb list of verb + 
-																				accessNouns.append(child.lemma_)
-																			return True # ??? or continure & compare all accessNoun candidates
-													if not child_has_acl:
-														if formerchild.lemma_ not in self.ontodict.accessNouns: # enlarge accessverb list of verb + 
-															accessNouns.append(formerchild.lemma_)
-						return False
-
-					if lingui_rightVerb_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for string in toPrint:
-							print(string)
-						activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs)
-						return
-
-					def lingui_rightVerb_conjVerb_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for child in token.children:
-							if child.dep_ == 'conj' and child.pos_ == 'VERB':
-								if child.lemma_ not in self.ontodict.rightVerbs: 
-									rightVerbs.append(child.lemma_)
-								curchild = child
-								toPrint.append('conjVerb: '+curchild.lemma_)
-								return lingui_rightVerb_pp(curchild,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint) # to add ''You can control and limit our use of your advertising ID in your device settings .''
-								# for child in curchild.children:
-								# 	if child.dep_ == 'dobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								# 		toPrint.append('conjVerb+dobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-								# 		curchild = child
-								# 		for child in curchild.children:
-								# 			if child.dep_ == 'prep':
-								# 				toPrint.append('conjVerb+dobj+prep: '+child.text+' | '+child.pos_+' | '+child.dep_)
-								# 				curchild = child
-								# 				for child in curchild.children:
-								# 					if child.dep_ == 'pobj' and (child.pos_ == 'NOUN' or child.pos_ =='PROPN'):
-								# 						toPrint.append('conjVerb+dobj+prep+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
-								# 						if child.lemma_ not in self.ontodict.accessNouns: # enlarge accessverb list of verb + 
-								# 							accessNouns.append(child.lemma_) 
-								# 							#print('gradgrandchild.lemma_', gradgrandchild.lemma_)
-								# 					return True
-						return False
-
-					if lingui_rightVerb_conjVerb_pp(token,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint):
-						for string in toPrint:
-							print(string)
-						activate_ontodic_enlarge(rightVerbs,rightNouns,accessNouns,accessVerbs)
-						return						
-								
-				# 		if child.dep_ == 'dobj' and child.pos_ != 'NOUN':
-				# 			#print('child: ', child.text, child.pos_, child.dep_)
-				# 			for grandchild in child.children:
-				# 				#print('grandchild', grandchild.text, grandchild.pos_, grandchild.dep_)
-				# 				if grandchild.dep_ == 'prep':
-				# 					for gradgrandchild in grandchild.children:
-				# 						if gradgrandchild.dep_ == 'pobj' and gradgrandchild.pos_ == 'NOUN':
-				# 							#print('verb+prep+pobj', gradgrandchild.text)
-				# 							if gradgrandchild.lemma_ not in self.ontodict.rightNouns: # enlarge accessverb list of verb + 
-				# 								self.ontodict.rightNouns.append(gradgrandchild.lemma_) 
-				# 								#print('gradgrandchild.lemma_', gradgrandchild.lemma_)
-				# 								break
-						
-
-					#if not (token.dep_ == 'dobj' and token.head.pos_ == 'VERB'): 
-					mainVerbToken = lingui_findMainVerb_from_rightVerb(token, toPrint)
-					if mainVerbToken: 
-						toPrint.append('the mainVerbToken is: '+mainVerbToken.text)	
-						if mainVerbToken.dep_ == 'advcl' and (mainVerbToken.head.pos_ == 'VERB' or mainVerbToken.head.lemma_ == 'do'): # find rightsacess pattern
-							toPrint.append('rightVerb: '+mainVerbToken.text+' accessVerb: '+mainVerbToken.head.lemma_)
-							if mainVerbToken.head.lemma_ not in self.ontodict.accessVerbs and mainVerbToken.head.lemma_ != 'do': # enlarge accessverb list 
-								accessVerbs.append(mainVerbToken.head.lemma_) # ??? not sure
-							curtoken = mainVerbToken.head
-							lingui_accessVerb_patterns(curtoken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint)
-							for string in toPrint:
-								print(string) 
-							return 
-
-						if mainVerbToken.dep_ == 'ROOT':
-							lingui_accessVerb_patterns(mainVerbToken,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint)
-							for string in toPrint:
-								print(string) 
-							return
-
-		for sent in doc.sents:
-			rightVerbs = []
-			rightNouns = []
-			accessNouns = []
-			accessVerbs = []
-			toPrint = []
-			for token in sent:
-				toPrint.append(token.text+'\t'+token.pos_+'\t'+token.dep_+'\t'+token.head.text)
-			analysize_sentence(sent,rightVerbs,rightNouns,accessNouns,accessVerbs,toPrint)
-
+																if child.dep_ == 'pobj' and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter):
+																	self.toPrintInSentence.append('accessverb+prep+pcomp+dobj+acl+pobj: '+child.text+' | '+child.pos_+' | '+child.dep_)
+																	if child.lemma_ not in self.ontoDict.accessNouns: # enlarge accessverb list of verb + 
+																		self.candidateInSentence.accessNouns.append(child.text.lower())
+																	return True # ??? or continure & compare all accessNoun candidates
+											if not child_has_acl:
+												if formerchild.lemma_ not in self.ontoDict.accessNouns and all(filterWord not in child.lemma_ for filterWord in self.ontoDict.accessNounsFilter): # enlarge accessverb list of verb + 
+													self.candidateInSentence.accessNouns.append(formerchild.text.lower())
+				return False
 			
+			def pattern_rightVerb_conjVerb_pp(token):
+				for child in token.children:
+					if child.dep_ == 'conj' and child.pos_ == 'VERB':
+						if child.lemma_ not in self.ontoDict.rightVerbs: 
+							self.candidateInSentence.rightVerbs.append(child.lemma_)
+						curchild = child
+						self.toPrintInSentence.append('conjVerb: '+curchild.lemma_)
+						return pattern_rightVerb_pp(curchild) # to add ''You can control and limit our use of your advertising ID in your device settings .''
+				return False
 
+			for token in sent:
+				if token.pos_ == 'VERB'and any(rightVerb in token.lemma_ for rightVerb in self.ontoDict.rightVerbs):
+					self.toPrintInSentence.append("rightsVerb: "+token.text)
+					if token.text.lower() not in self.ontoDict.rightVerbs: 
+						self.ontoDict.rightVerbs.append(token.text.lower())
+					if pattern_rightVerb_rightNoun_pp(token):
+						self.toPrintInSentence.append('this target sentence is analysed ')
+						return					
+					if pattern_rightVerb_pp(token):
+						self.toPrintInSentence.append('this target sentence is analysed ')
+						addToOntoDict()
+						return
+					if pattern_rightVerb_conjVerb_pp(token):
+						self.toPrintInSentence.append('this target sentence is analysed ')
+						addToOntoDict()
+						return						
+					mainVerbToken = lingui_findMainVerb_from_rightVerb(token)
+					if mainVerbToken: 
+						self.toPrintInSentence.append('the mainVerbToken is: '+mainVerbToken.text)	
+						if mainVerbToken.dep_ == 'advcl' and (mainVerbToken.head.pos_ == 'VERB' or mainVerbToken.head.lemma_ == 'do'): # find rightsacess pattern
+							self.toPrintInSentence.append('rightVerb: '+mainVerbToken.text+' accessVerb: '+mainVerbToken.head.lemma_)
+							if mainVerbToken.head.lemma_ not in self.ontoDict.accessVerbs and mainVerbToken.head.lemma_ != 'do': # enlarge accessverb list 
+								self.candidateInSentence.accessVerbs.append(mainVerbToken.head.lemma_) # ??? not sure
+							curtoken = mainVerbToken.head
+							lingui_accessVerb_patterns(curtoken)
+							self.toPrintInSentence.append('this target sentence is analysed ') 
+							return 
+						if mainVerbToken.dep_ == 'ROOT':
+							lingui_accessVerb_patterns(mainVerbToken)
+							self.toPrintInSentence.append('this target sentence is analysed ')
+							return	
 
+				if token.pos_ == 'NOUN' and any(rightNoun in token.lemma_ for rightNoun in self.ontoDict.rightNouns):	
+					self.toPrintInSentence.append('trigger rightNoun: '+token.text)
+					if token.text.lower() not in self.ontoDict.rightNouns: 
+						self.ontoDict.rightNouns.append(token.text.lower())
+					if pattern_prep_n(token):	
+						addToOntoDict()
+						return	
+					mainVerbToken = None
+					if token.dep_ == 'dobj' and token.head.text == 'have': # have the right + ... 
+						pattern_aclVerb_dobj_prep_n(token)
+						self.toPrintInSentence.append('this target sentence is analysed ')
+					if token.dep_ == 'dobj' and token.head.pos_ == 'VERB' and token.head.text != 'have':
+
+						if pattern_rightVerb_rightNoun(token):
+							VerbToken = pattern_rightVerb_rightNoun(token) 
+						else:
+							VerbToken = pattern_Verb_rightNoun(token)
+						#print('verbToken'+VerbToken)
+						if VerbToken:
+							mainVerbToken = lingui_findMainVerb_from_rightVerb(VerbToken)	
+						else:
+							self.toPrintInSentence.append('skip for no access')
+							return None							
+					if not (token.dep_ == 'dobj' and token.head.pos_ == 'VERB'): 
+						mainVerbToken = lingui_findMainVerb(token)
+					# 	if not mainVerbToken: # no main verb ????						
+					if mainVerbToken: 
+						self.toPrintInSentence.append('the mainVerbToken is: '+mainVerbToken.text)	
+						checkMainVerb(mainVerbToken)	
+						return 		
+					else:
+						self.toPrintInSentence.append('skip this sentence')
+		
+
+		self.candidateInSentence.rightVerbs, self.candidateInSentence.rightNouns, self.candidateInSentence.accessVerbs, self.candidateInSentence.accessNouns, self.toPrintInSentence = ([] for i in range(5))		
+		with doc.retokenize() as retokenizer:
+			for chunk in doc.noun_chunks:
+				retokenizer.merge(chunk, attrs={'LEMMA': chunk.root.lemma_, 'TAG':chunk.root.tag_, 'TEXT': chunk.root.text })
+		self.toPrintInSentence.append('**************************************')
+		self.toPrintInSentence.append('*********** analyse start ************')
+		self.toPrintInSentence.append(doc)
+
+		for token in doc:
+			self.toPrintInSentence.append(token.text+'\t'+token.pos_+'\t'+token.dep_+'\t'+token.head.text)
+		analysizeSentence(doc)
+		for string in self.toPrintInSentence:
+			print(string)
+
+		if self.candidateInSentence.accessNouns:		
+			self.word_dict['accessNouns'].append(self.candidateInSentence.accessNouns)
+		else:
+			self.word_dict['accessNouns'].append('nah')
+			self.word_dict['rightNouns'].append('nah')
+			self.word_dict['rightVerbs'].append('nah')
+			self.word_dict['accessVerbs'].append('nah')
+			return 
+		if self.candidateInSentence.rightVerbs:		
+			self.word_dict['rightVerbs'].append(self.candidateInSentence.rightVerbs)
+		else:
+			self.word_dict['rightVerbs'].append('nah')
+		if self.candidateInSentence.rightNouns:		
+			self.word_dict['rightNouns'].append(self.candidateInSentence.rightNouns)
+		else:
+			self.word_dict['rightNouns'].append('nah')
+		if self.candidateInSentence.accessVerbs:		
+			self.word_dict['accessVerbs'].append(self.candidateInSentence.accessVerbs)	
+		else:
+			self.word_dict['accessVerbs'].append('nah')
 
 if __name__ == '__main__':
-	nlp = spacy.load('en_core_web_lg') #self.defined entity 
+	
+	nlp = spacy.load('en_core_web_lg') 
 	print(nlp.pipe_names)
 
-	# sentences_training = [
-	# 	"If you have any questions related to data protection , or if you wish to exercise your rights , please contact EMAIL or the address stated above , adding the keyword Data Protection . ",
-	# 	"If you have any questions about this Privacy Policy or your rights under applicable data protection law , you can contact our customer service at address." ,
-	# 	"You can access the personal information you have made available as part of your account by logging into your Game account",
-	# 	"You can access much of your information by logging into your account .",
-	# 	'You can access your personal data within the Apps profile page',
-	# 	'You can edit some of your personal data through your account .',
-	# 	'You can control and limit our use of your advertising ID in your device settings .',
-	# 	'To limit the use and disclosure of your personal information , please submit a written request to -Email- .',
-	# 	'You can disable the sharing of you position by adapting your browser settings accordingly .',
-	# 	'If you wish to object to this use of your data , you can do so by canceling our newsletters in any of the emails we sent .',
-	# 	'If you would like a copy of some or all of your Personal Information , please contact us at -Email- - ',
-	# 	'You can request a copy of or deletion of your game account data through our Personal Data Request Portal .',
-	# 	'You have the right to make a complaint to the Information Commissioners Office'
-	# ]
-
-	# extractor = EventsExtraction(nlpModel=nlp)
-	# for sentence in sentences_training:
-	# 	extractor.generate_ontology(sentence)
-	# print(extractor.ontodict.rightNouns)
-	# print(extractor.ontodict.rightVerbs)
-	# print(extractor.ontodict.accessNouns)
-	# print(extractor.ontodict.accessVerbs)
-
-
-# output of training sentences
-
-	extractor = EventsExtraction(nlpModel=nlp)
-	with open('./input/user_rights_sentences.tsv') as csvfile:
-		reader = csv.reader(csvfile)
-		#for row in islice(reader, 10): # first 10 only
+	extractor = EventsExtraction()
+	sentences = []
+	with open('./input/user_rights_sentences_dedup.tsv') as csvfile:
+		reader = csv.reader(csvfile,delimiter=',')
 		for row in reader:
-			row2string = ''.join(str(e) for e in row)
-			rowSplited = row2string.split('\t')
-			parapraph = rowSplited[1]
-			
-			extractor.generate_ontology(parapraph)
-	print(extractor.ontodict.rightNouns)
-	print(extractor.ontodict.rightVerbs)
-	print(extractor.ontodict.accessNouns)
-	print(extractor.ontodict.accessVerbs)
-# output
-#['right', 'datum', 'requirement', 'question', 'update', 'information', 'account', 'privacy', 'data', 'control', 'possibility', 'error', '-', 'complaint', 'doubt', 'opportunity', 'e', 'officer', 'object', 'limit', 'correction', 'copy', 'erasure', 'access', 'objection”below', 'restriction', 'amendment', 'list', 'office', 'deletion', 'way', 'thing', 'trustarc', 'email', 'purpose', 'duration', 'inquiry', 'processing', 'representative', 'info', 'history', 'download', 'accordance', 'sky', 'lion', 'acknowledgment', 'application', 'part', 'option', 'request', 'assistance', 'query', 'out', 'user', 'limitation', 'us', 'name', 'number', 'record', 'mail', 'comment', 'message', 'center', 'change', 'effort', 'administrator', 'person', 'team', 'address', 'transparency', 'tool', 'means', 'service', 'setting', 'password', 'section', 'inaccuracy', 'file', 'studio', 'play', 'store', 'removal', 'consent', 'use', 'acknowledgement', 'cookie', 'portability', 'description', 'confirmation', 'ltd', 'art', 'sharing', 'dpo', 'policy', 'experience', 'amount', 'concern', 'detail', 'support', 'headspace', 'lawfulness', 'homa', 'platform', 'ironhide', 'ability', 'preference', 'lane', 'sk9', 'form', 'picsart', 'notification', 'issue', 'driver']
-#['exercise', 'lodge', 'delete', 'access', 'correct', 'object', 'ask', 'correct', 'have', 'edit', 'process', 'modify', 'update', 'erase', 'apply', 'assert', 'give', 'destroy', 'share', 'hold', 'remove', 'wish', 'revise', 'open', 'request', 'restrict', 'receive', 'connect', 'select', 'see', 'provide', 'follow', 'obtain', 'contact', 'think', 'send', 'change', 'profile', 'appoint', 'reserve', 'amend', 'find', 'revoke', 'inform', 'issue', 'use', 'want', 'affect', 'violate', 'prevent', 'resolve', 'submit', 'withdraw', 'like', 'review', 'deactivate', 'email', 'play', 'include', 'cease', 'address', 'view', 'welcome', 'explain', 'limit', 'remind', 'make', 'require', 'retain', 'get', 'create', 'track', 'rectify', 'download', 'write', 'raise', 'oppose', 'desire', 'tap', 'move', 'occur', 'offer', 'manage', 'export', 'mean', 'entitle', 'collect', 'direct', 'alert', 'adjust', 'instruct', 'reach', 'accessor', 'reflect', 'opt', 'visit', 'respect', 'invite', 'disclose', 'take', 'refer', 'record', 'anonymise', 'maintain']
-#['email', 'time', '8 temasek boulevard # 08-05 suntec tower', 'any time', 'the right', 'the requirements', 'device', 'any question', 'your personal data', ' update', 'our newsletters', 'account', 'any questions', 'a right', 'commercially reasonable efforts', 'the personal information', 'concern', 'your account', 'your data', 'your right', 'section', 'control', 'personal data', 'request', 'the possibility', 'so-called opt-out cookies', 'your personal information', 'personal information', '-', 'correct  delete inaccurate information', 'application', 'a complaint', 'an email', 'an additional request', 'a grave complaint', 'mean', 'your complaint', '-email-', 'any other personal information', 'name', 'the opportunity', 'rights', 'services', 'e', 'a support ticket', 'portal', 'object', 'any other complaint', 'the access', 'the processing', 'the following contact information', 'a general right', 'all information', 'rectification / correction', 'support', 'a copy', 'betterme.tip', 'your facebook account', ' remove data', 'the personal data', 'any information', 'questions', 'any necessary changes', 'examples', 'the end', 'access', ' erasure', 'objection”below', ' s information', 'pnix_support', 'restriction', 'mail', 'certain legal rights', ' update  amendment', 'a restriction', 'update', 'the unsubscribe instructions', 'copies', 'other rights', 'the account information', 'a data protection officer', 'the office', 'setting', 'automatic filters', 'a request', 'deletion', 'more information', 'the current contact details', 'our data protection officer', 'the rights', 'certain information', 'the way', 'things', 'disputes', 'website', 'your request', 'a request email', 'netmarble', ' information', 'the purpose', 'the planned duration', 'consent', 'privacy', 'total control', 'info', 'the  delete chat history', 'the  delete imo account', 'a download', 'app', 'your keeper security account', 'an official request', 'confirmation', 'sin accordance', 'lima sky', 'address', 'a legal right', 'timely acknowledgment', 'dataprotection', ' questions', 'the profile photo', 'an application', 'approach', 'channel', 'information', 'the option', 'review  update', 'your profile', 'settings', 'amino', 'assistance', 'a written request', 'any queries', 'the legal right', 'limitations', 'european users', '-url-', 'an e', 'any privacy or security questions', 'your information', 'the email address', 'us', 'informationsfreiheit  email', 'menu', 'the name', ' phone number', 'certain records', 'our website', 'your comments', 'a message', ' change', 'this information', 'any inaccurate or incomplete personal data', 'page', 'any other questions', 'your questions', 'site', 'good faith efforts', 'our privacy policy administrator', 'the authorized person', 'boubolina', 'feedback page', 'your email address', 'transparency', 'tools', 'the instructions', 'correction', 'a means', 'twitter  s data protection officer', 'the irish data protection commission', 'your settings', 'service', 'your password', 'my', 'the contact details', 'such a request', 'files', 'my account', 'a ticket', 'certain rights', 'our contact information', 'the google play', 'app store', 'removal', 'your local data protection supervisory authority', 'a question', 'residents', ' certain information', 'timely acknowledgement', 'cost', 'your query', 'user', 'obligation', 'the settings', 'controller', 'the data controller', 'brunnsgatan', ' erasure  portability', 'our privacy officer', 'a brief description', 'our eu representative', 'an electronic copy', 'browser', 'art', 'form', '( data portability', 'incorrect personal data', 'game', 'operativesappsupport', 'this privacy policy', 'the minimum amount', 'their contact details', 'the primary account holder', 'bottom', ' please email', 'headspace customer support', 'processing', 'the lawfulness', 'the ico website', 'more details', 'use', 'homa', 'denis', 'cookies', 'the privacy policy', 'the platform', 'summarywhat information', 'ironhide', 'amazon.com', 'contact information', 'a query', 'the matter', 'dpo', 'the ability', 'any requests', 'several rights', 'water lane', 'wilmslow sk9', 'your rights', 'beginning', 'the email', 'details', 'picsart', 'a notice', 'sms  push notification', 'any issues', ' concerns', 'our drivers', 'a moment', 'phone', 'a dedicated team', 'my personal data', 'our privacy center', 'download', 'the necessary personal data']
-#['contact', 'have', 'use', 'retain', 'send', 'log', 'visit', 'submit', 'withdraw', 'find', 'change', 'please']
+			sentences.append(row[1])	
+	
+	counter = 0
+	for doc in nlp.pipe(sentences[:200]):
+		extractor.word_dict['sentence'].append(sentences[counter])
+		extractor.generateOntology(doc)
+		counter += 1
+
+	df = pd.DataFrame(extractor.word_dict)
+	filename = './output/result.csv'
+	df.to_csv(filename, sep=',', encoding='utf-8',index=False) 
+	extractor.recordFile.close()
+
+	print(extractor.ontoDict.rightNouns)
+	print(extractor.ontoDict.rightVerbs)
+	print(extractor.ontoDict.accessNouns)
+	print(extractor.ontoDict.accessVerbs)
+
+
+	# evaluation
+	with open('./input/data_gt_dedup_user_rights_sentences.csv', 'r') as source, open('./output/result.csv', 'r') as tested:
+		source_r = csv.reader(source,delimiter=',')
+		tested_r = csv.reader(tested,delimiter=',')
+		TP_accessNouns = 0
+		TP_FP_accessNouns = 0
+		TP_FN_accessNouns = 0
+		counter = 0
+		for row_s, row_t in zip(source_r, tested_r):
+			if counter > 200:
+				break
+			else:
+				counter += 1
+			if row_s[0] == 'sentence':
+				print('skip header')
+				continue
+
+			if row_s[1] != 'nah':
+				TP_FN_accessNouns += 1
+			if row_t[1] != 'nah':
+				TP_FP_accessNouns += 1
+
+			if row_s[1] != 'nah' and row_t[1] == 'nah':
+				print('TN missing sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
+			if row_s[1] == 'nah' and row_t[1] != 'nah':
+				print('FP non-targeted sentence predicted: ', row_s[0], row_s[1], row_t[1])
+
+			if row_s[1] != 'nah' and row_t[1] != 'nah':
+				print(row_s[1],row_t[1])
+				if row_s[1] in row_t[1]: # to add type if sting, then in; if list then loop or any
+					TP_accessNouns += 1
+					print(row_s[1],row_t[1])
+				else:
+					print('wrong predicted sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
+
+		print('TP_accessNouns: ', TP_accessNouns)
+		print('TP_FP_accessNouns: ', TP_FP_accessNouns) # trigger word
+		print('TP_FN_accessNouns: ', TP_FN_accessNouns)
+		print('precision_accessNouns: ', TP_accessNouns/TP_FP_accessNouns)
+		print('recall_accessNouns: ', TP_accessNouns/TP_FN_accessNouns)
+
+# result
+# TP_accessNouns:  10
+# TP_FP_accessNouns:  28
+# TP_FN_accessNouns:  51
+# precision_accessNouns:  0.35714285714285715
+# recall_accessNouns:  0.19607843137254902
