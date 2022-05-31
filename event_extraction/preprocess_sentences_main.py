@@ -76,7 +76,7 @@ with open('./input/user_rights_sentences.tsv') as csvfile:
 		for row in reader:
 			sentences.append(row[1])	
 
-# def somajo_remove_url(text): # label_email
+# def somajo_remove_url(text): # label_url
 #     """
 #     A customized function to remove e-mails which have whitespaces
 #     and URLs which were apparently not cleaned from the corpus.
