@@ -4,10 +4,14 @@
 from curses.panel import top_panel
 from json.tool import main
 import spacy
+from spacy.tokens import Span
+from spacy.language import Language
 # import pandas as pd
 import csv
 import pandas as pd
 import itertools
+from somajo import SoMaJo
+import re
 
 class DotDict(dict):
 	__getattr__ = dict.get
@@ -285,6 +289,12 @@ class EventsExtraction:
 						return pattern_rightVerb_pp(curchild) # to add ''You can control and limit our use of your advertising ID in your device settings .''
 				return False
 
+			
+			for ent in doc.ents:
+				if ent.label_ == 'EMAIL' or ent.label_ == 'URL':
+					self.candidateInSentence.accessNouns.append(ent.text)
+
+			
 			for token in sent:
 				if token.pos_ == 'VERB'and any(rightVerb in token.lemma_ for rightVerb in self.ontoDict.rightVerbs):
 					self.toPrintInSentence.append("rightsVerb: "+token.text)
@@ -354,7 +364,7 @@ class EventsExtraction:
 		self.candidateInSentence.rightVerbs, self.candidateInSentence.rightNouns, self.candidateInSentence.accessVerbs, self.candidateInSentence.accessNouns, self.toPrintInSentence = ([] for i in range(5))		
 		with doc.retokenize() as retokenizer:
 			for chunk in doc.noun_chunks:
-				retokenizer.merge(chunk, attrs={'LEMMA': chunk.root.lemma_, 'TAG':chunk.root.tag_, 'TEXT': chunk.root.text })
+				retokenizer.merge(chunk, attrs={'LEMMA': chunk.root.lemma_, 'TAG':chunk.root.tag_, 'TEXT': chunk.root.text})
 		self.toPrintInSentence.append('**************************************')
 		self.toPrintInSentence.append('*********** analyse start ************')
 		self.toPrintInSentence.append(doc)
@@ -368,40 +378,104 @@ class EventsExtraction:
 		if self.candidateInSentence.accessNouns:		
 			self.word_dict['accessNouns'].append(self.candidateInSentence.accessNouns)
 		else:
-			self.word_dict['accessNouns'].append('nah')
-			self.word_dict['rightNouns'].append('nah')
-			self.word_dict['rightVerbs'].append('nah')
-			self.word_dict['accessVerbs'].append('nah')
+			self.word_dict['accessNouns'].append('NaN')
+			self.word_dict['rightNouns'].append('NaN')
+			self.word_dict['rightVerbs'].append('NaN')
+			self.word_dict['accessVerbs'].append('NaN')
 			return 
 		if self.candidateInSentence.rightVerbs:		
 			self.word_dict['rightVerbs'].append(self.candidateInSentence.rightVerbs)
 		else:
-			self.word_dict['rightVerbs'].append('nah')
+			self.word_dict['rightVerbs'].append('NaN')
 		if self.candidateInSentence.rightNouns:		
 			self.word_dict['rightNouns'].append(self.candidateInSentence.rightNouns)
 		else:
-			self.word_dict['rightNouns'].append('nah')
+			self.word_dict['rightNouns'].append('NaN')
 		if self.candidateInSentence.accessVerbs:		
 			self.word_dict['accessVerbs'].append(self.candidateInSentence.accessVerbs)	
 		else:
-			self.word_dict['accessVerbs'].append('nah')
+			self.word_dict['accessVerbs'].append('NaN')
+
+
+
+def somajo_label_url(text): # label_email
+    match = re.search('-URL-', text)
+    if match:
+        return '-URL-'
+
+    text_as_list = list()
+    text_as_list.append(text)
+    tokenized_text = somajo_tokenizer.tokenize_text(text_as_list)
+    for dummy_tokenized_text in tokenized_text:
+        for token in dummy_tokenized_text:
+            if token.token_class == "URL":
+                match = re.search(token.text, text)
+                if match:
+                    return token.text
+                else:
+                    print('error') 
+    return 
+
+def somajo_label_email(text): # label_email
+    match = re.search('-Email-', text)
+    if match:
+        return '-Email-'
+     
+    text_as_list = list()
+    text_as_list.append(text)
+    tokenized_text = somajo_tokenizer.tokenize_text(text_as_list)
+    for dummy_tokenized_text in tokenized_text:
+        for token in dummy_tokenized_text:
+            if token.token_class == "email_address":
+                match = re.search(token.text, text)
+                if match:
+                    return token.text
+                else:
+                    print('error')        
+    return 
 
 if __name__ == '__main__':
-	
-	nlp = spacy.load('en_core_web_lg') 
+
+	@Language.component('access')
+	def access_info(doc):
+		# Create an entity Span with label 'EMAIL','URL','ADDRESS'     
+		if somajo_label_email(doc.text):
+			email_token = somajo_label_email(doc.text)
+			for token in doc:
+				if token.text == email_token:
+					doc.ents = [Span(doc, token.i, token.i+1, label='EMAIL')] # replace with the label function,
+		
+		if somajo_label_url(doc.text):
+			url_token = somajo_label_url(doc.text)
+			for token in doc:
+				if token.text == url_token:
+					doc.ents = [Span(doc, token.i, token.i+1, label='URL')]
+
+		return doc
+
+
+
+	nlp = spacy.load('en_core_web_lg')
+	nlp.add_pipe('access')
+	somajo_tokenizer = SoMaJo("en_PTB", split_sentences=False)
+	sentences = []
+	ema = r"[a-zA-Z0-9_.+-]+ @ [ a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
 	print(nlp.pipe_names)
 
 	extractor = EventsExtraction()
 	sentences = []
-	with open('./input/user_rights_sentences_dedup.tsv') as csvfile:
-		reader = csv.reader(csvfile,delimiter=',')
+	with open('./input/user_rights_sentences_dedup_test_output.tsv') as csvfile:
+		reader = csv.reader(csvfile,delimiter='\t')
 		for row in reader:
-			sentences.append(row[1])	
+			email_without_whitespace = "".join(re.findall(ema,row[1])).replace(" ","")
+			sentence = re.sub(ema, email_without_whitespace, row[1])
+			sentences.append(sentence)	
 	
 	counter = 0
-	for doc in nlp.pipe(sentences[:200]):
+	for doc in nlp.pipe(sentences):
 		extractor.word_dict['sentence'].append(sentences[counter])
 		extractor.generateOntology(doc)
+		# print([(ent.text, ent.label_) for ent in doc.ents])
 		counter += 1
 
 	df = pd.DataFrame(extractor.word_dict)
@@ -413,48 +487,52 @@ if __name__ == '__main__':
 	print(extractor.ontoDict.rightVerbs)
 	print(extractor.ontoDict.accessNouns)
 	print(extractor.ontoDict.accessVerbs)
+	print(len(extractor.ontoDict.rightNouns))
+	print(len(extractor.ontoDict.rightVerbs))
+	print(len(extractor.ontoDict.accessNouns))
+	print(len(extractor.ontoDict.accessVerbs))
 
 
-	# evaluation
-	with open('./input/data_gt_dedup_user_rights_sentences.csv', 'r') as source, open('./output/result.csv', 'r') as tested:
-		source_r = csv.reader(source,delimiter=',')
-		tested_r = csv.reader(tested,delimiter=',')
-		TP_accessNouns = 0
-		TP_FP_accessNouns = 0
-		TP_FN_accessNouns = 0
-		counter = 0
-		for row_s, row_t in zip(source_r, tested_r):
-			if counter > 200:
-				break
-			else:
-				counter += 1
-			if row_s[0] == 'sentence':
-				print('skip header')
-				continue
+	# # evaluation
+	# with open('./input/data_gt_dedup_user_rights_sentences.csv', 'r') as source, open('./output/result.csv', 'r') as tested:
+	# 	source_r = csv.reader(source,delimiter=',')
+	# 	tested_r = csv.reader(tested,delimiter=',')
+	# 	TP_accessNouns = 0
+	# 	TP_FP_accessNouns = 0
+	# 	TP_FN_accessNouns = 0
+	# 	counter = 0
+	# 	for row_s, row_t in zip(source_r, tested_r):
+	# 		if counter > 200:
+	# 			break
+	# 		else:
+	# 			counter += 1
+	# 		if row_s[0] == 'sentence':
+	# 			print('skip header')
+	# 			continue
 
-			if row_s[1] != 'nah':
-				TP_FN_accessNouns += 1
-			if row_t[1] != 'nah':
-				TP_FP_accessNouns += 1
+	# 		if row_s[1] != 'nah':
+	# 			TP_FN_accessNouns += 1
+	# 		if row_t[1] != 'nah':
+	# 			TP_FP_accessNouns += 1
 
-			if row_s[1] != 'nah' and row_t[1] == 'nah':
-				print('TN missing sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
-			if row_s[1] == 'nah' and row_t[1] != 'nah':
-				print('FP non-targeted sentence predicted: ', row_s[0], row_s[1], row_t[1])
+	# 		if row_s[1] != 'nah' and row_t[1] == 'nah':
+	# 			print('TN missing sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
+	# 		if row_s[1] == 'nah' and row_t[1] != 'nah':
+	# 			print('FP non-targeted sentence predicted: ', row_s[0], row_s[1], row_t[1])
 
-			if row_s[1] != 'nah' and row_t[1] != 'nah':
-				print(row_s[1],row_t[1])
-				if row_s[1] in row_t[1]: # to add type if sting, then in; if list then loop or any
-					TP_accessNouns += 1
-					print(row_s[1],row_t[1])
-				else:
-					print('wrong predicted sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
+	# 		if row_s[1] != 'nah' and row_t[1] != 'nah':
+	# 			print(row_s[1],row_t[1])
+	# 			if row_s[1] in row_t[1]: # to add type if sting, then in; if list then loop or any
+	# 				TP_accessNouns += 1
+	# 				print(row_s[1],row_t[1])
+	# 			else:
+	# 				print('wrong predicted sentence with accessNouns: ', row_s[0], row_s[1], row_t[1])
 
-		print('TP_accessNouns: ', TP_accessNouns)
-		print('TP_FP_accessNouns: ', TP_FP_accessNouns) # trigger word
-		print('TP_FN_accessNouns: ', TP_FN_accessNouns)
-		print('precision_accessNouns: ', TP_accessNouns/TP_FP_accessNouns)
-		print('recall_accessNouns: ', TP_accessNouns/TP_FN_accessNouns)
+	# 	print('TP_accessNouns: ', TP_accessNouns)
+	# 	print('TP_FP_accessNouns: ', TP_FP_accessNouns) # trigger word
+	# 	print('TP_FN_accessNouns: ', TP_FN_accessNouns)
+	# 	print('precision_accessNouns: ', TP_accessNouns/TP_FP_accessNouns)
+	# 	print('recall_accessNouns: ', TP_accessNouns/TP_FN_accessNouns)
 
 # result
 # TP_accessNouns:  10
