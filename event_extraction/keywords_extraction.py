@@ -4,6 +4,7 @@ import string
 import pandas as pd
 import re
 import sys
+import os
 import string
 import traceback
 import datetime
@@ -157,7 +158,7 @@ def analyse(filepath):
     def keybert(text, language):
         try:
             if language == "en":
-                kw_model = KeyBERT(model="paraphrase-mpnet-base-v2")
+                kw_model = KeyBERT(model="all-mpnet-base-v2")
             else:
                 kw_model = KeyBERT(model="paraphrase-multilingual-mpnet-base-v2")
             keyphrases = kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 1), top_n=20)
@@ -215,14 +216,14 @@ def analyse(filepath):
 
     # Depending on whether the library can extract keyterms based on pos or not, the appropriate list is passed to the function
     groups_of_algorithms = {"bert":["KeyBert"],
-            "notBert":["TextRank", "SingleRank", "PositionRank", "MultipartiteRank", "Yake", "sCAKE", "SGRank", ]}
+            "notBert":["TextRank", "SingleRank", "PositionRank", "MultipartiteRank", "Yake", "sCAKE", "SGRank"]}
 
     # load tsv file as corpus
     list_of_texts = load_texts(filepath)
     list_of_texts = [text_preprocessing(text) for text in list_of_texts]
     list_of_lemmatized_texts = spacy_lemmatizer_with_whitespace(list_of_texts, language)
 
-    list_of_df_keywords = []
+    # list_of_df_keywords = []
     for pos in include_pos:
         list_of_lists_of_keywords = []
         for name, extractor in keyphrase_extractors.items():
@@ -236,21 +237,23 @@ def analyse(filepath):
                     list_of_lists_of_keywords.append(flatten(Parallel(n_jobs=1)(
                         delayed(extractor)(text, language, pos) for text in tqdm(list_of_texts, position=1))))
         df_keywords = postprocessing(list_of_lists_of_keywords, len(list_of_texts), pos, None)
-        list_of_df_keywords.append(df_keywords)
+        output_filename = './output/' + str(filepath).split('/')[-1].split('.')[0]+'_keywords.xlsx'
+        if os.path.exists(output_filename):
+            with pd.ExcelWriter(output_filename, mode='a') as writer:
+                df_keywords.to_excel(writer, sheet_name=pos, encoding='utf-8', index=False)
+        else:
+            with pd.ExcelWriter(output_filename, mode='w') as writer:
+                df_keywords.to_excel(writer, sheet_name=pos, encoding='utf-8', index=False)
 
-    # keyphrase extraction for keybert is performed seperately as not pos can be passed
-    print("Extracting keyphrases using KeyBert")
-    list_of_lists_of_keywords = Parallel(n_jobs=1)(
-    delayed(keybert)(text, language) for text in tqdm(list_of_lemmatized_texts, position=1))
-    df_keywords = postprocessing(list_of_lists_of_keywords, len(list_of_lemmatized_texts), None,  "KeyBert")
-    list_of_df_keywords.append(df_keywords)
+    # keyphrase extraction for keybert is commented out as the part-of-speech tags cannot be specificied during the extraction process
+    # print("Extracting keyphrases using KeyBert")
+    # list_of_lists_of_keywords = Parallel(n_jobs=1)(
+    # delayed(keybert)(text, language) for text in tqdm(list_of_lemmatized_texts, position=1))
+    # df_keywords = postprocessing(list_of_lists_of_keywords, len(list_of_lemmatized_texts), None,  "KeyBert")
+    # list_of_df_keywords.append(df_keywords)
 
-    df_keywords = pd.concat(list_of_df_keywords, axis=1)
-    output_filename = './output/'+str(filepath).split('/')[-1].split('.')[0]+'_single_keywords'+'.tsv'
-    df_keywords.to_csv(output_filename, sep='\t', encoding='utf-8', index=False)
 
 if __name__ == '__main__':
-    filepath = "./input/contact_details.tsv"
-    analyse(filepath)
-    filepath = './input/user_rights_sentences.tsv'
-    analyse(filepath)
+    for i in range(5, 11):
+        filepath = './input/user_rights_data_' + str(i) + '_sentences_deduplicated.tsv'
+        analyse(filepath)
